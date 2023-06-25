@@ -11,11 +11,12 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { GiScales } from "react-icons/gi";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const pages = ["Services", "About Us", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-export default function Nav() {
+function Nav() {
   const [isMobile, setIsMobile] = useState(false);
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
@@ -49,12 +50,16 @@ export default function Nav() {
   return (
     <AppBar
       position="static"
-      sx={{  background: 'linear-gradient(to right, #011936, #331943)', fontSize: "24px", color: "#fcff1" }}
+      sx={{
+        background: "linear-gradient(to left, #507DBC, #507dbc)",
+        fontSize: "24px",
+        color: "#fcff1",
+      }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {!isMobile && (
-    
+          
             <GiScales
               style={{
                 fontSize: "240%",
@@ -64,23 +69,29 @@ export default function Nav() {
             />
             
           )}
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                mr: 2,
-                display: { xs: "none", md: "flex" },
-                fontFamily: "'Raleway'",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            href="/"
+            sx={{
+              mr: 2,
+              display: { xs: "none", md: "flex" },
+              fontFamily: "'Raleway'",
+              fontWeight: 700,
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
+            }}
             >
-              Libra Care
-            </Typography>
+            Libra Care
+          </Typography>
+          {!isMobile && <p
+          style={{
+            fontSize: "14px",
+         
+          }}
+          >Balancing your care with independence</p>}
           <Box
             sx={{
               flexGrow: 1,
@@ -105,6 +116,7 @@ export default function Nav() {
                 fontSize: "240%",
                 marginBottom: "5px",
                 marginRight: "2vh",
+                fontWeight: "1",
               }}
             />
           )}
@@ -128,7 +140,9 @@ export default function Nav() {
           >
             {pages.map((page) => (
               <MenuItem key={page} onClick={handleCloseNavMenu}>
-                <Typography textAlign="center" sx={{fontFamily: "'Raleway'"}}>{page}</Typography>
+                <Typography textAlign="center" sx={{ fontFamily: "'Raleway'" }}>
+                  {page}
+                </Typography>
               </MenuItem>
             ))}
           </Menu>
@@ -193,13 +207,45 @@ export default function Nav() {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center" sx={{fontFamily: "'Raleway'"}}>{setting}</Typography>
+                  <Typography
+                    textAlign="center"
+                    sx={{ fontFamily: "'Raleway'" }}
+                  >
+                    {setting}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
         </Toolbar>
       </Container>
+
+      <section
+        style={{
+          backgroundColor: "#B3DEC1",
+          color: "green",
+          fontSize: "14px",
+          padding: "0.5em",
+          display: "flex",
+          justifyContent: "center",
+          lineHeight: "1",
+          WebkitUserSelect: "none", /* Safari */
+          MozUserSelect: "none", /* Firefox */
+          msUserSelect: "none", /* IE10+/Edge */
+          userSelect: "none",
+          cursor: "default" 
+        }}
+      >
+        🚀 We are now&nbsp;
+        <div>
+          <Link to="/" style={{}}>
+            hiring
+          </Link>
+        </div>
+        &nbsp;carers in the Walsall, Cannock, and Lichfield areas! 🚀
+      </section>
     </AppBar>
   );
 }
+
+export default Nav;
