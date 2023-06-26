@@ -51,9 +51,8 @@ function Nav() {
     <AppBar
       position="static"
       sx={{
-        background: "linear-gradient(to left, #507DBC, #507dbc)",
+        background: "linear-gradient(to right, black, #001242)",
         fontSize: "24px",
-        color: "#fcff1",
       }}
     >
       <Container maxWidth="xl">
@@ -89,7 +88,6 @@ function Nav() {
           {!isMobile && <p
           style={{
             fontSize: "14px",
-         
           }}
           >Balancing your care with independence</p>}
           <Box
@@ -160,6 +158,7 @@ function Nav() {
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
+              
             }}
           >
             Libra Care
@@ -220,30 +219,36 @@ function Nav() {
         </Toolbar>
       </Container>
 
-      <section
-        style={{
+      <Container
+       maxWidth="xl"
+        sx={{
           backgroundColor: "#B3DEC1",
           color: "green",
-          fontSize: "14px",
+          fontSize: {xs: "9.5px", sm: "16px", md: "20px"},
           padding: "0.5em",
           display: "flex",
           justifyContent: "center",
           lineHeight: "1",
-          WebkitUserSelect: "none", /* Safari */
-          MozUserSelect: "none", /* Firefox */
-          msUserSelect: "none", /* IE10+/Edge */
+          WebkitUserSelect: "none", 
+          MozUserSelect: "none", 
+          msUserSelect: "none", 
           userSelect: "none",
-          cursor: "default" 
+          cursor: "default",
+          borderBottom: "1px solid green",
+          borderTop: "1px solid green",
+          width: "100%",
+          margin: "0px"
         }}
       >
         🚀 We are now&nbsp;
-        <div>
-          <Link to="/" style={{}}>
+        <div style={{}}>
+          <Link to="/" style={{
+          }}>
             hiring
           </Link>
         </div>
         &nbsp;carers in the Walsall, Cannock, and Lichfield areas! 🚀
-      </section>
+      </Container>
     </AppBar>
   );
 }
