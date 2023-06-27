@@ -1,0 +1,6 @@
+.leaflet-container {
+height: 100px;
+width: 50vw;
+display: flex;
+justify-content: center;
+}
