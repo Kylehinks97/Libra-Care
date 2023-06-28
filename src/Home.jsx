@@ -4,7 +4,8 @@ import { MapContainer, TileLayer, Polygon } from "react-leaflet";
 import {} from "leaflet";
 import "./styles/Map.css";
 import "leaflet/dist/leaflet.css";
-import Form from "./Form";
+import FormComponent from "./FormComponent";
+import Footer from "./Footer";
 
 export default function Home() {
   const polygonCoords = [
@@ -81,8 +82,9 @@ export default function Home() {
           justifyContent: "center",
         }}
       >
-        <Form></Form>
+        <FormComponent></FormComponent>
       </div>
+      <Footer />
     </>
   );
 }

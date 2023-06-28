@@ -1,0 +1,16 @@
+#care-radio {
+  background-color: rgba(55, 55, 55, 0.821);
+  border: 1px solid black;
+}
+#care-radio:active {
+  background-color: "coral";
+}
+#job-radio {
+  background-color: rgb(78, 78, 78);
+  border: 1px solid black;
+}
+
+.form-check-input:checked {
+    background-image: none;
+    background-color: #FF6B3D !important;
+}
