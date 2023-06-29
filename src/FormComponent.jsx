@@ -52,7 +52,7 @@ export default function FormComponent() {
                 label="I want care"
                 id="care-radio"
                 checked={wantCare}
-                onClick={() => {
+                onChange={() => {
                   setIsChecked(true);
                   setWantCare(true);
                   setWantJob(false);
@@ -70,7 +70,7 @@ export default function FormComponent() {
                 label="I want a job"
                 id="job-radio"
                 checked={wantJob}
-                onClick={() => {
+                onChange={() => {
                   setIsChecked(true);
                   setWantJob(true);
                   setWantCare(false);
