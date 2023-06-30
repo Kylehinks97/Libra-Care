@@ -9,16 +9,10 @@ import Footer from "./Footer";
 import * as turf from "@turf/turf";
 
 export default function Home() {
-  // const polygonCoords = [
-  //   [52.615, -2.115],
-  //   [52.7, -2.05],
-  //   [52.7, -1.95],
-  //   [52.6, -1.95],
-  // ];
 
   const transparentIcon = new L.Icon({
     iconUrl: "../assets/",
-    iconSize: [0, 0], // Set the icon size to 0x0
+    iconSize: [0, 0],
   });
 
   const markerCoords = 
@@ -61,14 +55,12 @@ export default function Home() {
       [52.595787, -1.941609],
       [52.6154, -1.8845],
       [52.674827,-2.029781]
-  
   ];
-
   const bufferedPolygon = turf.buffer(turf.multiPoint(markerCoords), 3.4, {
     units: "kilometers",
   });
-
   const polygonCoords = bufferedPolygon.geometry.coordinates[0]
+
   return (
     <>
       <HomeImage />
@@ -134,8 +126,9 @@ export default function Home() {
       </div>
       <div
         style={{
-          clipPath: "polygon(0 0, 100% 0, 100% 80%, 0 90%)",
-          height: "500px",
+          // clipPath: "polygon(0 0, 100% 0, 100% 80%, 0 90%)",
+          marginBottom: "5%",
+          height: "auto",
           display: "flex",
           justifyContent: "center",
         }}
