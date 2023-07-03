@@ -14,3 +14,13 @@
     background-image: none;
     background-color: #FF6B3D !important;
 }
+
+#for-who-myself, #for-who-another {
+  background-color: rgb(78, 78, 78);
+  border: 1px solid black;
+} 
+
+#care-req-1, #care-req-2, #care-req-3, #care-req-4, #care-req-5, #care-req-6, #care-req-7, #care-req-8, #care-req-9 {
+  background-color: rgb(78, 78, 78);;
+  border: 1px solid black;
+}

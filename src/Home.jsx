@@ -105,7 +105,6 @@ export default function Home() {
             url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           {markerCoords.map((coord, idx) => {
-            console.log(coord);
             return <Marker position={coord} id={idx} key={idx} icon={transparentIcon}></Marker>;
           })}
         </MapContainer>
