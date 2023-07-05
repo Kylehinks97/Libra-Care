@@ -15,7 +15,7 @@
     background-color: #FF6B3D !important;
 }
 
-#for-who-myself, #for-who-another {
+#for-who-myself, #for-who-another, #can-drive, #cannot-drive, #willing, #not-willing {
   background-color: rgb(78, 78, 78);
   border: 1px solid black;
 } 
