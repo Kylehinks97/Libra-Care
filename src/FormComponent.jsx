@@ -1,10 +1,12 @@
 import { FormGroup } from "@mui/material";
+import React from 'react';
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "./styles/FormComponent.css";
 import { useState, useEffect } from "react";
 
 export default function FormComponent() {
+  
   const [isChecked, setIsChecked] = useState(false);
   const [wantCare, setWantCare] = useState(false);
   const [wantJob, setWantJob] = useState(false);
@@ -19,16 +21,6 @@ export default function FormComponent() {
   const [firstLineOfAddress, setFirstLineOfAddress] = useState("");
   const [secondLineOfAddress, setSecondLineOfAddress] = useState("");
   const [postCode, setPostCode] = useState("");
-  const [
-    inquirersAndReceiversFirstLineOfAddress,
-    setInquirersAndReceiversFirstLineOfAddress,
-  ] = useState("");
-  const [
-    inquirersAndReceiversSecondLineOfAddress,
-    setInquirersAndReceiversSecondLineOfAddress,
-  ] = useState("");
-  const [inquirersAndReceiversPostCode, setInquirersAndReceiversPostCode] =
-    useState("");
 
   const [continenceCare, setContinenceCare] = useState(false);
   const [personalCare, setPersonalCare] = useState(false);
@@ -76,9 +68,16 @@ export default function FormComponent() {
     inquirersAndReceiversContactNumber,
     setInquirersAndReceiversContactNumber,
   ] = useState("");
-
-  console.log(employeeCanDrive, "can");
-  console.log(employeeCannotDrive, "cannot");
+  const [
+    inquirersAndReceiversFirstLineOfAddress,
+    setInquirersAndReceiversFirstLineOfAddress,
+  ] = useState("");
+  const [
+    inquirersAndReceiversSecondLineOfAddress,
+    setInquirersAndReceiversSecondLineOfAddress,
+  ] = useState("");
+  const [inquirersAndReceiversPostCode, setInquirersAndReceiversPostCode] =
+  useState("");
 
   const visitsGreenList = [
     "Weekly",
@@ -95,12 +94,85 @@ export default function FormComponent() {
     "Spouse",
     "Sibling",
     "Grandparent",
+    "Grandchild",
     "Parent",
     "Friend",
     "Other",
   ];
-
-  const careForOtherObj = {};
+  
+  
+  
+  const careInquiry = {
+    forMyself: forMyself,
+    forAnother: forAnother,
+    onBehalfDetails: {
+      relationship: relationship,
+      customRelationship: customRelationship,
+  
+      inquirersName: inquirersName,
+      inquirersEmail: inquirersEmail,
+      contactNumber: contactNumber,
+      address: {
+        firstLineOfAddress: firstLineOfAddress,
+        secondLineOfAddress: secondLineOfAddress,
+        postCode: postCode,
+      },
+    },
+    forMyselfDetails: {
+      inquirersAndReceiversName: inquirersAndReceiversName,
+      inquirersAndReceiversEmail: inquirersAndReceiversEmail,
+      inquirersAndReceiversContactNumber: inquirersAndReceiversContactNumber,
+      address: {
+        inquirersAndReceiversFirstLineOfAddress:
+          inquirersAndReceiversFirstLineOfAddress,
+        inquirersAndReceiversSecondLineOfAddress:
+          inquirersAndReceiversSecondLineOfAddress,
+        inquirersAndReceiversPostCode: inquirersAndReceiversPostCode,
+      },
+    },
+    careRequirements: {
+      continenceCare: continenceCare,
+      personalCare: personalCare,
+      mealPrep: mealPrep,
+      medicationAdmin: medicationAdmin,
+      domesticDuties: domesticDuties,
+      feeding: feeding,
+      oralCare: oralCare,
+      notSure: notSure,
+      other: other,
+      moreDetails: moreDetails,
+      visits: visits,
+      visitsForMyself: visitsForMyself,
+      moreDetailsForMyself: forMyself,
+      anythingMore: anythingMore,
+    },
+  };
+  const jobInquiry = {
+    employeeName: employeeName,
+    employeeDOB: employeeDOB,
+    employeeEmail: employeeEmail,
+    employeeContactNumber: employeeContactNumber,
+    employeeNationalInsurance: employeeNationalInsurance,
+    address: {
+      employeeFirstLineOfAddress: employeeFirstLineOfAddress,
+      employeeSecondLineOfAddress: employeeSecondLineOfAddress,
+      employeePostCode: employeePostCode,
+    },
+    reference: {
+      employeeRefName: employeeRefName,
+      employeeRefEmail: employeeRefEmail,
+      employeeRefContactNumber: employeeRefContactNumber,
+    },
+    skillsAndExperience: {
+      employeeExperience: employeeExperience,
+      employeeSkills: employeeSkills,
+      employeeQualifications: employeeQualifications,
+    },
+    employeeIsWilling: employeeIsWilling,
+    employeeIsNotWilling: employeeIsNotWilling,
+    employeeCanDrive: employeeCanDrive,
+    employeeCannotDrive: employeeCannotDrive,
+  }
 
   const careRequirements = [
     continenceCare,
@@ -114,19 +186,15 @@ export default function FormComponent() {
     other,
   ];
 
-  useEffect(() => {}, []);
-
-  // console.log(careRequirements, "<--continence");
-
   return (
     <div
       style={{
-        background: "grey",
+        background: "white",
       }}
     >
       <Form
         style={{
-          width: "60vw",
+          width: "80vw",
         }}
       >
         <div
@@ -135,13 +203,20 @@ export default function FormComponent() {
             justifyContent: "center",
           }}
         >
-          <h2
+          <h2>Inquiry Form</h2>
+        </div>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <Form.Label
+            className="text-center align-middle"
             style={{
-              marginBottom: "20px",
+              margin: "3% 0 9%",
+              fontWeight: "580",
+              pointerEvents: "none",
             }}
           >
-            Inquiry Form
-          </h2>
+            You can expect to hear from us regarding your inquiry within 48
+            hours...
+          </Form.Label>
         </div>
         <FormGroup
           style={{
@@ -155,6 +230,7 @@ export default function FormComponent() {
               <Form.Check
                 type="radio"
                 label="I want care"
+                className="longer-questions"
                 id="care-radio"
                 checked={wantCare}
                 onChange={() => {
@@ -176,10 +252,10 @@ export default function FormComponent() {
                   setEmployeeCannotDrive(false);
                   setEmployeeIsWilling(false);
                   setEmployeeIsNotWilling(false);
-                  setEmployeeRefName("")
-                  setEmployeeRefEmail("")
-                  setEmployeeRefContactNumber("")
-                  setCV(false)
+                  setEmployeeRefName("");
+                  setEmployeeRefEmail("");
+                  setEmployeeRefContactNumber("");
+                  setCV(false);
                 }}
               />
             </div>
@@ -188,6 +264,7 @@ export default function FormComponent() {
                 type="radio"
                 label="I want a career"
                 id="job-radio"
+                className="longer-questions"
                 checked={wantJob}
                 onChange={() => {
                   setIsChecked(true);
@@ -239,6 +316,7 @@ export default function FormComponent() {
                     type="radio"
                     label="For myself"
                     id="for-who-myself"
+                    className="longer-questions"
                     checked={forMyself}
                     onChange={() => {
                       setForMyself(true);
@@ -263,12 +341,8 @@ export default function FormComponent() {
                       setVisits("");
                       setMoreDetails("");
                       setInquirersAndReceiversName("");
+                      setCustomRelationship("");
                     }}
-                    style={
-                      {
-                        // backgroundColor: "coral"
-                      }
-                    }
                   />
                 </div>
                 <div className="col">
@@ -277,6 +351,7 @@ export default function FormComponent() {
                     label="For another"
                     id="for-who-another"
                     checked={forAnother}
+                    className="longer-questions"
                     onChange={() => {
                       setForAnother(true);
                       setForMyself(false);
@@ -305,11 +380,6 @@ export default function FormComponent() {
                       setVisits("");
                       setVisitsForMyself("");
                     }}
-                    style={
-                      {
-                        // backgroundColor: "coral"
-                      }
-                    }
                   />
                 </div>
               </div>
@@ -318,7 +388,7 @@ export default function FormComponent() {
         )}
         {forAnother && (
           <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-            <Form.Group className="mb-3" controlId="formBasicSelect">
+            <Form.Group className="mb-3">
               <Form.Label>What is your relationship to this person?</Form.Label>
               <Form.Select
                 value={relationship}
@@ -327,6 +397,7 @@ export default function FormComponent() {
                 <option value="">Select relationship</option>
                 <option value="Son/Daughter">Son/Daughter</option>
                 <option value="Spouse">Spouse</option>
+                <option value="Grandchild">Grandchild</option>
                 <option value="Sibling">Sibling</option>
                 <option value="Grandparent">Grandparent</option>
                 <option value="Parent">Parent</option>
@@ -338,12 +409,13 @@ export default function FormComponent() {
         )}
         {relationship === "Other" && (
           <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label style={{ pointerEvents: "none" }}>
+            <Form.Group className="mb-3">
+              <Form.Label htmlFor="describe-relationship">
                 Please describe your relationship with this person
               </Form.Label>
               <Form.Control
                 type="text"
+                id="describe-relationship"
                 placeholder="Enter contact number..."
                 onChange={(e) => setCustomRelationship(e.target.value)}
               />
@@ -353,7 +425,7 @@ export default function FormComponent() {
         {(relationshipsGreenList.includes(relationship) ||
           customRelationship) && (
           <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3">
               <Form.Label>What is your full name?</Form.Label>
               <Form.Control
                 type="text"
@@ -366,11 +438,12 @@ export default function FormComponent() {
 
         {inquirersName !== "" && (
           <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>
+            <Form.Group className="mb-3">
+              <Form.Label htmlFor="name-receiving-care">
                 What is the full name of the person to receive care?
               </Form.Label>
               <Form.Control
+                id="name-receiving-care"
                 type="text"
                 placeholder="Enter full name..."
                 onChange={(e) => setPersonReceivingCare(e.target.value)}
@@ -380,7 +453,7 @@ export default function FormComponent() {
         )}
         {personReceivingCare !== "" && (
           <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3">
               <Form.Label
                 style={{
                   display: "flex",
@@ -392,12 +465,11 @@ export default function FormComponent() {
               >
                 Your contact details
               </Form.Label>
-              <Form.Label style={{ pointerEvents: "none" }}>
-                Email address
-              </Form.Label>
+              <Form.Label htmlFor="poc-email">Email address</Form.Label>
               <Form.Control
-                type="text"
-                placeholder="Enter email address"
+                type="email"
+                id="poc-email"
+                placeholder="Enter email address..."
                 onChange={(e) => setInquirersEmail(e.target.value)}
               />
             </Form.Group>
@@ -405,13 +477,12 @@ export default function FormComponent() {
         )}
         {inquirersEmail !== "" && (
           <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label style={{ pointerEvents: "none" }}>
-                Contact number
-              </Form.Label>
+            <Form.Group className="mb-3">
+              <Form.Label htmlFor="poc-number">Contact number</Form.Label>
               <Form.Control
                 type="tel"
-                placeholder="Enter contact number"
+                id="poc-number"
+                placeholder="Enter contact number..."
                 onChange={(e) => setContactNumber(e.target.value)}
               />
             </Form.Group>
@@ -432,23 +503,30 @@ export default function FormComponent() {
               </Form.Label>
             </Form.Group>
             <Form.Group style={{ marginTop: "20px", marginBottom: "20px" }}>
-              <Form.Label>1st Line of Address</Form.Label>
+              <Form.Label htmlFor="receivers-1st-line-address">
+                1st Line of Address
+              </Form.Label>
               <Form.Control
-                type="email"
+                id="receivers-1st-line-address"
+                type="text"
                 onChange={(e) => setFirstLineOfAddress(e.target.value)}
               />
             </Form.Group>
             <Form.Group style={{ marginTop: "20px", marginBottom: "20px" }}>
-              <Form.Label>2nd Line of Address</Form.Label>
+              <Form.Label htmlFor="receivers-2nd-line-address">
+                2nd Line of Address
+              </Form.Label>
               <Form.Control
-                type="email"
+                id="receivers-2nd-line-address"
+                type="text"
                 onChange={(e) => setSecondLineOfAddress(e.target.value)}
               />
             </Form.Group>
             <Form.Group style={{ marginTop: "20px", marginBottom: "20px" }}>
-              <Form.Label>Post Code</Form.Label>
+              <Form.Label htmlFor="receivers-post-code">Post Code</Form.Label>
               <Form.Control
-                type="email"
+                id="receivers-post-code"
+                type="text"
                 onChange={(e) => setPostCode(e.target.value)}
               />
             </Form.Group>
@@ -456,7 +534,7 @@ export default function FormComponent() {
         )}
         {firstLineOfAddress !== "" && postCode !== "" && (
           <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3">
               <Form.Label
                 style={{
                   display: "flex",
@@ -474,6 +552,7 @@ export default function FormComponent() {
                   justifyContent: "center",
                   marginTop: "20px",
                   marginBottom: "20px",
+                  pointerEvents: "none",
                 }}
               >
                 Select all that apply
@@ -483,67 +562,46 @@ export default function FormComponent() {
                   <Form.Check
                     type="radio"
                     label="Continence Care"
-                    // disabled={other}
                     id="care-req-1"
                     checked={continenceCare}
+                    className="text-nowrap"
                     onClick={() => {
                       setContinenceCare((prevState) => !prevState);
                       setOther(false);
                       setNotSure(false);
                     }}
                   />
-                </div>
-                <div className="col">
                   <Form.Check
                     type="radio"
                     label="Personal Care"
                     id="care-req-2"
+                    className="text-nowrap"
                     checked={personalCare}
-                    // disabled={other}
                     onClick={() => {
                       setPersonalCare((prevState) => !prevState);
                       setOther(false);
                       setNotSure(false);
                     }}
                   />
-                </div>
-                <div className="col">
                   <Form.Check
                     type="radio"
                     label="Meal preparation"
+                    className="text-nowrap"
                     id="care-req-3"
                     checked={mealPrep}
-                    // disabled={other}
                     onClick={() => {
                       setMealPrep((prevState) => !prevState);
                       setOther(false);
                       setNotSure(false);
                     }}
                   />
-                </div>
-                <div className="col">
                   <Form.Check
                     type="radio"
                     label="Medication administration"
                     id="care-req-4"
                     checked={medicationAdmin}
-                    // disabled={other}
                     onClick={() => {
                       setMedicationAdmin((prevState) => !prevState);
-                      setOther(false);
-                      setNotSure(false);
-                    }}
-                  />
-                </div>
-                <div className="col">
-                  <Form.Check
-                    type="radio"
-                    label="Domestic duties"
-                    id="care-req-5"
-                    checked={domesticDuties}
-                    // disabled={other}
-                    onClick={() => {
-                      setDomesticDuties((prevState) => !prevState);
                       setOther(false);
                       setNotSure(false);
                     }}
@@ -555,29 +613,42 @@ export default function FormComponent() {
                     label="Feeding"
                     id="care-req-6"
                     checked={feeding}
-                    // disabled={other}
                     onClick={() => {
                       setFeeding((prevState) => !prevState);
                       setOther(false);
                       setNotSure(false);
                     }}
                   />
-                </div>
-                <div className="col">
                   <Form.Check
                     type="radio"
                     label="Oral Care"
                     id="care-req-7"
                     checked={oralCare}
-                    // disabled={other}
                     onClick={() => {
                       setOralCare((prevState) => !prevState);
                       setOther(false);
                       setNotSure(false);
                     }}
                   />
-                </div>
-                <div className="col">
+                  <Form.Check
+                    type="radio"
+                    label="Not sure"
+                    id="care-req-9"
+                    checked={notSure}
+                    onClick={() => {
+                      setNotSure((prevState) => !prevState);
+                      setContinenceCare(false);
+                      setPersonalCare(false);
+                      setMealPrep(false);
+                      setMedicationAdmin(false);
+                      setDomesticDuties(false);
+                      setFeeding(false);
+                      setOralCare(false);
+                      setOther(false);
+                      setMoreDetails("");
+                      setVisits("");
+                    }}
+                  />
                   <Form.Check
                     type="radio"
                     label="Other"
@@ -597,82 +668,73 @@ export default function FormComponent() {
                       setVisits("");
                     }}
                   />
-                </div>
-                <div className="col">
                   <Form.Check
                     type="radio"
-                    label="Not sure"
-                    id="care-req-9"
-                    checked={notSure}
-                    // disabled={other}
+                    label="Domestic duties"
+                    id="care-req-5"
+                    checked={domesticDuties}
                     onClick={() => {
-                      setNotSure((prevState) => !prevState);
-                      setContinenceCare(false);
-                      setPersonalCare(false);
-                      setMealPrep(false);
-                      setMedicationAdmin(false);
-                      setDomesticDuties(false);
-                      setFeeding(false);
-                      setOralCare(false);
+                      setDomesticDuties((prevState) => !prevState);
                       setOther(false);
-                      setMoreDetails("");
-                      setVisits("");
+                      setNotSure(false);
                     }}
                   />
                 </div>
-                {(other || notSure) && (
-                  <Form.Group
-                    className="mb-3"
-                    controlId="formBasicEmail"
-                    style={{ marginTop: "20px", marginBottom: "20px" }}
-                  >
-                    <Form.Label style={{ pointerEvents: "none" }}>
-                      Please describe the care required
-                    </Form.Label>
-                    <Form.Control
-                      type="email"
-                      value={moreDetails}
-                      placeholder="Tell us how we can help..."
-                      onChange={(e) => setMoreDetails(e.target.value)}
-                    />
-                  </Form.Group>
-                )}
               </div>
+              {(other || notSure) && (
+                <Form.Group
+                  className="mb-3"
+                  style={{ marginTop: "20px", marginBottom: "20px" }}
+                >
+                  <Form.Label htmlFor="set-more-details">
+                    Please describe the care required
+                  </Form.Label>
+                  <Form.Control
+                    id="set-more-details"
+                    type="text"
+                    value={moreDetails}
+                    placeholder="Tell us how we can help..."
+                    onChange={(e) => setMoreDetails(e.target.value)}
+                  />
+                </Form.Group>
+              )}
             </Form.Group>
           </div>
         )}
-        {(((other || notSure) && moreDetails !== "") ||
-          continenceCare ||
-          personalCare ||
-          mealPrep ||
-          medicationAdmin ||
-          domesticDuties ||
-          oralCare ||
-          feeding) && (
-          <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-            <Form.Group className="mb-3" controlId="formBasicSelect">
-              <Form.Label style={{ pointerEvents: "none" }}>
-                How many visits do you think are needed?
-              </Form.Label>
-              <Form.Select
-                value={visits}
-                onChange={(e) => setVisits(e.target.value)}
-              >
-                <option value="">Select visits</option>
-                <option value="Weekly">Weekly</option>
-                <option value="Every other day">Every other day</option>
-                <option value="Daily">Daily</option>
-                <option value="Twice a day">Twice a day</option>
-                <option value="Three times a day">Three times a day</option>
-                <option value="Four times a day">Four times a day</option>
-                <option value="Five, or more times a day">
-                  Five, or more times a day
-                </option>
-                <option value="Not sure">Not sure</option>
-              </Form.Select>
-            </Form.Group>
-          </div>
-        )}
+        {forAnother &&
+          (((other || notSure) && moreDetails !== "") ||
+            continenceCare ||
+            personalCare ||
+            mealPrep ||
+            medicationAdmin ||
+            domesticDuties ||
+            oralCare ||
+            feeding) && (
+            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+              <Form.Group className="mb-3" controlId="formBasicSelect">
+                <Form.Label htmlFor="how-many-visits">
+                  Lastly, many visits do you think are needed?
+                </Form.Label>
+                <Form.Select
+                  id="how-many-visits"
+                  value={visits}
+                  onChange={(e) => setVisits(e.target.value)}
+                >
+                  <option value="">Select visits</option>
+                  <option value="Weekly">Weekly</option>
+                  <option value="Every other day">Every other day</option>
+                  <option value="Daily">Daily</option>
+                  <option value="Twice a day">Twice a day</option>
+                  <option value="Three times a day">Three times a day</option>
+                  <option value="Four times a day">Four times a day</option>
+                  <option value="Five, or more times a day">
+                    Five, or more times a day
+                  </option>
+                  <option value="Not sure">Not sure</option>
+                </Form.Select>
+              </Form.Group>
+            </div>
+          )}
         {(moreDetails !== "" && visits !== "") ||
           visitsGreenList.includes(visits) ||
           (inquirersAndReceiversContactNumber &&
@@ -700,15 +762,17 @@ export default function FormComponent() {
                   style={{
                     width: "100%",
                     color: "white",
-                    fontSize: "15px",
+                    fontSize: "18px",
                     fontWeight: "bold",
                     textShadow: "2px 2px 4px black",
                     whiteSpace: "nowrap",
                     padding: "1.8%",
+                    letterSpacing: "1.3px",
                     borderRadius: "10px",
                     border: "none",
                     background: "#FF6B3D",
                     boxShadow: "1px 1px 6px black",
+                    marginTop: "20px",
                   }}
                 >
                   Submit
@@ -718,7 +782,6 @@ export default function FormComponent() {
         {forMyself && (
           <Form.Group
             className="mb-3"
-            controlId="formBasicEmail"
             style={{ marginTop: "20px", marginBottom: "20px" }}
           >
             <Form.Label>What is your full name?</Form.Label>
@@ -733,7 +796,6 @@ export default function FormComponent() {
           <>
             <Form.Group
               className="mb-3"
-              controlId="formBasicEmail"
               style={{ marginTop: "20px", marginBottom: "20px" }}
             >
               <Form.Label
@@ -749,12 +811,13 @@ export default function FormComponent() {
               >
                 Your contact details
               </Form.Label>
-              <Form.Label style={{ pointerEvents: "none" }}>
+              <Form.Label htmlFor="inquirer-and-receivers-email">
                 Email address
               </Form.Label>
               <Form.Control
-                type="text"
-                placeholder="Enter email address"
+                type="email"
+                placeholder="Enter email address..."
+                id="inquirer-and-receivers-email"
                 onChange={(e) => setInquirersAndReceiversEmail(e.target.value)}
               />
             </Form.Group>
@@ -762,13 +825,14 @@ export default function FormComponent() {
         )}
         {inquirersAndReceiversEmail !== "" && (
           <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label style={{ pointerEvents: "none" }}>
+            <Form.Group className="mb-3">
+              <Form.Label htmlFor="inquirer-and-receivers-contact-number">
                 Contact number
               </Form.Label>
               <Form.Control
-                type="text"
+                type="tel"
                 placeholder="Enter contact number..."
+                id="inquirer-and-receivers-contact-number"
                 onChange={(e) =>
                   setInquirersAndReceiversContactNumber(e.target.value)
                 }
@@ -793,27 +857,38 @@ export default function FormComponent() {
               </Form.Label>
             </Form.Group>
             <Form.Group style={{ marginTop: "20px", marginBottom: "20px" }}>
-              <Form.Label>1st Line of Address</Form.Label>
+              <Form.Label htmlFor="inquirers-and-receivers-first-line-of-address">
+                1st Line of Address
+              </Form.Label>
               <Form.Control
-                type="email"
+                type="text"
+                id="inquirers-and-receivers-first-line-of-address"
                 onChange={(e) =>
                   setInquirersAndReceiversFirstLineOfAddress(e.target.value)
                 }
               />
             </Form.Group>
             <Form.Group style={{ marginTop: "20px", marginBottom: "20px" }}>
-              <Form.Label>2nd Line of Address</Form.Label>
+              <Form.Label htmlFor="inquirers-and-receivers-second-line-of-address">
+                2nd Line of Address
+              </Form.Label>
+
               <Form.Control
-                type="email"
+                type="text"
+                id="inquirers-and-receivers-second-line-of-address"
                 onChange={(e) =>
                   setInquirersAndReceiversSecondLineOfAddress(e.target.value)
                 }
               />
             </Form.Group>
             <Form.Group style={{ marginTop: "20px", marginBottom: "20px" }}>
-              <Form.Label>Post Code</Form.Label>
+              <Form.Label htmlFor="inquirers-and-receivers-post-code">
+                Post Code
+              </Form.Label>
+
               <Form.Control
-                type="email"
+                type="text"
+                id="inquirers-and-receivers-post-code"
                 onChange={(e) =>
                   setInquirersAndReceiversPostCode(e.target.value)
                 }
@@ -824,7 +899,7 @@ export default function FormComponent() {
         {inquirersAndReceiversFirstLineOfAddress &&
           inquirersAndReceiversPostCode && (
             <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Group className="mb-3">
                 <Form.Label
                   style={{
                     display: "flex",
@@ -840,6 +915,9 @@ export default function FormComponent() {
                   style={{
                     display: "flex",
                     justifyContent: "center",
+                    marginTop: "20px",
+                    marginBottom: "20px",
+                    pointerEvents: "none",
                   }}
                 >
                   Select all that apply
@@ -849,67 +927,46 @@ export default function FormComponent() {
                     <Form.Check
                       type="radio"
                       label="Continence Care"
-                      // disabled={other}
                       id="care-req-1"
                       checked={continenceCare}
+                      className="text-nowrap"
                       onClick={() => {
                         setContinenceCare((prevState) => !prevState);
                         setOther(false);
                         setNotSure(false);
                       }}
                     />
-                  </div>
-                  <div className="col">
                     <Form.Check
                       type="radio"
                       label="Personal Care"
                       id="care-req-2"
+                      className="text-nowrap"
                       checked={personalCare}
-                      // disabled={other}
                       onClick={() => {
                         setPersonalCare((prevState) => !prevState);
                         setOther(false);
                         setNotSure(false);
                       }}
                     />
-                  </div>
-                  <div className="col">
                     <Form.Check
                       type="radio"
                       label="Meal preparation"
+                      className="text-nowrap"
                       id="care-req-3"
                       checked={mealPrep}
-                      // disabled={other}
                       onClick={() => {
                         setMealPrep((prevState) => !prevState);
                         setOther(false);
                         setNotSure(false);
                       }}
                     />
-                  </div>
-                  <div className="col">
                     <Form.Check
                       type="radio"
                       label="Medication administration"
                       id="care-req-4"
                       checked={medicationAdmin}
-                      // disabled={other}
                       onClick={() => {
                         setMedicationAdmin((prevState) => !prevState);
-                        setOther(false);
-                        setNotSure(false);
-                      }}
-                    />
-                  </div>
-                  <div className="col">
-                    <Form.Check
-                      type="radio"
-                      label="Domestic duties"
-                      id="care-req-5"
-                      checked={domesticDuties}
-                      // disabled={other}
-                      onClick={() => {
-                        setDomesticDuties((prevState) => !prevState);
                         setOther(false);
                         setNotSure(false);
                       }}
@@ -921,29 +978,42 @@ export default function FormComponent() {
                       label="Feeding"
                       id="care-req-6"
                       checked={feeding}
-                      // disabled={other}
                       onClick={() => {
                         setFeeding((prevState) => !prevState);
                         setOther(false);
                         setNotSure(false);
                       }}
                     />
-                  </div>
-                  <div className="col">
                     <Form.Check
                       type="radio"
                       label="Oral Care"
                       id="care-req-7"
                       checked={oralCare}
-                      // disabled={other}
                       onClick={() => {
                         setOralCare((prevState) => !prevState);
                         setOther(false);
                         setNotSure(false);
                       }}
                     />
-                  </div>
-                  <div className="col">
+                    <Form.Check
+                      type="radio"
+                      label="Not sure"
+                      id="care-req-9"
+                      checked={notSure}
+                      onClick={() => {
+                        setNotSure((prevState) => !prevState);
+                        setContinenceCare(false);
+                        setPersonalCare(false);
+                        setMealPrep(false);
+                        setMedicationAdmin(false);
+                        setDomesticDuties(false);
+                        setFeeding(false);
+                        setOralCare(false);
+                        setOther(false);
+                        setMoreDetails("");
+                        setVisits("");
+                      }}
+                    />
                     <Form.Check
                       type="radio"
                       label="Other"
@@ -963,43 +1033,36 @@ export default function FormComponent() {
                         setVisits("");
                       }}
                     />
-                  </div>
-                  <div className="col">
                     <Form.Check
                       type="radio"
-                      label="Not sure"
-                      id="care-req-9"
-                      checked={notSure}
-                      // disabled={other}
+                      label="Domestic duties"
+                      id="care-req-5"
+                      checked={domesticDuties}
                       onClick={() => {
-                        setNotSure((prevState) => !prevState);
-                        setContinenceCare(false);
-                        setPersonalCare(false);
-                        setMealPrep(false);
-                        setMedicationAdmin(false);
-                        setDomesticDuties(false);
-                        setFeeding(false);
-                        setOralCare(false);
+                        setDomesticDuties((prevState) => !prevState);
                         setOther(false);
-                        setMoreDetails("");
-                        setVisits("");
+                        setNotSure(false);
                       }}
                     />
                   </div>
-                  {(other || notSure) && (
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                      <Form.Label style={{ pointerEvents: "none" }}>
-                        Please describe the care required
-                      </Form.Label>
-                      <Form.Control
-                        type="email"
-                        value={moreDetails}
-                        placeholder="Tell us how we can help..."
-                        onChange={(e) => setMoreDetails(e.target.value)}
-                      />
-                    </Form.Group>
-                  )}
                 </div>
+                {(other || notSure) && (
+                  <Form.Group
+                    className="mb-3"
+                    style={{ marginTop: "20px", marginBottom: "20px" }}
+                  >
+                    <Form.Label htmlFor="set-more-details">
+                      Please describe the care required
+                    </Form.Label>
+                    <Form.Control
+                      id="set-more-details"
+                      type="text"
+                      value={moreDetails}
+                      placeholder="Tell us how we can help..."
+                      onChange={(e) => setMoreDetails(e.target.value)}
+                    />
+                  </Form.Group>
+                )}
               </Form.Group>
             </div>
           )}
@@ -1012,39 +1075,42 @@ export default function FormComponent() {
           oralCare ||
           feeding) &&
           inquirersAndReceiversContactNumber && (
-            <Form.Group className="mb-3" controlId="formBasicSelect">
-              <Form.Label style={{ pointerEvents: "none" }}>
-                Lastly, how many visits do you think are needed?
-              </Form.Label>
-              <Form.Select
-                value={visits}
-                onChange={(e) => setVisits(e.target.value)}
-              >
-                <option value="">Select visits</option>
-                <option value="Weekly">Weekly</option>
-                <option value="Every other day">Every other day</option>
-                <option value="Daily">Daily</option>
-                <option value="Twice a day">Twice a day</option>
-                <option value="Three times a day">Three times a day</option>
-                <option value="Four times a day">Four times a day</option>
-                <option value="Five, or more times a day">
-                  Five, or more times a day
-                </option>
+            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+              <Form.Group className="mb-3" controlId="formBasicSelect">
+                <Form.Label htmlFor="set-visits">
+                  Lastly, how many visits do you think are needed?
+                </Form.Label>
+                <Form.Select
+                  id="set-visits"
+                  value={visits}
+                  onChange={(e) => setVisits(e.target.value)}
+                >
+                  <option value="">Select visits</option>
+                  <option value="Weekly">Weekly</option>
+                  <option value="Every other day">Every other day</option>
+                  <option value="Daily">Daily</option>
+                  <option value="Twice a day">Twice a day</option>
+                  <option value="Three times a day">Three times a day</option>
+                  <option value="Four times a day">Four times a day</option>
+                  <option value="Five, or more times a day">
+                    Five, or more times a day
+                  </option>
 
-                <option value="Not sure">Not sure</option>
-              </Form.Select>
-            </Form.Group>
+                  <option value="Not sure">Not sure</option>
+                </Form.Select>
+              </Form.Group>
+            </div>
           )}
         {(visits || visitsForMyself) && (
           <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-            <div class="mb-3">
-              <label for="exampleFormControlTextarea1" class="form-label">
-                Anything else we should know?
+            <div className="mb-3">
+              <label htmlFor="exampleFormControlTextarea1" className="form-label">
+                Anything else we should know? (optional)
               </label>
               <textarea
-                class="form-control"
+                className="form-control"
                 id="exampleFormControlTextarea1"
-                rows="3"
+                rows={3}
                 onChange={(e) => setAnythingMore(e.target.value)}
               ></textarea>
             </div>
@@ -1063,7 +1129,7 @@ export default function FormComponent() {
               style={{
                 width: "100%",
                 color: "white",
-                fontSize: "15px",
+                fontSize: "18px",
                 fontWeight: "bold",
                 textShadow: "2px 2px 4px black",
                 whiteSpace: "nowrap",
@@ -1072,6 +1138,8 @@ export default function FormComponent() {
                 border: "none",
                 background: "#FF6B3D",
                 boxShadow: "1px 1px 6px black",
+                marginTop: "20px",
+                letterSpacing: "1.3px",
               }}
             >
               Submit
@@ -1080,10 +1148,13 @@ export default function FormComponent() {
         )}
         {wantJob && (
           <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>What is your full name?</Form.Label>
+            <Form.Group className="mb-3">
+              <Form.Label htmlFor="employee-name">
+                What is your full name?
+              </Form.Label>
               <Form.Control
                 type="text"
+                id="employee-name"
                 placeholder="Enter full name..."
                 onChange={(e) => setEmployeeName(e.target.value)}
               />
@@ -1092,10 +1163,11 @@ export default function FormComponent() {
         )}
         {employeeName && (
           <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Date of birth</Form.Label>
+            <Form.Group className="mb-3">
+              <Form.Label htmlFor="employee-dob">Date of birth</Form.Label>
               <Form.Control
-                type="text"
+                id="employee-dob"
+                type="date"
                 placeholder="DD/MM/YYYY"
                 onChange={(e) => setEmployeeDOB(e.target.value)}
               />
@@ -1104,7 +1176,7 @@ export default function FormComponent() {
         )}
         {employeeDOB && (
           <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3">
               <Form.Label>National insurance number</Form.Label>
               <Form.Control
                 type="text"
@@ -1116,7 +1188,7 @@ export default function FormComponent() {
         )}
         {employeeNationalInsurance && (
           <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3">
               <Form.Label
                 style={{
                   display: "flex",
@@ -1128,12 +1200,11 @@ export default function FormComponent() {
               >
                 Your Contact Details
               </Form.Label>
-              <Form.Label style={{ pointerEvents: "none" }}>
-                Email address
-              </Form.Label>
+              <Form.Label htmlFor="employee-email">Email address</Form.Label>
               <Form.Control
-                type="text"
-                placeholder="Enter email address"
+                type="email"
+                id="employee-email"
+                placeholder="Enter email address..."
                 onChange={(e) => setEmployeeEmail(e.target.value)}
               />
             </Form.Group>
@@ -1141,10 +1212,11 @@ export default function FormComponent() {
         )}
         {employeeEmail && (
           <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Contact Number</Form.Label>
+            <Form.Group className="mb-3">
+              <Form.Label htmlFor="employee-contact">Contact Number</Form.Label>
               <Form.Control
-                type="text"
+                id="employee-contact"
+                type="tel"
                 placeholder="Enter full name..."
                 onChange={(e) => setEmployeeContactNumber(e.target.value)}
               />
@@ -1168,23 +1240,30 @@ export default function FormComponent() {
               </Form.Label>
             </Form.Group>
             <Form.Group style={{ marginTop: "20px", marginBottom: "20px" }}>
-              <Form.Label>1st Line of Address</Form.Label>
+              <Form.Label htmlFor="employee-1st-address">
+                1st Line of Address
+              </Form.Label>
               <Form.Control
-                type="email"
+                id="employee-1st-address"
+                type="text"
                 onChange={(e) => setEmployeeFirstLineOfAddress(e.target.value)}
               />
             </Form.Group>
             <Form.Group style={{ marginTop: "20px", marginBottom: "20px" }}>
-              <Form.Label>2nd Line of Address</Form.Label>
+              <Form.Label htmlFor="employee-2nd-address">
+                2nd Line of Address
+              </Form.Label>
               <Form.Control
-                type="email"
+                id="employee-2nd-address"
+                type="text"
                 onChange={(e) => setEmployeeSecondLineOfAddress(e.target.value)}
               />
             </Form.Group>
             <Form.Group style={{ marginTop: "20px", marginBottom: "20px" }}>
-              <Form.Label>Post Code</Form.Label>
+              <Form.Label htmlFor="employee-post-code">Post Code</Form.Label>
               <Form.Control
-                type="email"
+                id="employee-post-code"
+                type="text"
                 onChange={(e) => setEmployeePostCode(e.target.value)}
               />
             </Form.Group>
@@ -1192,7 +1271,7 @@ export default function FormComponent() {
         )}
         {employeeFirstLineOfAddress && employeePostCode && (
           <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3">
               <Form.Label
                 style={{
                   display: "flex",
@@ -1204,7 +1283,6 @@ export default function FormComponent() {
               >
                 Experience and Qualifications
               </Form.Label>
-
               <div class="mb-3">
                 <label htmlFor="experience" className="form-label">
                   What experience do you have that would strengthen your
@@ -1222,28 +1300,29 @@ export default function FormComponent() {
           </div>
         )}
         {employeeExperience && (
-          <div class="mb-3">
+          <div className="mb-3">
+            
             <label htmlFor="skills" className="form-label">
               What relevant skills/abilities do you have?
             </label>
             <textarea
               className="form-control"
               id="skills"
-              rows="3"
+              rows={3}
               placeholder="e.g. Empathy, patience, communication skills..."
               onChange={(e) => setEmployeeSkills(e.target.value)}
             ></textarea>
           </div>
         )}
         {employeeSkills && (
-          <div class="mb-3">
+          <div className="mb-3">
             <label htmlFor="qualifications" className="form-label">
               What relevant qualifications do you have?
             </label>
             <textarea
               className="form-control"
               id="qualifications"
-              rows="3"
+              rows={3}
               placeholder="e.g. Level 2 Health and Social Care, Food Hygeine, First Aid..."
               onChange={(e) => setEmployeeQualifications(e.target.value)}
             ></textarea>
@@ -1261,6 +1340,7 @@ export default function FormComponent() {
                   <Form.Check
                     type="radio"
                     label="Yes"
+                    className="yes-or-no"
                     id="can-drive"
                     checked={employeeCanDrive}
                     onChange={() => {
@@ -1273,6 +1353,7 @@ export default function FormComponent() {
                   <Form.Check
                     type="radio"
                     label="No"
+                    className="yes-or-no"
                     id="cannot-drive"
                     checked={employeeCannotDrive}
                     onChange={() => {
@@ -1297,6 +1378,7 @@ export default function FormComponent() {
                     type="radio"
                     label="Yes"
                     id="willing"
+                    className="yes-or-no"
                     checked={employeeIsWilling}
                     onChange={() => {
                       setEmployeeIsWilling(true);
@@ -1307,6 +1389,7 @@ export default function FormComponent() {
                 <div className="col">
                   <Form.Check
                     type="radio"
+                    className="yes-or-no"
                     label="No"
                     id="not-willing"
                     checked={employeeIsNotWilling}
@@ -1322,7 +1405,7 @@ export default function FormComponent() {
         )}
         {(employeeIsWilling || employeeIsNotWilling) && (
           <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Group className="mb-3">
               <Form.Label
                 style={{
                   display: "flex",
@@ -1352,11 +1435,12 @@ export default function FormComponent() {
                 <br></br>
                 e.g. a former employer, teacher or college tutor...
               </Form.Label>
-              <Form.Label style={{ pointerEvents: "none" }}>
+              <Form.Label htmlFor="ref-name">
                 Full name of your reference
               </Form.Label>
               <Form.Control
-                type="email"
+                id="ref-name"
+                type="text"
                 placeholder="Enter their full name..."
                 onChange={(e) => setEmployeeRefName(e.target.value)}
               />
@@ -1365,18 +1449,24 @@ export default function FormComponent() {
         )}
         {employeeRefName && (
           <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address of your reference</Form.Label>
+            <Form.Group className="mb-3">
+              <Form.Label htmlFor="ref-email">
+                Email address of your reference
+              </Form.Label>
               <Form.Control
-                type="text"
+                type="email"
+                id="ref-email"
                 placeholder="Enter their email address..."
                 onChange={(e) => setEmployeeRefEmail(e.target.value)}
               />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Contact Number (optional)</Form.Label>
+            <Form.Group className="mb-3">
+              <Form.Label htmlFor="ref-contact">
+                Contact Number (optional)
+              </Form.Label>
               <Form.Control
-                type="text"
+                id="ref-contact"
+                type="tel"
                 placeholder="Enter full name..."
                 onChange={(e) => setEmployeeRefContactNumber(e.target.value)}
               />
@@ -1384,12 +1474,12 @@ export default function FormComponent() {
           </div>
         )}
         {employeeRefEmail && (
-          <div class="mb-3">
-            <label for="formFile" class="form-label">
+          <div className="mb-3">
+            <label htmlFor="formFile" className="form-label">
               Lastly, upload your CV:
             </label>
             <input
-              class="form-control"
+              className="form-control"
               type="file"
               id="formFile"
               onChange={(e) => setCV(true)}
@@ -1405,9 +1495,10 @@ export default function FormComponent() {
           >
             <button
               style={{
+                marginTop: "20px",
                 width: "100%",
                 color: "white",
-                fontSize: "15px",
+                fontSize: "18px",
                 fontWeight: "bold",
                 textShadow: "2px 2px 4px black",
                 whiteSpace: "nowrap",
@@ -1416,6 +1507,7 @@ export default function FormComponent() {
                 border: "none",
                 background: "#FF6B3D",
                 boxShadow: "1px 1px 6px black",
+                letterSpacing: "1.3px",
               }}
             >
               Submit

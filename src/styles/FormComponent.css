@@ -24,3 +24,24 @@
   background-color: rgb(78, 78, 78);;
   border: 1px solid black;
 }
+
+.yes-or-no {
+ padding-left: 50%;
+ white-space: nowrap;
+}
+
+.form-control {
+  background-color: #e7e7e7aa;
+  border-color: rgba(0, 0, 0, 0.529);
+  
+}
+
+.longer-questions {
+  padding-left: 21%;
+  white-space: nowrap;
+}
+
+form {
+  border: 2px solid #e7e7e7 ;
+  padding: 5%;
+}
