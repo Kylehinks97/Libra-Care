@@ -1,12 +1,10 @@
 import { FormGroup } from "@mui/material";
-import React from 'react';
-import Button from "react-bootstrap/Button";
+import React from "react";
 import Form from "react-bootstrap/Form";
 import "./styles/FormComponent.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function FormComponent() {
-  
   const [isChecked, setIsChecked] = useState(false);
   const [wantCare, setWantCare] = useState(false);
   const [wantJob, setWantJob] = useState(false);
@@ -77,7 +75,9 @@ export default function FormComponent() {
     setInquirersAndReceiversSecondLineOfAddress,
   ] = useState("");
   const [inquirersAndReceiversPostCode, setInquirersAndReceiversPostCode] =
-  useState("");
+    useState("");
+
+  const [careFormSent, setCareFormSent] = useState(false);
 
   const visitsGreenList = [
     "Weekly",
@@ -99,80 +99,6 @@ export default function FormComponent() {
     "Friend",
     "Other",
   ];
-  
-  
-  
-  const careInquiry = {
-    forMyself: forMyself,
-    forAnother: forAnother,
-    onBehalfDetails: {
-      relationship: relationship,
-      customRelationship: customRelationship,
-  
-      inquirersName: inquirersName,
-      inquirersEmail: inquirersEmail,
-      contactNumber: contactNumber,
-      address: {
-        firstLineOfAddress: firstLineOfAddress,
-        secondLineOfAddress: secondLineOfAddress,
-        postCode: postCode,
-      },
-    },
-    forMyselfDetails: {
-      inquirersAndReceiversName: inquirersAndReceiversName,
-      inquirersAndReceiversEmail: inquirersAndReceiversEmail,
-      inquirersAndReceiversContactNumber: inquirersAndReceiversContactNumber,
-      address: {
-        inquirersAndReceiversFirstLineOfAddress:
-          inquirersAndReceiversFirstLineOfAddress,
-        inquirersAndReceiversSecondLineOfAddress:
-          inquirersAndReceiversSecondLineOfAddress,
-        inquirersAndReceiversPostCode: inquirersAndReceiversPostCode,
-      },
-    },
-    careRequirements: {
-      continenceCare: continenceCare,
-      personalCare: personalCare,
-      mealPrep: mealPrep,
-      medicationAdmin: medicationAdmin,
-      domesticDuties: domesticDuties,
-      feeding: feeding,
-      oralCare: oralCare,
-      notSure: notSure,
-      other: other,
-      moreDetails: moreDetails,
-      visits: visits,
-      visitsForMyself: visitsForMyself,
-      moreDetailsForMyself: forMyself,
-      anythingMore: anythingMore,
-    },
-  };
-  const jobInquiry = {
-    employeeName: employeeName,
-    employeeDOB: employeeDOB,
-    employeeEmail: employeeEmail,
-    employeeContactNumber: employeeContactNumber,
-    employeeNationalInsurance: employeeNationalInsurance,
-    address: {
-      employeeFirstLineOfAddress: employeeFirstLineOfAddress,
-      employeeSecondLineOfAddress: employeeSecondLineOfAddress,
-      employeePostCode: employeePostCode,
-    },
-    reference: {
-      employeeRefName: employeeRefName,
-      employeeRefEmail: employeeRefEmail,
-      employeeRefContactNumber: employeeRefContactNumber,
-    },
-    skillsAndExperience: {
-      employeeExperience: employeeExperience,
-      employeeSkills: employeeSkills,
-      employeeQualifications: employeeQualifications,
-    },
-    employeeIsWilling: employeeIsWilling,
-    employeeIsNotWilling: employeeIsNotWilling,
-    employeeCanDrive: employeeCanDrive,
-    employeeCannotDrive: employeeCannotDrive,
-  }
 
   const careRequirements = [
     continenceCare,
@@ -185,6 +111,89 @@ export default function FormComponent() {
     notSure,
     other,
   ];
+
+  const getCareInquiry = () => {
+    const careInquiry = {
+      forMyself: forMyself,
+      forAnother: forAnother,
+      onBehalfDetails: {
+        relationship: relationship,
+        customRelationship: customRelationship,
+
+        inquirersName: inquirersName,
+        inquirersEmail: inquirersEmail,
+        contactNumber: contactNumber,
+        address: {
+          firstLineOfAddress: firstLineOfAddress,
+          secondLineOfAddress: secondLineOfAddress,
+          postCode: postCode,
+        },
+      },
+      forMyselfDetails: {
+        inquirersAndReceiversName: inquirersAndReceiversName,
+        inquirersAndReceiversEmail: inquirersAndReceiversEmail,
+        inquirersAndReceiversContactNumber: inquirersAndReceiversContactNumber,
+        address: {
+          inquirersAndReceiversFirstLineOfAddress:
+            inquirersAndReceiversFirstLineOfAddress,
+          inquirersAndReceiversSecondLineOfAddress:
+            inquirersAndReceiversSecondLineOfAddress,
+          inquirersAndReceiversPostCode: inquirersAndReceiversPostCode,
+        },
+      },
+      careRequirements: {
+        continenceCare: continenceCare,
+        personalCare: personalCare,
+        mealPrep: mealPrep,
+        medicationAdmin: medicationAdmin,
+        domesticDuties: domesticDuties,
+        feeding: feeding,
+        oralCare: oralCare,
+        notSure: notSure,
+        other: other,
+        moreDetails: moreDetails,
+        visits: visits,
+        visitsForMyself: visitsForMyself,
+        moreDetailsForMyself: forMyself,
+        anythingMore: anythingMore,
+      },
+    };
+    return careInquiry;
+  };
+
+  const handleSubmit = () => {
+    console.log("Submit button clicked");
+  };
+
+  const getJobInquiry = () => {
+    const jobInquiry = {
+      employeeName: employeeName,
+      employeeDOB: employeeDOB,
+      employeeEmail: employeeEmail,
+      employeeContactNumber: employeeContactNumber,
+      employeeNationalInsurance: employeeNationalInsurance,
+      address: {
+        employeeFirstLineOfAddress: employeeFirstLineOfAddress,
+        employeeSecondLineOfAddress: employeeSecondLineOfAddress,
+        employeePostCode: employeePostCode,
+      },
+      reference: {
+        employeeRefName: employeeRefName,
+        employeeRefEmail: employeeRefEmail,
+        employeeRefContactNumber: employeeRefContactNumber,
+      },
+      skillsAndExperience: {
+        employeeExperience: employeeExperience,
+        employeeSkills: employeeSkills,
+        employeeQualifications: employeeQualifications,
+      },
+      employeeIsWilling: employeeIsWilling,
+      employeeIsNotWilling: employeeIsNotWilling,
+      employeeCanDrive: employeeCanDrive,
+      employeeCannotDrive: employeeCannotDrive,
+    };
+    return jobInquiry;
+  };
 
   return (
     <div
@@ -711,7 +720,7 @@ export default function FormComponent() {
             oralCare ||
             feeding) && (
             <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-              <Form.Group className="mb-3" controlId="formBasicSelect">
+              <Form.Group className="mb-3">
                 <Form.Label htmlFor="how-many-visits">
                   Lastly, many visits do you think are needed?
                 </Form.Label>
@@ -757,8 +766,10 @@ export default function FormComponent() {
                   display: "flex",
                   justifyContent: "center",
                 }}
+                onClick={() => console.log("hi")}
+              
               >
-                <button
+                {/* <div
                   style={{
                     width: "100%",
                     color: "white",
@@ -773,10 +784,13 @@ export default function FormComponent() {
                     background: "#FF6B3D",
                     boxShadow: "1px 1px 6px black",
                     marginTop: "20px",
+                    display: "flex",
+                    justifyContent: "center",
+                    
                   }}
                 >
                   Submit
-                </button>
+                </div> */}
               </div>
             ))}
         {forMyself && (
@@ -1076,7 +1090,7 @@ export default function FormComponent() {
           feeding) &&
           inquirersAndReceiversContactNumber && (
             <div style={{ marginTop: "20px", marginBottom: "20px" }}>
-              <Form.Group className="mb-3" controlId="formBasicSelect">
+              <Form.Group className="mb-3">
                 <Form.Label htmlFor="set-visits">
                   Lastly, how many visits do you think are needed?
                 </Form.Label>
@@ -1104,7 +1118,10 @@ export default function FormComponent() {
         {(visits || visitsForMyself) && (
           <div style={{ marginTop: "20px", marginBottom: "20px" }}>
             <div className="mb-3">
-              <label htmlFor="exampleFormControlTextarea1" className="form-label">
+              <label
+                htmlFor="exampleFormControlTextarea1"
+                className="form-label"
+              >
                 Anything else we should know? (optional)
               </label>
               <textarea
@@ -1125,8 +1142,10 @@ export default function FormComponent() {
               justifyContent: "center",
             }}
           >
-            <button
+            <div
               style={{
+                display: "flex",
+                justifyContent: "center",
                 width: "100%",
                 color: "white",
                 fontSize: "18px",
@@ -1143,7 +1162,7 @@ export default function FormComponent() {
               }}
             >
               Submit
-            </button>
+            </div>
           </div>
         )}
         {wantJob && (
@@ -1301,7 +1320,6 @@ export default function FormComponent() {
         )}
         {employeeExperience && (
           <div className="mb-3">
-            
             <label htmlFor="skills" className="form-label">
               What relevant skills/abilities do you have?
             </label>
@@ -1493,8 +1511,10 @@ export default function FormComponent() {
               justifyContent: "center",
             }}
           >
-            <button
+            <div
               style={{
+                display: "flex",
+                justifyContent: "center",
                 marginTop: "20px",
                 width: "100%",
                 color: "white",
@@ -1511,10 +1531,11 @@ export default function FormComponent() {
               }}
             >
               Submit
-            </button>
+            </div>
           </div>
         )}
       </Form>
+      {/* <FormData getCareInquiry={getCareInquiry} getJobInquiry={getJobInquiry} /> */}
     </div>
   );
 }

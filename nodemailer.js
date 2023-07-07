@@ -1,7 +1,4 @@
 import nodemailer from "nodemailer";
-import { careInquiry } from "./src/FormComponent";
-
-console.log(careInquiry);
 
 const transporter = nodemailer.createTransport({
   service: "hotmail",

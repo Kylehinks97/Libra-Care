@@ -1,5 +1,4 @@
-import { careInquiry } from "./FormComponent";
-import { jobInquiry } from "./FormComponent";
+import { getCareInquiry, getJobInquiry } from "./FormComponent";
 
-console.log(careInquiry);
-console.log(jobInquiry);
+console.log(getCareInquiry);
+console.log(getJobInquiry);
