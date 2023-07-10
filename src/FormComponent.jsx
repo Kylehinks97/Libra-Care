@@ -12,7 +12,7 @@ import StepContent from "@mui/material/StepContent";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
-import axios from "axios"
+import axios from "axios";
 
 export default function FormComponent() {
   const [isChecked, setIsChecked] = useState(false);
@@ -90,7 +90,7 @@ export default function FormComponent() {
   const [jobApplication, setJobApplication] = useState(false);
   const [activeStep, setActiveStep] = React.useState(0);
 
-  const [careFormSent, setCareFormSent] = useState(false);
+  const [completedJobApplication, setCompletedJobApplication] = useState(false);
 
   const visitsGreenList = [
     "Weekly",
@@ -115,22 +115,17 @@ export default function FormComponent() {
 
   const steps = [
     {
-      label: "Select campaign settings",
-      description: `For each ad campaign that you create, you can control how much
-                you're willing to spend on clicks and conversions, which networks
-                and geographical locations you want your ads to show on, and more.`,
+      label: "Submit application",
+      description: `Congratulations ${employeeName}, you are one step closer to joining our team!`,
     },
     {
-      label: "Create an ad group",
+      label: "Submit your CV",
       description:
-        "An ad group contains one or more ads which target a shared set of keywords.",
+        "Please send your CV to us via email.",
     },
     {
-      label: "Create an ad",
-      description: `Try out different ad text to see what brings in the most customers,
-                and learn how to enhance your ads using features like ad extensions.
-                If you run into any problems with your ads, find out how to tell if
-                they're running and how to resolve approval issues.`,
+      label: "Await our response",
+      description: `Please confirm you have sent your CV.`,
     },
   ];
 
@@ -197,32 +192,55 @@ export default function FormComponent() {
 
   const handleEmployeeSubmit = () => {
     console.log("hi");
-    const templateParams = {
-      from_name: "kyle.s.hinks1997@gmail.com",
-      to_name: "kyle.s.hinks@outlook.com",
-      subject: "Test Email",
-      message: `${employeeName} has applied for a job with Libra Care. Their details are as follows: 
-      Email: ${employeeEmail},
-      Contact Number: ${employeeContactNumber},
-      Date of Birth: ${employeeDOB},
-      National Insurance No.: ${employeeNationalInsurance},
-      1st Line of Address: ${employeeFirstLineOfAddress},
-      2nd Line of Address: ${employeeSecondLineOfAddress},
-      Post Code: ${employeePostCode}
-      Experience: ${employeeExperience}
-      Skills: ${employeeSkills}
-      Qualifications: ${employeeQualifications}
-      Can they drive? (if true, they can): ${employeeCanDrive}
-      Can they NOT drive? (if true, they cannot): ${employeeCannotDrive}
-      Name of their reference: ${employeeRefName}
-      Email of their reference: ${employeeRefEmail}
-      Contact number of their reference: ${employeeRefContactNumber}`,
-    };
+
+    const formData = {}
+
+    formData["from_name"] = "kyle.s.hinks1997@gmail.com";
+    formData["to_name"] = "kyle.s.hinks@outlook.com";
+    formData["subject"] = "Test Email";
+    formData[
+      "message"
+    ] = `${employeeName} has applied for a job with Libra Care. Their details are as follows:
+    \n
+Email:   ${employeeEmail},
+\n
+Contact Number:   ${employeeContactNumber},
+\n
+Date of Birth:   ${employeeDOB},
+\n
+National Insurance No.:   ${employeeNationalInsurance},
+\n
+1st Line of Address: ${employeeFirstLineOfAddress},
+\n
+2nd Line of Address:   ${employeeSecondLineOfAddress},
+\n
+Post Code:   ${employeePostCode},
+\n
+Willing to work 1 weekend on, 1 weekend off?:   ${employeeIsWilling},
+\n
+NOT willing to work 1 weekend on, 1 weekend off?:   ${employeeIsNotWilling},
+\n
+Experience:   ${employeeExperience},
+\n
+Skills:   ${employeeSkills},
+\n
+Qualifications:   ${employeeQualifications},
+\n
+Can they drive? (if true, they can):   ${employeeCanDrive},
+\n
+Can they NOT drive? (if true, they cannot):   ${employeeCannotDrive},
+\n
+Name of their reference:   ${employeeRefName},
+\n
+Email of their reference:   ${employeeRefEmail},
+\n
+Contact number of their reference:   ${employeeRefContactNumber}`;
+
     emailjs
       .send(
         "kyle_s_hinks1997",
         "care_submission_template",
-        templateParams,
+        formData,
         "6qbARiXYk2OZNtVe3"
       )
       .then((response) => {
@@ -263,10 +281,6 @@ export default function FormComponent() {
     return jobInquiry;
   };
 
-  const handleFileChange = (event) => {
-    setSelectedFile(event.target.files[0]);
-  };
-
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
@@ -279,29 +293,12 @@ export default function FormComponent() {
     setActiveStep(0);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  
-    const formData = new FormData();
-    formData.append("cv", selectedFile);
-  
-    axios
-      .post("https://libra-care.firebaseapp.com/", formData)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
   return (
     <div
       style={{
         background: "white",
       }}
     >
-      {" "}
       {!jobApplication && (
         <Form
           style={{
@@ -1592,7 +1589,7 @@ export default function FormComponent() {
               </Form.Group>
               <Form.Group className="mb-3">
                 <Form.Label htmlFor="ref-contact">
-                  Contact Number (optional)
+                  Contact number (optional)
                 </Form.Label>
                 <Form.Control
                   id="ref-contact"
@@ -1603,24 +1600,32 @@ export default function FormComponent() {
               </Form.Group>
             </div>
           )}
+          {/* {employeeRefEmail && (
+            <Form style={{ border: "none", padding: 0 }} id="emailForm">
+              <Form.Group>
+                <Form.Label htmlFor="ref-contact">
+                  Lastly, upload CV (.pdf, .doc, .docx)
+                </Form.Label>
+                <div class="input-group mb-3">
+                  <input
+                    style={{
+                      marginBottom: "20px",
+                    }}
+                    type="file"
+                    className="form-control"
+                    id="inputGroupFile02"
+                    name="attachment"
+                    accept=".pdf, .doc, .docx"
+                    onChange={(e) => {
+                      setCV(true);
+                      handleFileChange(e);
+                    }}
+                  ></input>
+                </div>
+              </Form.Group>
+            </Form>
+          )} */}
           {employeeRefEmail && (
-            <Form.Group>
-              <Form.Label htmlFor="ref-contact">Upload CV</Form.Label>
-              <div class="input-group mb-3">
-                <input
-                  style={{
-                    marginBottom: "20px",
-                  }}
-                  type="file"
-                  class="form-control"
-                  id="inputGroupFile02"
-                  accept=".pdf, .doc, .docx"
-                  onChange={handleFileChange}
-                ></input>
-              </div>
-            </Form.Group>
-          )}
-          {selectedFile && (
             <div
               style={{
                 display: "flex",
@@ -1631,7 +1636,6 @@ export default function FormComponent() {
                 style={{
                   display: "flex",
                   justifyContent: "center",
-                  marginTop: "20px",
                   width: "100%",
                   color: "white",
                   fontSize: "18px",
@@ -1644,10 +1648,12 @@ export default function FormComponent() {
                   background: "#FF6B3D",
                   boxShadow: "1px 1px 6px black",
                   letterSpacing: "1.3px",
+                  marginBottom: "20px",
+                  marginTop: "20px"
                 }}
                 onClick={() => {
                   setJobApplication(true);
-                  handleEmployeeSubmit()
+                  handleEmployeeSubmit();
                   // handleSubmit()
                 }}
               >
@@ -1658,59 +1664,75 @@ export default function FormComponent() {
         </Form>
       )}
       {/* <FormData getCareInquiry={getCareInquiry} getJobInquiry={getJobInquiry} /> */}
-      {jobApplication && (
+      {jobApplication && !completedJobApplication && (
         <>
           {" "}
-          <Box sx={{ maxWidth: 400 }}>
+          <Box sx={{ width: "300px" }}>
             <Stepper activeStep={activeStep} orientation="vertical">
               {steps.map((step, index) => (
-                <Step key={step.label}>
+                <Step key={step.label} >
                   <StepLabel
-                    optional={
-                      index === 2 ? (
-                        <Typography variant="caption">Last step</Typography>
-                      ) : null
-                    }
+                    
                   >
                     {step.label}
                   </StepLabel>
                   <StepContent>
-                    <Typography>{step.description}</Typography>
+                    <Typography style={{color: "grey"}}>{step.description}</Typography>
                     <Box sx={{ mb: 2 }}>
                       <div>
                         <Button
                           variant="contained"
-                          onClick={handleNext}
+                          style={{backgroundColor: "#FF6B3D",
+                      }}
+                          onClick={() => {
+                            if (index === steps.length - 1) {
+                              setTimeout(() => {
+                                setCompletedJobApplication(true)
+                              }, 1000)
+                            }
+                            if (index === steps.length - 2) {
+                              window.open("mailto:recipient@example.com");
+                              handleNext()
+                            } else {
+                              handleNext();
+                            }
+                          }}
                           sx={{ mt: 1, mr: 1 }}
                         >
-                          {index === steps.length - 1 ? "Finish" : "Continue"}
+                           {index === 0 ? "continue" : index === steps.length - 1 ? "confirm" : "SEND CV"}
                         </Button>
-                        <Button
+                        {index !== 0 && <Button
                           disabled={index === 0}
-                          onClick={handleBack}
+                          onClick={() => {
+                            handleBack()
+                          }}
+                          sx={{ mt: 1, mr: 1, color: "grey" }}
+                        >
+                          Back
+                        </Button>}
+                        {/* <Button
+                          disabled={index === 0}
+                          onClick={() => {
+                            handleBack()
+                          }}
                           sx={{ mt: 1, mr: 1 }}
                         >
                           Back
-                        </Button>
+                        </Button> */}
                       </div>
                     </Box>
                   </StepContent>
                 </Step>
               ))}
             </Stepper>
-            {activeStep === steps.length && (
-              <Paper square elevation={0} sx={{ p: 3 }}>
-                <Typography>
-                  All steps completed - you&apos;re finished
-                </Typography>
-                <Button onClick={handleReset} sx={{ mt: 1, mr: 1 }}>
-                  Reset
-                </Button>
-              </Paper>
-            )}
+            
           </Box>
         </>
       )}
+      {completedJobApplication && <div className="text text-center">
+      <h4>Thank you for applying, you can expect to hear from us shortly...</h4>
+      </div>
+      }
     </div>
   );
 }

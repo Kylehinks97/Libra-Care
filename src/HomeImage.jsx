@@ -14,7 +14,7 @@ export default function HomeImage() {
           }}
           alt="Background Image"
         />
-        <div style={{ position: "absolute", top: 0, width: "100vw" }}>
+        {/* <div style={{ position: "absolute", top: 0, width: "100vw" }}>
           <Carousel controls={false} indicators={false}>
             <Carousel.Item style={{}}>
         
@@ -33,7 +33,7 @@ export default function HomeImage() {
           
           
           </Carousel>
-        </div>
+        </div> */}
         <h1
           style={{
             position: "absolute",
