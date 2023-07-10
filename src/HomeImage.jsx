@@ -1,8 +1,8 @@
-
-
+import Carousel from "react-bootstrap/Carousel";
 
 export default function HomeImage() {
-    return (
+  return (
+    <>
       <div style={{ position: "relative", width: "100%" }}>
         <img
           src="/src/assets/old man.jpg"
@@ -10,10 +10,30 @@ export default function HomeImage() {
           style={{
             filter: "blur(1.2px) brightness(80%)",
             clipPath: "polygon(0 0, 100% 0, 100% 80%, 0 90%)",
-            borderTop: "1px solid coral"
+            borderTop: "1px solid coral",
           }}
           alt="Background Image"
         />
+        <div style={{ position: "absolute", top: 0, width: "100vw" }}>
+          <Carousel controls={false} indicators={false}>
+            <Carousel.Item style={{}}>
+        
+        <img
+          className="carousel-item active"
+          src="/src/assets/CQC.png"
+          style={{width: "140px", padding: "30px 20px"}}
+          ></img>
+            <img
+          className="carousel-item active"
+          src="/src/assets/save lives.png"
+          style={{width: "140px", padding: "30px 20px"}}
+          ></img>
+      
+            </Carousel.Item>
+          
+          
+          </Carousel>
+        </div>
         <h1
           style={{
             position: "absolute",
@@ -24,7 +44,7 @@ export default function HomeImage() {
             fontSize: "40px",
             fontWeight: "bold",
             textShadow: "2px 2px 4px black",
-            whiteSpace: "nowrap"
+            whiteSpace: "nowrap",
           }}
         >
           Libra Care
@@ -39,7 +59,7 @@ export default function HomeImage() {
             fontSize: "15.5px",
             fontWeight: "bold",
             textShadow: "2px 2px 4px black",
-            whiteSpace: "nowrap"
+            whiteSpace: "nowrap",
           }}
         >
           "Balancing care with your independence"
@@ -59,12 +79,12 @@ export default function HomeImage() {
             borderRadius: "10px",
             border: "none",
             background: "#FF6B3D",
-            boxShadow: "1px 1px 6px black"
+            boxShadow: "1px 1px 6px black",
           }}
         >
           Make an Inquiry
         </button>
       </div>
-    );
-  }
-  
+    </>
+  );
+}

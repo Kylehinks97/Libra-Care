@@ -12,6 +12,7 @@ import StepContent from "@mui/material/StepContent";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
+import axios from "axios"
 
 export default function FormComponent() {
   const [isChecked, setIsChecked] = useState(false);
@@ -85,7 +86,7 @@ export default function FormComponent() {
   ] = useState("");
   const [inquirersAndReceiversPostCode, setInquirersAndReceiversPostCode] =
     useState("");
-  const [cvFile, setCVFile] = useState(null);
+  const [selectedFile, setSelectedFile] = useState(null);
   const [jobApplication, setJobApplication] = useState(false);
   const [activeStep, setActiveStep] = React.useState(0);
 
@@ -114,18 +115,18 @@ export default function FormComponent() {
 
   const steps = [
     {
-      label: 'Select campaign settings',
+      label: "Select campaign settings",
       description: `For each ad campaign that you create, you can control how much
                 you're willing to spend on clicks and conversions, which networks
                 and geographical locations you want your ads to show on, and more.`,
     },
     {
-      label: 'Create an ad group',
+      label: "Create an ad group",
       description:
-        'An ad group contains one or more ads which target a shared set of keywords.',
+        "An ad group contains one or more ads which target a shared set of keywords.",
     },
     {
-      label: 'Create an ad',
+      label: "Create an ad",
       description: `Try out different ad text to see what brings in the most customers,
                 and learn how to enhance your ads using features like ad extensions.
                 If you run into any problems with your ads, find out how to tell if
@@ -262,6 +263,10 @@ export default function FormComponent() {
     return jobInquiry;
   };
 
+  const handleFileChange = (event) => {
+    setSelectedFile(event.target.files[0]);
+  };
+
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
@@ -272,6 +277,22 @@ export default function FormComponent() {
 
   const handleReset = () => {
     setActiveStep(0);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  
+    const formData = new FormData();
+    formData.append("cv", selectedFile);
+  
+    axios
+      .post("https://libra-care.firebaseapp.com/", formData)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -1318,7 +1339,7 @@ export default function FormComponent() {
             <div style={{ marginTop: "20px", marginBottom: "20px" }}>
               <Form.Group className="mb-3">
                 <Form.Label htmlFor="employee-contact">
-                  Contact Number
+                  Contact number
                 </Form.Label>
                 <Form.Control
                   id="employee-contact"
@@ -1583,6 +1604,23 @@ export default function FormComponent() {
             </div>
           )}
           {employeeRefEmail && (
+            <Form.Group>
+              <Form.Label htmlFor="ref-contact">Upload CV</Form.Label>
+              <div class="input-group mb-3">
+                <input
+                  style={{
+                    marginBottom: "20px",
+                  }}
+                  type="file"
+                  class="form-control"
+                  id="inputGroupFile02"
+                  accept=".pdf, .doc, .docx"
+                  onChange={handleFileChange}
+                ></input>
+              </div>
+            </Form.Group>
+          )}
+          {selectedFile && (
             <div
               style={{
                 display: "flex",
@@ -1609,7 +1647,8 @@ export default function FormComponent() {
                 }}
                 onClick={() => {
                   setJobApplication(true);
-                  // handleEmployeeSubmit();
+                  handleEmployeeSubmit()
+                  // handleSubmit()
                 }}
               >
                 Submit
