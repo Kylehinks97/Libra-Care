@@ -293,6 +293,134 @@ Contact number of their reference:   ${employeeRefContactNumber}`;
     setActiveStep(0);
   };
 
+  function handleSubmitForMyself() {
+    const formDataForMyself = {}
+
+    formDataForMyself["from_name"] = "kyle.s.hinks1997@gmail.com";
+    formDataForMyself["to_name"] = "kyle.s.hinks@outlook.com";
+    formDataForMyself["subject"] = "Test Email";
+    formDataForMyself[
+      "message"
+    ] = `${inquirersAndReceiversName} has applied for care for themselves. Their details are as follows:
+    \n
+Email:   ${inquirersAndReceiversEmail},
+\n
+Contact Number:   ${inquirersAndReceiversContactNumber},
+\n
+1st Line of Address:   ${inquirersAndReceiversFirstLineOfAddress},
+\n
+2nd Line of Address:   ${inquirersAndReceiversSecondLineOfAddress},
+\n
+Post Code:   ${inquirersAndReceiversPostCode},
+\n
+They need the following care: (true if they need it, false if they don't):
+\n  
+Continence care: ${continenceCare},
+\n
+Personal Care: ${personalCare},
+\n
+Meal prep: ${mealPrep},
+\n
+Medication admin: ${medicationAdmin},
+\n
+Feeding: ${feeding},
+\n
+Oral Care: ${oralCare}
+\n
+Domestic Duties: ${domesticDuties}
+\n
+Other: ${other}
+\n
+Not sure: ${notSure}
+\n
+Further details entered about care requirements (if they selected other or not sure): ${moreDetails},
+\n
+They need this many visits: ${visits},
+\n
+They gave this as optional further information: ${anythingMore}
+`
+
+    emailjs
+      .send(
+        "kyle_s_hinks1997",
+        "care_submission_template",
+        formDataForMyself,
+        "6qbARiXYk2OZNtVe3"
+      )
+      .then((response) => {
+        console.log("Email sent successfully:", response.status, response.text);
+      })
+      .catch((error) => {
+        console.error("Email sending failed:", error);
+      });
+  }
+
+  function handleSubmitForAnother() {
+    const formDataForAnother = {}
+
+    formDataForAnother["from_name"] = "kyle.s.hinks1997@gmail.com";
+    formDataForAnother["to_name"] = "kyle.s.hinks@outlook.com";
+    formDataForAnother["subject"] = "Test Email";
+    formDataForAnother[
+      "message"
+    ] = `${inquirersName} has applied for care for another.
+    \n
+    They applied for care for their: ${relationship}.
+    \n
+    If other, they described their relationship as: ${customRelationship}
+    \n
+Email:   ${inquirersEmail},
+\n
+Contact Number:   ${contactNumber},
+\n
+1st Line of Address:   ${firstLineOfAddress},
+\n
+2nd Line of Address:   ${secondLineOfAddress},
+\n
+Post Code:   ${postCode},
+\n
+They need the following care: (true if they need it, false if they don't):
+\n  
+Continence care: ${continenceCare},
+\n
+Personal Care: ${personalCare},
+\n
+Meal prep: ${mealPrep},
+\n
+Medication admin: ${medicationAdmin},
+\n
+Feeding: ${feeding},
+\n
+Oral Care: ${oralCare}
+\n
+Domestic Duties: ${domesticDuties}
+\n
+Other: ${other}
+\n
+Not sure: ${notSure}
+\n
+Further details entered about care requirements (if they selected other or not sure): ${moreDetails},
+\n
+They need this many visits: ${visits},
+\n
+They gave this as optional further information: ${anythingMore}
+`
+
+    emailjs
+      .send(
+        "kyle_s_hinks1997",
+        "care_submission_template",
+        formDataForAnother,
+        "6qbARiXYk2OZNtVe3"
+      )
+      .then((response) => {
+        console.log("Email sent successfully:", response.status, response.text);
+      })
+      .catch((error) => {
+        console.error("Email sending failed:", error);
+      });
+  }
+
   return (
     <div
       style={{
@@ -304,6 +432,7 @@ Contact number of their reference:   ${employeeRefContactNumber}`;
           style={{
             width: "80vw",
           }}
+          id="inquiry-form"
         >
           <div
             style={{
@@ -847,7 +976,7 @@ Contact number of their reference:   ${employeeRefContactNumber}`;
                 </Form.Group>
               </div>
             )}
-          {(moreDetails !== "" && visits !== "") ||
+          {/* {(moreDetails !== "" && visits !== "") ||
             visitsGreenList.includes(visits) ||
             (inquirersAndReceiversContactNumber &&
               inquirersAndReceiversEmail &&
@@ -869,7 +998,7 @@ Contact number of their reference:   ${employeeRefContactNumber}`;
                     display: "flex",
                     justifyContent: "center",
                   }}
-                  onClick={() => console.log("hi")}
+                  // onClick={() => console.log("hi")}
                 >
                   <div
                     style={{
@@ -886,14 +1015,16 @@ Contact number of their reference:   ${employeeRefContactNumber}`;
                       background: "#FF6B3D",
                       boxShadow: "1px 1px 6px black",
                       marginTop: "20px",
+                      marginBottom: "20px",
                       display: "flex",
                       justifyContent: "center",
                     }}
+                    onClick={handleSubmitForAnother}
                   >
                     Submit
                   </div>
                 </div>
-              ))}
+              ))} */}
           {forMyself && (
             <Form.Group
               className="mb-3"
@@ -1252,7 +1383,7 @@ Contact number of their reference:   ${employeeRefContactNumber}`;
                   width: "100%",
                   color: "white",
                   fontSize: "18px",
-                  fontWeight: "bold",
+                  fontWeight: "500",
                   textShadow: "2px 2px 4px black",
                   whiteSpace: "nowrap",
                   padding: "1.8%",
@@ -1263,8 +1394,11 @@ Contact number of their reference:   ${employeeRefContactNumber}`;
                   marginTop: "20px",
                   letterSpacing: "1.3px",
                 }}
+                onClick={() => {
+                  forMyself ? handleSubmitForMyself() : handleSubmitForAnother()
+                }}
               >
-                Submit
+                SUBMIT
               </div>
             </div>
           )}
