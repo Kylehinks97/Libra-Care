@@ -1,27 +1,284 @@
 
-#hiring-banner span:hover {
-    color: #004f00 !important;
-    text-decoration: underline;
+/* title */
+@media (max-width: 10000px) and (min-width: 2800px) {
+  #title {
+    font-size: 250px !important;
+    top: 2950% !important
+  }
+}
+
+@media (max-width: 2800px) and (min-width: 2400px) {
+  #title {
+    font-size: 230px !important;
+    top: 2550% !important
+  }
+}
+
+@media (max-width: 2400px) and (min-width: 2000px) {
+  #title {
+    font-size: 210px !important;
+    top: 2300% !important
+  }
+}
+
+@media (max-width: 2000px) and (min-width: 1800px) {
+  #title {
+    font-size: 210px !important;
+    top: 2000% !important
+  }
+}
+
+@media (max-width: 1800px) and (min-width: 1600px) {
+  #title {
+    font-size: 185px !important;
+    top: 1750% !important
+  }
+}
+
+@media (max-width: 1600px) and (min-width: 1400px) {
+  #title {
+    font-size: 150px !important;
+    top: 1500% !important
+  }
+}
+
+@media (max-width: 1400px) and (min-width: 1200px) {
+  #title {
+    font-size: 120px !important;
+    top: 1300% !important
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 1050px) {
+  #title {
+    font-size: 96px !important;
+    top: 1100% !important
+  }
+}
+
+@media (max-width: 1050px) and (min-width: 960px) {
+  #title {
+    font-size: 68px !important;
+    top: 950% !important
+  }
+}
+
+@media (max-width: 960px) and (min-width: 880px) {
+  #title {
+    font-size: 68px !important;
+    top: 880% !important
+  }
+}
+
+@media (max-width: 880px) and (min-width: 790px) {
+  #title {
+    font-size: 64px !important;
+    top: 800% !important
+  }
+}
+
+@media (max-width: 790px) and (min-width: 700px) {
+  #title {
+    font-size: 54px !important;
+    top: 720% !important
+  }
+}
+
+@media (max-width: 700px) and (min-width: 620px) {
+  #title {
+    font-size: 52px !important;
+    top: 650% !important
+  }
+}
+
+@media (max-width: 620px) and (min-width: 550px) {
+  #title {
+    font-size: 50px !important;
+    top: 580% !important
+  }
 }
 
 
-@media (max-width: 1850px) and (min-width: 600px) {
-    #hiring-banner {
-      font-size: 24px !important;
-    }
+@media (max-width: 550px) and (min-width: 500px) {
+  #title {
+    font-size: 50px !important;
+    top: 530% !important
   }
+}
+
+@media (max-width: 500px) and (min-width: 460px) {
+  #title {
+    font-size: 48px !important;
+    top: 485% !important
+  }
+}
+
+@media (max-width: 460px) and (min-width: 430px) {
+  #title {
+    font-size: 48px !important;
+    top: 455% !important
+  }
+}
+
+@media (max-width: 430px) and (min-width: 400px) {
+  #title {
+    font-size: 48px !important;
+    top: 430% !important
+  }
+}
+
+@media (max-width: 400px) and (min-width: 380px) {
+  #title {
+    font-size: 46px !important;
+    top: 405% !important
+  }
+}
+
+@media (max-width: 380px) and (min-width: 360px) {
+  #title {
+    font-size: 44px !important;
+    top: 400% !important
+  }
+}
+
+@media (max-width: 360px) and (min-width: 340px) {
+  #title {
+    font-size: 42px !important;
+    top: 385% !important
+  }
+}
+
+@media (max-width: 340px) and (min-width: 320px) {
+  #title {
+    font-size: 40px !important;
+    top: 360% !important
+  }
+}
+
+@media (max-width: 320px) and (min-width: 300px) {
+  #title {
+    font-size: 38px !important;
+    top: 340% !important
+  }
+}
+
+@media (max-width: 300px) and (min-width: 260px) {
+  #title {
+    font-size: 34px !important;
+    top: 320% !important
+  }
+}
+
+/* slogan */
+@media (max-width: 1800px) and (min-width: 1500px) {
+  #slogan {
+    font-size: 64px !important;
+  }
+}
+
+@media (max-width: 1500px) and (min-width: 1300px) {
+  #slogan {
+    font-size: 58px !important;
+  }
+}
+
+@media (max-width: 1300px) and (min-width: 1100px) {
+  #slogan {
+    font-size: 46px !important;
+  }
+}
+
+@media (max-width: 1100px) and (min-width: 880px) {
+  #slogan {
+    font-size: 42px !important;
+  }
+}
+
+@media (max-width: 880px) and (min-width: 850px) {
+  #slogan {
+    font-size: 36px !important;
+  }
+}
+
+@media (max-width: 850px) and (min-width: 750px) {
+  #slogan {
+    font-size: 32px !important;
+  }
+}
+
+@media (max-width: 750px) and (min-width: 650px) {
+  #slogan {
+    font-size: 30px !important;
+  }
+}
+
+@media (max-width: 650px) and (min-width: 550px) {
+  #slogan {
+    font-size: 25px !important;
+  }
+}
+
+@media (max-width: 550px) and (min-width: 450px) {
+  #slogan {
+    font-size: 20px !important;
+  }
+}
+
+@media (max-width: 450px) and (min-width: 350px) {
+  #slogan {
+    font-size: 17px !important;
+  }
+}
+
+@media (max-width: 350px) and (min-width: 250px) {
+  #slogan {
+    font-size: 15px !important;
+  }
+}
+
+/* carousel */
+@media (max-width: 350px) and (min-width: 250px) {
+  #security-and-advancement {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 350px) and (min-width: 250px) {
+  #on-security-and-advancement {
+    font-size: 13px !important;
+  }
+}
+
+@media (max-width: 350px) and (min-width: 250px) {
+  #indeed-security-and-advancement {
+    width: 60px !important;
+    height: 17px !important;
+  }
+}
+
+/* hiring banner */
+#hiring-banner span:hover {
+  color: #004f00 !important;
+  text-decoration: underline;
+}
+
+@media (max-width: 1850px) and (min-width: 600px) {
+  #hiring-banner {
+    font-size: 24px !important;
+  }
+}
 
 @media (max-width: 600px) and (min-width: 550px) {
-    #hiring-banner {
-      font-size: 22px !important;
-    }
+  #hiring-banner {
+    font-size: 22px !important;
   }
+}
 
 @media (max-width: 550px) and (min-width: 500px) {
-    #hiring-banner {
-      font-size: 20px !important;
-    }
+  #hiring-banner {
+    font-size: 20px !important;
   }
+}
 
 @media (max-width: 500px) and (min-width: 400px) {
   #hiring-banner {
