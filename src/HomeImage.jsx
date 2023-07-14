@@ -75,6 +75,7 @@ export default function HomeImage() {
                       width: "100%",
                       textShadow: "2px 2px 4px black",
                     }}
+                    id="carousel-text"
                   >
                     4.3&nbsp;
                     <BiSolidStar
@@ -83,6 +84,7 @@ export default function HomeImage() {
                         fontSize: "19px",
                         color: "#9d2b6b",
                       }}
+                      id="star"
                     />
                     &nbsp;Pay/Benefits&nbsp;
                     <span
@@ -92,6 +94,7 @@ export default function HomeImage() {
                         fontWeight: "200",
                         textShadow: "2px 2px 4px black",
                       }}
+                      id="on-security-and-advancement"
                     >
                       on&nbsp;
                     </span>
@@ -100,6 +103,7 @@ export default function HomeImage() {
                       style={{ width: "65px", marginBottom: "7px" }}
                       href="https://uk.indeed.com/cmp/Libra-Care-Ltd/reviews#:~:text=Excellent%20place%20to%20work!,are%20both%20supportive%20and%20helpful!"
                       alt="Indeed logo"
+                      id="indeed-logo"
                     />
                   </div>
                 </Carousel.Item>
@@ -112,7 +116,6 @@ export default function HomeImage() {
                       color: "white",
                       fontWeight: "500",
                       width: "100%",
-                      height: "26.91px",
                       textShadow: "2px 2px 4px black",
                     }}
                     id="security-and-advancement"
@@ -125,6 +128,7 @@ export default function HomeImage() {
                         color: "#9d2b6b",
                         textShadow: "2px 2px 4px black",
                       }}
+                      id="star"
                     />
                     &nbsp;Job Security and Advancement&nbsp;
                     <span
@@ -155,6 +159,7 @@ export default function HomeImage() {
                       width: "100%",
                       textShadow: "2px 2px 4px black",
                     }}
+                    id="carousel-text"
                   >
                     4&nbsp;
                     <BiSolidStar
@@ -163,6 +168,7 @@ export default function HomeImage() {
                         fontSize: "19px",
                         color: "#9d2b6b",
                       }}
+                      id="star"
                     />
                     &nbsp;Management&nbsp;
                     <span
@@ -172,6 +178,7 @@ export default function HomeImage() {
                         fontWeight: "200",
                         textShadow: "2px 2px 4px black",
                       }}
+                      id="on-security-and-advancement"
                     >
                       on&nbsp;
                     </span>
@@ -179,6 +186,7 @@ export default function HomeImage() {
                       src="../src/assets/Indeed_logo.svg.png"
                       style={{ width: "65px", marginBottom: "7px" }}
                       alt="Indeed logo"
+                      id="indeed-logo"
                     />
                   </div>
                 </Carousel.Item>
@@ -190,7 +198,8 @@ export default function HomeImage() {
                       fontWeight: "500",
                       width: "100%",
                       textShadow: "2px 2px 4px black",
-                    }}
+                    }}   
+                    id="carousel-text"                
                   >
                     4&nbsp;
                     <BiSolidStar
@@ -199,6 +208,8 @@ export default function HomeImage() {
                         fontSize: "19px",
                         color: "#9d2b6b",
                       }}
+                      id="star"
+                      
                     />
                     &nbsp;Culture&nbsp;
                     <span
@@ -208,6 +219,7 @@ export default function HomeImage() {
                         fontWeight: "200",
                         textShadow: "2px 2px 4px black",
                       }}
+                      id="on-security-and-advancement"
                     >
                       on&nbsp;
                     </span>
@@ -215,6 +227,7 @@ export default function HomeImage() {
                       src="../src/assets/Indeed_logo.svg.png"
                       style={{ width: "65px", marginBottom: "7px" }}
                       alt="Indeed logo"
+                      id="indeed-logo"
                     />
                   </div>
                 </Carousel.Item>
