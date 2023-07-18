@@ -60,7 +60,7 @@ export default function HomeImage() {
               backgroundColor: "rgba(0, 0, 0, 0.16)",
             }}
           >
-            <a href="https://uk.indeed.com/cmp/Libra-Care-Ltd/reviews">
+            <a href="https://uk.indeed.com/cmp/Libra-Care-Ltd/reviews" target="_blank">
               <Carousel
                 controls={false}
                 indicators={false}
@@ -245,7 +245,6 @@ export default function HomeImage() {
               <h1
                 style={{
                   color: "white",
-                  // fontSize: "40px",
                   fontWeight: "bold",
                   textShadow: "2px 2px 4px black",
                   whiteSpace: "nowrap",
@@ -278,11 +277,9 @@ export default function HomeImage() {
         <button
           style={{
             position: "absolute",
-            top: "71%",
             left: "50%",
             transform: "translate(-50%, -50%)",
             color: "white",
-            fontSize: "15px",
             fontWeight: "bold",
             textShadow: "2px 2px 4px black",
             whiteSpace: "nowrap",
@@ -292,6 +289,7 @@ export default function HomeImage() {
             background: "#FF6B3D",
             boxShadow: "1px 1px 6px black",
             zIndex: 2,
+            width: "fit-content"
           }}
           onClick={scrollToBottom}
           id="inquiry-button"
