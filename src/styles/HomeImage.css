@@ -1,5 +1,75 @@
 /* button */
-@media (max-width: 540px) and (min-width: 520px) {
+@media (max-width: 1600px) and (min-width: 1500px) {
+  #inquiry-button {
+    top: 70%;
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 1500px) and (min-width: 1300px) {
+  #inquiry-button {
+    top: 70%;
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 1300px) and (min-width: 1200px) {
+  #inquiry-button {
+    top: 67%;
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 1080px) {
+  #inquiry-button {
+    top: 67%;
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 1080px) and (min-width: 980px) {
+  #inquiry-button {
+    top: 65%;
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 980px) and (min-width: 880px) {
+  #inquiry-button {
+    top: 67%;
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 980px) and (min-width: 880px) {
+  #inquiry-button {
+    top: 67%;
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 880px) and (min-width: 800px) {
+  #inquiry-button {
+    top: 63%;
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 800px) and (min-width: 700px) {
+  #inquiry-button {
+    top: 64%;
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 700px) and (min-width: 650px) {
+  #inquiry-button {
+    top: 66%;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 650px) and (min-width: 520px) {
   #inquiry-button {
     top: 68%;
     font-size: 20px;
@@ -50,8 +120,8 @@
 
 @media (max-width: 280px) and (min-width: 239px) {
   #inquiry-button {
-    top: 73%;
-    font-size: 15px;
+    top: 74.5%;
+    font-size: 12px;
   }
 }
 
@@ -87,14 +157,21 @@
 @media (max-width: 1800px) and (min-width: 1600px) {
   #title {
     font-size: 185px !important;
-    top: 500% !important
+    top: 520% !important
   }
 }
 
-@media (max-width: 1600px) and (min-width: 1400px) {
+@media (max-width: 1700px) and (min-width: 1600px) {
   #title {
     font-size: 150px !important;
-    top: 500% !important
+    top: 470% !important
+  }
+}
+
+@media (max-width: 1600px) and (min-width: 1500px) {
+  #title {
+    font-size: 150px !important;
+    top: 480% !important
   }
 }
 
@@ -317,7 +394,21 @@
   }
 }
 
-@media (max-width: 1800px) and (min-width: 1500px) {
+@media (max-width: 1800px) and (min-width: 1700px) {
+  #slogan {
+    font-size: 64px !important;
+    top: 55% !important;
+  }
+}
+
+@media (max-width: 1700px) and (min-width: 1600px) {
+  #slogan {
+    font-size: 64px !important;
+    top: 53% !important;
+  }
+}
+
+@media (max-width: 1600px) and (min-width: 1500px) {
   #slogan {
     font-size: 64px !important;
     top: 55% !important;
@@ -462,12 +553,14 @@
 @media (max-width: 750px) and (min-width: 700px) {
   #security-and-advancement, #on-security-and-advancement, #carousel-text, #star {
     font-size: 32px !important;
+    height: 48.83px
   }
 }
 
 @media (max-width: 700px) and (min-width: 650px) {
   #security-and-advancement, #on-security-and-advancement, #carousel-text, #star {
     font-size: 29px !important;
+    height: 45.57px
   }
 }
 
@@ -523,16 +616,32 @@
   #on-security-and-advancement {
     font-size: 14px !important;
     height: 26.91px;
-    margin-top: 20px !important
+    margin-top: 5px !important
   }
 }
 
 @media (max-width: 350px) and (min-width: 300px) {
+#on-security-and-advancement {
+    margin-top: 7px !important;
+  
+  }
+}
+
+
+@media (max-width: 350px) and (min-width: 300px) {
   #security-and-advancement, #on-security-and-advancement {
-    font-size: 13px !important;
+    font-size: 12.5px !important; 
     height: 26.91px
   }
 }
+
+@media (max-width: 350px) and (min-width: 300px) {
+  #on-security-and-advancement {
+    margin-top: 7px !important;
+  }
+}
+
+
 
 @media (max-width: 300px) and (min-width: 250px) {
   #security-and-advancement, #on-security-and-advancement {
@@ -865,10 +974,10 @@
 
 @media (max-width: 360px) and (min-width: 300px) {
   #hiring-banner {
-    font-size: 13px !important;
+    font-size: 12.5px !important;
   }
 }
-@media (max-width: 299px) and (min-width: 100px) {
+@media (max-width: 300px) and (min-width: 100px) {
   #hiring-banner {
     font-size: 10px !important;
   }
