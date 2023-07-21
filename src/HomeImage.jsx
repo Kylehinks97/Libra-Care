@@ -42,13 +42,8 @@ export default function HomeImage() {
           <img
             src="/src/assets/old man.jpg"
             width="100%"
-            style={{
-              filter: "blur(1px) brightness(80%)",
-              clipPath: "polygon(0 0, 100% 0, 100% 80%, 0 90%)",
-              borderTop: "1px solid coral",
-              zIndex: 1,
-            }}
             alt="Background Image"
+            id="background-img"
           />
           <div
             style={{
@@ -60,7 +55,10 @@ export default function HomeImage() {
               backgroundColor: "rgba(0, 0, 0, 0.16)",
             }}
           >
-            <a href="https://uk.indeed.com/cmp/Libra-Care-Ltd/reviews" target="_blank">
+            <a
+              href="https://uk.indeed.com/cmp/Libra-Care-Ltd/reviews"
+              target="_blank"
+            >
               <Carousel
                 controls={false}
                 indicators={false}
@@ -73,7 +71,6 @@ export default function HomeImage() {
                       color: "white",
                       fontWeight: "500",
                       width: "100%",
-                      textShadow: "2px 2px 4px black",
                     }}
                     id="carousel-text"
                   >
@@ -86,21 +83,10 @@ export default function HomeImage() {
                       }}
                       id="star"
                     />
-                    &nbsp;Pay/Benefits&nbsp;
-                    <span
-                      style={{
-                        fontSize: "15px",
-                        letterSpacing: 0,
-                        fontWeight: "200",
-                        textShadow: "2px 2px 4px black",
-                      }}
-                      id="on-security-and-advancement"
-                    >
-                      on&nbsp;
-                    </span>
+                    &nbsp;Pay/Benefits&nbsp;on&nbsp;
                     <img
                       src="../src/assets/Indeed_logo.svg.png"
-                      style={{ width: "65px", marginBottom: "7px" }}
+                      style={{ width: "65px" }}
                       href="https://uk.indeed.com/cmp/Libra-Care-Ltd/reviews#:~:text=Excellent%20place%20to%20work!,are%20both%20supportive%20and%20helpful!"
                       alt="Indeed logo"
                       id="indeed-logo"
@@ -110,42 +96,27 @@ export default function HomeImage() {
                 <Carousel.Item>
                   <div
                     style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
+                      padding: "0px 5px 0px",
                       color: "white",
                       fontWeight: "500",
                       width: "100%",
-                      textShadow: "2px 2px 4px black",
                     }}
-                    id="security-and-advancement"
+                    id="carousel-text"
                   >
                     4.3&nbsp;
                     <BiSolidStar
                       style={{
-                        marginBottom: "2px",
+                        marginBottom: "5px",
                         fontSize: "19px",
                         color: "#9d2b6b",
-                        textShadow: "2px 2px 4px black",
                       }}
                       id="star"
                     />
-                    &nbsp;Job Security and Advancement&nbsp;
-                    <span
-                      style={{
-                        fontSize: "15px",
-                        letterSpacing: 0,
-                        fontWeight: "200",
-                        textShadow: "2px 2px 4px black",
-                      }}
-                      id="on-security-and-advancement"
-                    >
-                      on&nbsp;
-                    </span>
+                    &nbsp;Job Security and Advancement&nbsp;on&nbsp;
                     <img
                       src="../src/assets/Indeed_logo.svg.png"
-                      style={{ width: "65px", marginBottom: "5px" }}
-                      id="indeed-security-and-advancement"
+                      style={{ width: "65px" }}
+                      id="indeed-logo"
                       alt="Indeed logo"
                     />
                   </div>
@@ -157,7 +128,6 @@ export default function HomeImage() {
                       color: "white",
                       fontWeight: "500",
                       width: "100%",
-                      textShadow: "2px 2px 4px black",
                     }}
                     id="carousel-text"
                   >
@@ -170,21 +140,10 @@ export default function HomeImage() {
                       }}
                       id="star"
                     />
-                    &nbsp;Management&nbsp;
-                    <span
-                      style={{
-                        fontSize: "15px",
-                        letterSpacing: 0,
-                        fontWeight: "200",
-                        textShadow: "2px 2px 4px black",
-                      }}
-                      id="on-security-and-advancement"
-                    >
-                      on&nbsp;
-                    </span>
+                    &nbsp;Management&nbsp;on&nbsp;
                     <img
                       src="../src/assets/Indeed_logo.svg.png"
-                      style={{ width: "65px", marginBottom: "7px" }}
+                      style={{ width: "65px" }}
                       alt="Indeed logo"
                       id="indeed-logo"
                     />
@@ -197,9 +156,8 @@ export default function HomeImage() {
                       color: "white",
                       fontWeight: "500",
                       width: "100%",
-                      textShadow: "2px 2px 4px black",
-                    }}   
-                    id="carousel-text"                
+                    }}
+                    id="carousel-text"
                   >
                     4&nbsp;
                     <BiSolidStar
@@ -209,23 +167,11 @@ export default function HomeImage() {
                         color: "#9d2b6b",
                       }}
                       id="star"
-                      
                     />
-                    &nbsp;Culture&nbsp;
-                    <span
-                      style={{
-                        fontSize: "15px",
-                        letterSpacing: 0,
-                        fontWeight: "200",
-                        textShadow: "2px 2px 4px black",
-                      }}
-                      id="on-security-and-advancement"
-                    >
-                      on&nbsp;
-                    </span>
+                    &nbsp;Culture&nbsp;on&nbsp;
                     <img
                       src="../src/assets/Indeed_logo.svg.png"
-                      style={{ width: "65px", marginBottom: "7px" }}
+                      style={{ width: "65px" }}
                       alt="Indeed logo"
                       id="indeed-logo"
                     />
@@ -246,7 +192,6 @@ export default function HomeImage() {
                 style={{
                   color: "white",
                   fontWeight: "bold",
-                  textShadow: "2px 2px 4px black",
                   whiteSpace: "nowrap",
                   zIndex: 2,
                 }}
@@ -266,7 +211,6 @@ export default function HomeImage() {
             color: "white",
             fontSize: "19.5px",
             fontWeight: "bold",
-            textShadow: "2px 2px 4px black",
             whiteSpace: "nowrap",
             zIndex: 2,
           }}
@@ -284,12 +228,12 @@ export default function HomeImage() {
             textShadow: "2px 2px 4px black",
             whiteSpace: "nowrap",
             padding: "1.8%",
-            borderRadius: "10px",
+            borderRadius: "0.5em",
             border: "none",
             background: "#FF6B3D",
             boxShadow: "1px 1px 6px black",
             zIndex: 2,
-            width: "fit-content"
+            width: "fit-content",
           }}
           onClick={scrollToBottom}
           id="inquiry-button"

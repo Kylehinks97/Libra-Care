@@ -1,4 +1,75 @@
+#background-img {
+  filter: blur(calc(0.15vw)) brightness(calc(80%));
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 90%);
+  border-top: 1px solid coral;
+  z-index: 1;
+}
+
+/* carousel-text */
+@media (max-width: 99999px) and (min-width: 1000px) {
+  #carousel-text {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 1000px) and (min-width: 700px) {
+  #carousel-text {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 700px) and (min-width: 600px) {
+  #carousel-text {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 600px) and (min-width: 500px) {
+  #carousel-text {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 500px) and (min-width: 450px) {
+  #carousel-text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 380px) and (min-width: 330px) {
+  #carousel-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 330px) and (min-width: 240px) {
+  #carousel-text {
+    font-size: 12px;
+  }
+}
+
 /* button */
+@media (max-width: 1900px) and (min-width: 1800px) {
+  #inquiry-button {
+    top: 72.5%;
+    font-size: 54px;
+  }
+}
+
+@media (max-width: 1800px) and (min-width: 1700px) {
+  #inquiry-button {
+    top: 67.5%;
+    font-size: 54px;
+  }
+}
+
+@media (max-width: 1700px) and (min-width: 1600px) {
+  #inquiry-button {
+    top: 67.5%;
+    font-size: 54px;
+  }
+}
+
 @media (max-width: 1600px) and (min-width: 1500px) {
   #inquiry-button {
     top: 70%;
@@ -126,245 +197,270 @@
 }
 
 /* title */
-@media (max-width: 10000px) and (min-width: 2800px) {
+@media (max-width: 2600px) and (min-width: 2500px) {
+  #title {
+    font-size: 260px !important;
+    top: 645% !important;
+  }
+}
+
+@media (max-width: 2500px) and (min-width: 2400px) {
+  #title {
+    font-size: 260px !important;
+    top: 645% !important;
+  }
+}
+
+@media (max-width: 2400px) and (min-width: 2300px) {
+  #title {
+    font-size: 260px !important;
+    top: 635% !important;
+  }
+}
+
+@media (max-width: 2300px) and (min-width: 2200px) {
+  #title {
+    font-size: 260px !important;
+    top: 715% !important;
+  }
+}
+
+@media (max-width: 2200px) and (min-width: 2100px) {
   #title {
     font-size: 250px !important;
-    top: 2950% !important
+    top: 585% !important;
   }
 }
 
-@media (max-width: 2800px) and (min-width: 2400px) {
+@media (max-width: 2100px) and (min-width: 2000px) {
   #title {
     font-size: 230px !important;
-    top: 2550% !important
+    top: 550% !important;
   }
 }
 
-@media (max-width: 2400px) and (min-width: 2000px) {
+@media (max-width: 2000px) and (min-width: 1900px) {
   #title {
     font-size: 210px !important;
-    top: 2300% !important
+    top: 530% !important;
   }
 }
 
-@media (max-width: 99999px) and (min-width: 1800px) {
+@media (max-width: 1900px) and (min-width: 1800px) {
   #title {
     font-size: 210px !important;
-    top: 560% !important
+    top: 500% !important;
   }
 }
 
-@media (max-width: 1800px) and (min-width: 1600px) {
+@media (max-width: 1800px) and (min-width: 1700px) {
   #title {
     font-size: 185px !important;
-    top: 520% !important
+    top: 480% !important;
   }
 }
 
 @media (max-width: 1700px) and (min-width: 1600px) {
   #title {
     font-size: 150px !important;
-    top: 470% !important
+    top: 470% !important;
   }
 }
 
 @media (max-width: 1600px) and (min-width: 1500px) {
   #title {
     font-size: 150px !important;
-    top: 480% !important
+    top: 480% !important;
   }
 }
 
 @media (max-width: 1500px) and (min-width: 1400px) {
   #title {
     font-size: 150px !important;
-    top: 430% !important
+    top: 430% !important;
   }
 }
 
 @media (max-width: 1400px) and (min-width: 1350px) {
   #title {
     font-size: 120px !important;
-    top: 400% !important
+    top: 400% !important;
   }
 }
 
 @media (max-width: 1350px) and (min-width: 1300px) {
   #title {
     font-size: 120px !important;
-    top: 400% !important
+    top: 400% !important;
   }
 }
 
 @media (max-width: 1300px) and (min-width: 1250px) {
   #title {
     font-size: 120px !important;
-    top: 380% !important
+    top: 700% !important;
   }
 }
 
 @media (max-width: 1250px) and (min-width: 1200px) {
   #title {
     font-size: 120px !important;
-    top: 450% !important
+    top: 450% !important;
   }
 }
 
 @media (max-width: 1200px) and (min-width: 1050px) {
   #title {
     font-size: 96px !important;
-    top: 400% !important
+    top: 400% !important;
   }
 }
 
 @media (max-width: 1050px) and (min-width: 1000px) {
   #title {
-    font-size: 78px !important;
-    top: 360% !important
+    font-size: 88px !important;
+    top: 530% !important;
   }
 }
 
 @media (max-width: 1000px) and (min-width: 960px) {
   #title {
     font-size: 68px !important;
-    top: 460% !important
+    top: 460% !important;
   }
 }
 
 @media (max-width: 960px) and (min-width: 890px) {
   #title {
     font-size: 68px !important;
-    top: 430% !important
+    top: 430% !important;
   }
 }
 
 @media (max-width: 890px) and (min-width: 840px) {
   #title {
     font-size: 64px !important;
-    top: 405% !important
+    top: 405% !important;
   }
 }
 
 @media (max-width: 840px) and (min-width: 790px) {
   #title {
     font-size: 64px !important;
-    top: 380% !important
+    top: 490% !important;
   }
 }
 
 @media (max-width: 790px) and (min-width: 700px) {
   #title {
     font-size: 54px !important;
-    top: 370% !important
+    top: 370% !important;
   }
 }
 
 @media (max-width: 700px) and (min-width: 650px) {
   #title {
     font-size: 52px !important;
-    top: 360% !important
+    top: 360% !important;
   }
 }
 
 @media (max-width: 650px) and (min-width: 600px) {
   #title {
     font-size: 52px !important;
-    top: 400% !important
+    top: 400% !important;
   }
 }
-
 
 @media (max-width: 600px) and (min-width: 550px) {
   #title {
     font-size: 50px !important;
-    top: 400% !important
+    top: 400% !important;
   }
 }
-
 
 @media (max-width: 550px) and (min-width: 500px) {
   #title {
     font-size: 50px !important;
-    top: 410% !important
+    top: 410% !important;
   }
 }
 
 @media (max-width: 500px) and (min-width: 475px) {
   #title {
     font-size: 48px !important;
-    top: 440% !important
+    top: 440% !important;
   }
 }
 
 @media (max-width: 475px) and (min-width: 450px) {
   #title {
     font-size: 48px !important;
-    top: 410% !important
+    top: 410% !important;
   }
 }
 
 @media (max-width: 450px) and (min-width: 430px) {
   #title {
     font-size: 48px !important;
-    top: 455% !important
+    top: 455% !important;
   }
 }
 
 @media (max-width: 430px) and (min-width: 400px) {
   #title {
     font-size: 48px !important;
-    top: 430% !important
+    top: 430% !important;
   }
 }
 
 @media (max-width: 400px) and (min-width: 380px) {
   #title {
     font-size: 46px !important;
-    top: 405% !important
+    top: 405% !important;
   }
 }
 
 @media (max-width: 380px) and (min-width: 360px) {
   #title {
     font-size: 44px !important;
-    top: 400% !important
+    top: 400% !important;
   }
 }
 
 @media (max-width: 360px) and (min-width: 340px) {
   #title {
     font-size: 42px !important;
-    top: 385% !important
+    top: 385% !important;
   }
 }
 
 @media (max-width: 340px) and (min-width: 320px) {
   #title {
     font-size: 40px !important;
-    top: 360% !important
+    top: 360% !important;
   }
 }
 
 @media (max-width: 320px) and (min-width: 300px) {
   #title {
     font-size: 38px !important;
-    top: 340% !important
+    top: 340% !important;
   }
 }
 
 @media (max-width: 300px) and (min-width: 250px) {
   #title {
     font-size: 34px !important;
-    top: 290% !important
+    top: 290% !important;
   }
 }
 @media (max-width: 250px) and (min-width: 200px) {
   #title {
     font-size: 30px !important;
-    top: 270% !important
+    top: 270% !important;
   }
 }
-
 
 /* slogan */
 @media (max-width: 3200px) and (min-width: 2800px) {
@@ -510,6 +606,7 @@
     top: 62.5% !important;
   }
 }
+
 @media (max-width: 250px) and (min-width: 200px) {
   #slogan {
     font-size: 9px !important;
@@ -517,411 +614,92 @@
   }
 }
 
-
-/* carousel */
-/* text */
-
-
-@media (max-width: 2200px) and (min-width: 1750px) {
-  #security-and-advancement, #on-security-and-advancement, #carousel-text, #star {
-    font-size: 64px !important;
-    height: 101.67px
-  }
-}
-
-@media (max-width: 1750px) and (min-width: 1250px) {
-  #security-and-advancement, #on-security-and-advancement, #carousel-text, #star {
-    font-size: 56px !important;
-    height: 89.33px
-  }
-}
-
-@media (max-width: 1250px) and (min-width: 1000px) {
-  #security-and-advancement, #on-security-and-advancement, #carousel-text, #star {
-    font-size: 44px !important;
-    height: 72.82px !important;
-  }
-}
-
-@media (max-width: 1000px) and (min-width: 750px) {
-  #security-and-advancement, #on-security-and-advancement, #carousel-text, #star {
-    font-size: 34px !important;
-    height: 53.83px !important;
-  }
-}
-
-@media (max-width: 750px) and (min-width: 700px) {
-  #security-and-advancement, #on-security-and-advancement, #carousel-text, #star {
-    font-size: 32px !important;
-    height: 48.83px
-  }
-}
-
-@media (max-width: 700px) and (min-width: 650px) {
-  #security-and-advancement, #on-security-and-advancement, #carousel-text, #star {
-    font-size: 29px !important;
-    height: 45.57px
-  }
-}
-
-@media (max-width: 650px) and (min-width: 600px) {
-  #security-and-advancement, #on-security-and-advancement, #carousel-text, #star {
-    font-size: 27px !important;
-    height: 42.08px
-  }
-}
-
-@media (max-width: 600px) and (min-width: 550px) {
-  #security-and-advancement, #on-security-and-advancement, #carousel-text, #star {
-    font-size: 24px !important;
-    height: 39px;
-  }
-}
-
-@media (max-width: 550px) and (min-width: 500px) {
-  #security-and-advancement, #on-security-and-advancement, #carousel-text, #star {
-    font-size: 22px !important;
-    height: 33.33px
-  }
-}
-
-@media (max-width: 500px) and (min-width: 450px) {
-  #security-and-advancement, #on-security-and-advancement, #carousel-text, #star {
-    font-size: 20px !important;
-    height: 30.17px
-  }
-}
-
-@media (max-width: 450px) and (min-width: 400px) {
-  #security-and-advancement, #on-security-and-advancement {
-    font-size: 17.5px !important;
-    height: 30.17px;
-  }
-}
-
-
-@media (max-width: 450px) and (min-width: 400px) {
-  #on-security-and-advancement {
-    margin-top: 5px;
-  }
-}
-
-@media (max-width: 400px) and (min-width: 350px) {
-  #on-security-and-advancement {
-    margin-top: 2px;
-  }
-}
-
-@media (max-width: 400px) and (min-width: 350px) {
-  #on-security-and-advancement {
-    font-size: 14px !important;
-    height: 26.91px;
-    margin-top: 5px !important
-  }
-}
-
-@media (max-width: 350px) and (min-width: 300px) {
-#on-security-and-advancement {
-    margin-top: 7px !important;
-  
-  }
-}
-
-
-@media (max-width: 350px) and (min-width: 300px) {
-  #security-and-advancement, #on-security-and-advancement {
-    font-size: 12.5px !important; 
-    height: 26.91px
-  }
-}
-
-@media (max-width: 350px) and (min-width: 300px) {
-  #on-security-and-advancement {
-    margin-top: 7px !important;
-  }
-}
-
-
-
-@media (max-width: 300px) and (min-width: 250px) {
-  #security-and-advancement, #on-security-and-advancement {
-    font-size: 10px !important;
-    height: 26.67px;
-  }
-}
-
-@media (max-width: 250px) and (min-width: 200px) {
-  #security-and-advancement {
-    font-size: 10px;
-    height: 26.67px;
-  }
-}
-
-/* on */
-@media (max-width: 450px) and (min-width: 400px) {
-  #on-security-and-advancement {
-    font-size: 17.5px !important;
-
-  }
-}
-
-@media (max-width: 400px) and (min-width: 350px) {
-  #on-security-and-advancement {
-    font-size: 13px !important;
-    margin-bottom: 0px !important;
-  }
-}
-
-@media (max-width: 350px) and (min-width: 300px) {
-  #on-security-and-advancement {
-    font-size: 13px !important;
-  }
-}
-@media (max-width: 300px) and (min-width: 250px) {
-  #on-security-and-advancement {
-    font-size: 10px !important;
-    margin-top: 11px !important;
-  }
-}
-
-@media (max-width: 250px) and (min-width: 200px) {
-  #on-security-and-advancement {
-    font-size: 10px !important;
-  }
-}
-
-/* indeed */
-@media (max-width: 99999px) and (min-width: 1750px) {
-  #indeed-security-and-advancement {
-    width: 220px !important;
-    height: 64px !important;
-    margin-bottom: 5px !important;
-  }
-}
-
-@media (max-width: 1750px) and (min-width: 1250px) {
-  #indeed-security-and-advancement {
-    width: 180px !important;
-    height: 54px !important;
-    margin-bottom: 5px !important;
-  }
-}
-
-@media (max-width: 1250px) and (min-width: 1000px) {
-  #indeed-security-and-advancement {
-    width: 150px !important;
-    height: 44px !important;
-    margin-bottom: 5px !important;
-  }
-}
-
-@media (max-width: 1000px) and (min-width: 750px) {
-  #indeed-security-and-advancement {
-    width: 110px !important;
-    height: 34px !important;
-    margin-bottom: 3px !important;
-  }
-}
-
-@media (max-width: 750px) and (min-width: 700px) {
-  #indeed-security-and-advancement {
-    width: 105px !important;
-    height: 32px !important;
-    margin-bottom: 2px !important;
-  }
-}
-
-@media (max-width: 700px) and (min-width: 650px) {
-  #indeed-security-and-advancement {
-    width: 100px !important;
-    height: 30px !important;
-    margin-bottom: 2px !important;
-  }
-}
-
-@media (max-width: 650px) and (min-width: 600px) {
-  #indeed-security-and-advancement {
-    width: 90px !important;
-    height: 28px !important;
-    margin-bottom: 2px !important;
-  }
-}
-
-@media (max-width: 600px) and (min-width: 550px) {
-  #indeed-security-and-advancement {
-    width: 80px !important;
-    height: 23px !important;
-    margin-bottom: 2px !important;
-  }
-}
-
-@media (max-width: 550px) and (min-width: 500px) {
-  #indeed-security-and-advancement {
-    width: 65px !important;
-    height: 18px !important;
-    margin-bottom: 1px !important;
-  }
-}
-
-@media (max-width: 500px) and (min-width: 450px) {
-  #indeed-security-and-advancement {
-    width: 60px !important;
-    height: 17px !important;
-    margin-bottom: 1.5px !important
-  }
-}
-
-@media (max-width: 450px) and (min-width: 400px) {
-  #indeed-security-and-advancement {
-    width: 60px !important;
-    height: 17px !important;
-    margin-top: 1.5px
-  }
-}
-
-@media (max-width: 400px) and (min-width: 350px) {
-  #indeed-security-and-advancement {
-    width: 60px !important;
-    height: 17px !important;
-    margin-top: 2px
-  }
-}
-
-@media (max-width: 450px) and (min-width: 400px) {
-  #indeed-security-and-advancement {
-    width: 60px !important;
-    height: 17px !important;
-    margin-top: 2px
-  }
-}
-
-@media (max-width: 400px) and (min-width: 350px) {
-  #indeed-security-and-advancement {
-    width: 60px !important;
-    height: 17px !important;
-    margin-top: 1.5px
-  }
-}
-@media (max-width: 350px) and (min-width: 300px) {
-  #indeed-security-and-advancement {
-    width: 60px !important;
-    height: 17px !important;
-  }
-}
-@media (max-width: 300px) and (min-width: 250px) {
-  #indeed-security-and-advancement {
-    width: 45px !important;
-    height: 12px !important;
-    margin-bottom: 4px !important;
-  }
-}
-
-@media (max-width: 250px) and (min-width: 200px) {
-  #indeed-security-and-advancement {
-    width: 35px !important;
-    height: 10px !important;
-    margin-bottom: 3px !important;
-  }
-}
-
-/* indeed 2 */
+/* indeed  */
 
 @media (max-width: 99999px) and (min-width: 1750px) {
   #indeed-logo {
-    width: 220px !important;
-    height: 64px !important;
-    margin-bottom: 22px !important;
+    width: 140px !important;
+    transform: translateY(-9px);
   }
 }
 
-
 @media (max-width: 1750px) and (min-width: 1250px) {
   #indeed-logo {
-    width: 180px !important;
-    height: 54px !important;
-    margin-bottom: 22px !important;
+    width: 130px !important;
+    transform: translateY(-8px);
   }
 }
 
 @media (max-width: 1250px) and (min-width: 1000px) {
   #indeed-logo {
-    width: 150px !important;
-    height: 44px !important;
-    margin-bottom: 18px !important;
+    width: 130px !important;
+    transform: translateY(-7px);
   }
 }
 
 @media (max-width: 1000px) and (min-width: 750px) {
   #indeed-logo {
     width: 105px !important;
-    height: 34px !important;
-    margin-bottom: 12px !important;
+    transform: translateY(-5px)
   }
 }
 
 @media (max-width: 750px) and (min-width: 700px) {
   #indeed-logo {
     width: 95px !important;
-    height: 30px !important;
-    margin-bottom: 9px !important;
+    transform: translateY(-4px)
   }
 }
 
 @media (max-width: 700px) and (min-width: 650px) {
   #indeed-logo {
     width: 95px !important;
-    height: 30px !important;
-    margin-bottom: 9px !important;
+    transform: translateY(-4px)
   }
 }
 
 @media (max-width: 650px) and (min-width: 600px) {
   #indeed-logo {
     width: 88px !important;
-    height: 26px !important;
-    margin-bottom: 9px !important;
+    transform: translateY(-3px)
   }
 }
 
 @media (max-width: 600px) and (min-width: 550px) {
   #indeed-logo {
     width: 80px !important;
-    height: 24px !important;
-    margin-bottom: 10px !important;
+    transform: translateY(-3px)
   }
 }
 
 @media (max-width: 550px) and (min-width: 450px) {
   #indeed-logo {
     width: 73px !important;
-    height: 20px !important;
-    margin-bottom: 7px !important;
+    transform: translateY(-3px)
   }
 }
 
 @media (max-width: 450px) and (min-width: 400px) {
-  #indeed-logo, #indeed-security-and-advancement {
+  #indeed-logo {
     width: 55px !important;
-    margin-bottom: 5px !important;
+    transform: translateY(-2.5px) 
   }
 }
 
-@media (max-width: 250px) and (min-width: 200px) {
+@media (max-width: 400px) and (min-width: 240px) {
   #indeed-logo {
     width: 50px !important;
-    margin-bottom: 5px !important;
+    transform: translateY(-2.5px)
   }
 }
 
 /* star */
 
-
-@media (max-width: 500px) and (min-width: 200px) {
+@media (max-width: 99999999px) and (min-width: 200px) {
   #star {
-    height: 80%;
+    font-size: 100% !important;
   }
 }
-
 
 /* hiring banner */
 #hiring-banner span:hover {
@@ -929,16 +707,15 @@
   text-decoration: underline;
 }
 
-
 @media (max-width: 9999px) and (min-width: 1000px) {
   #hiring-banner {
-    font-size: 42px !important;
+    font-size: 32px !important;
   }
 }
 
 @media (max-width: 1000px) and (min-width: 800px) {
   #hiring-banner {
-    font-size: 34px !important;
+    font-size: 28px !important;
   }
 }
 
@@ -980,5 +757,12 @@
 @media (max-width: 300px) and (min-width: 100px) {
   #hiring-banner {
     font-size: 10px !important;
+  }
+}
+
+
+@media (max-width: 999999px) and (min-width: 0px) {
+  #title, #slogan, #carousel-text {
+    text-shadow: calc(3px) calc(3px) calc(5px) black;
   }
 }
