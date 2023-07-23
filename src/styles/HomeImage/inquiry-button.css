@@ -1,0 +1,153 @@
+@media (max-width: 2000000px) and (min-width: 1900px) {
+    #inquiry-button {
+      top: 72.5%;
+      font-size: 54px;
+    }
+  }
+  
+  @media (max-width: 1900px) and (min-width: 1800px) {
+    #inquiry-button {
+      top: 72.5%;
+      font-size: 54px;
+    }
+  }
+  
+  @media (max-width: 1800px) and (min-width: 1700px) {
+    #inquiry-button {
+      top: 67.5%;
+      font-size: 54px;
+    }
+  }
+  
+  @media (max-width: 1700px) and (min-width: 1600px) {
+    #inquiry-button {
+      top: 67.5%;
+      font-size: 54px;
+    }
+  }
+  
+  @media (max-width: 1600px) and (min-width: 1500px) {
+    #inquiry-button {
+      top: 70%;
+      font-size: 48px;
+    }
+  }
+  
+  @media (max-width: 1500px) and (min-width: 1300px) {
+    #inquiry-button {
+      top: 70%;
+      font-size: 48px;
+    }
+  }
+  
+  @media (max-width: 1300px) and (min-width: 1200px) {
+    #inquiry-button {
+      top: 67%;
+      font-size: 42px;
+    }
+  }
+  
+  @media (max-width: 1200px) and (min-width: 1080px) {
+    #inquiry-button {
+      top: 67%;
+      font-size: 32px;
+    }
+  }
+  
+  @media (max-width: 1080px) and (min-width: 980px) {
+    #inquiry-button {
+      top: 65%;
+      font-size: 28px;
+    }
+  }
+  
+  @media (max-width: 980px) and (min-width: 880px) {
+    #inquiry-button {
+      top: 67%;
+      font-size: 28px;
+    }
+  }
+  
+  @media (max-width: 980px) and (min-width: 880px) {
+    #inquiry-button {
+      top: 67%;
+      font-size: 28px;
+    }
+  }
+  
+  @media (max-width: 880px) and (min-width: 800px) {
+    #inquiry-button {
+      top: 63%;
+      font-size: 28px;
+    }
+  }
+  
+  @media (max-width: 800px) and (min-width: 700px) {
+    #inquiry-button {
+      top: 64%;
+      font-size: 26px;
+    }
+  }
+  
+  @media (max-width: 700px) and (min-width: 650px) {
+    #inquiry-button {
+      top: 66%;
+      font-size: 24px;
+    }
+  }
+  
+  @media (max-width: 650px) and (min-width: 520px) {
+    #inquiry-button {
+      top: 68%;
+      font-size: 20px;
+    }
+  }
+  
+  @media (max-width: 520px) and (min-width: 480px) {
+    #inquiry-button {
+      top: 70%;
+      font-size: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) and (min-width: 440px) {
+    #inquiry-button {
+      top: 74%;
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 440px) and (min-width: 400px) {
+    #inquiry-button {
+      top: 73%;
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 400px) and (min-width: 360px) {
+    #inquiry-button {
+      top: 72%;
+      font-size: 17px;
+    }
+  }
+  
+  @media (max-width: 380px) and (min-width: 340px) {
+    #inquiry-button {
+      top: 75%;
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 340px) and (min-width: 280px) {
+    #inquiry-button {
+      top: 74%;
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 280px) and (min-width: 239px) {
+    #inquiry-button {
+      top: 74.5%;
+      font-size: 12px;
+    }
+  }

@@ -1,0 +1,58 @@
+/* hiring banner */
+#hiring-banner span:hover {
+    color: #004f00 !important;
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 9999px) and (min-width: 1000px) {
+    #hiring-banner {
+      font-size: 32px !important;
+    }
+  }
+  
+  @media (max-width: 1000px) and (min-width: 800px) {
+    #hiring-banner {
+      font-size: 28px !important;
+    }
+  }
+  
+  @media (max-width: 800px) and (min-width: 600px) {
+    #hiring-banner {
+      font-size: 24px !important;
+    }
+  }
+  
+  @media (max-width: 600px) and (min-width: 550px) {
+    #hiring-banner {
+      font-size: 22px !important;
+    }
+  }
+  
+  @media (max-width: 550px) and (min-width: 500px) {
+    #hiring-banner {
+      font-size: 20px !important;
+    }
+  }
+  
+  @media (max-width: 500px) and (min-width: 400px) {
+    #hiring-banner {
+      font-size: 16px !important;
+    }
+  }
+  
+  @media (max-width: 400px) and (min-width: 360px) {
+    #hiring-banner {
+      font-size: 16px !important;
+    }
+  }
+  
+  @media (max-width: 360px) and (min-width: 300px) {
+    #hiring-banner {
+      font-size: 12.5px !important;
+    }
+  }
+  @media (max-width: 300px) and (min-width: 100px) {
+    #hiring-banner {
+      font-size: 10px !important;
+    }
+  }

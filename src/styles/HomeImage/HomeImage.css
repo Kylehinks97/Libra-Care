@@ -1,0 +1,78 @@
+#background-img {
+  filter: blur(calc(0.15vw)) brightness(calc(80%));
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 80%);
+  border-top: 1px solid coral;
+  z-index: 1;
+  display: block;
+}
+
+
+/* carousel-text */
+@media (max-width: 99999px) and (min-width: 1000px) {
+  #carousel-text {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 1000px) and (min-width: 700px) {
+  #carousel-text {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 700px) and (min-width: 600px) {
+  #carousel-text {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 600px) and (min-width: 500px) {
+  #carousel-text {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 500px) and (min-width: 450px) {
+  #carousel-text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 380px) and (min-width: 330px) {
+  #carousel-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 330px) and (min-width: 240px) {
+  #carousel-text {
+    font-size: 9.7px;
+  }
+}
+
+/* button */
+
+
+/* title */
+
+
+/* slogan */
+
+
+/* indeed  */
+
+
+
+/* star */
+
+@media (max-width: 99999999px) and (min-width: 200px) {
+  #star {
+    font-size: 100% !important;
+  }
+}
+
+@media (max-width: 999999px) and (min-width: 0px) {
+  #title, #slogan, #carousel-text {
+    text-shadow: calc(3px) calc(3px) calc(5px) black;
+  }
+}

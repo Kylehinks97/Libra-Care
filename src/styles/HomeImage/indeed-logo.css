@@ -1,0 +1,90 @@
+@media (max-width: 99999px) and (min-width: 1750px) {
+    #indeed-logo {
+      width: 140px !important;
+      transform: translateY(-9px);
+    }
+  }
+  
+  @media (max-width: 1750px) and (min-width: 1250px) {
+    #indeed-logo {
+      width: 130px !important;
+      transform: translateY(-8px);
+    }
+  }
+  
+  @media (max-width: 1250px) and (min-width: 1000px) {
+    #indeed-logo {
+      width: 130px !important;
+      transform: translateY(-7px);
+    }
+  }
+  
+  @media (max-width: 1000px) and (min-width: 750px) {
+    #indeed-logo {
+      width: 105px !important;
+      transform: translateY(-5px)
+    }
+  }
+  
+  @media (max-width: 750px) and (min-width: 700px) {
+    #indeed-logo {
+      width: 95px !important;
+      transform: translateY(-4px)
+    }
+  }
+  
+  @media (max-width: 700px) and (min-width: 650px) {
+    #indeed-logo {
+      width: 95px !important;
+      transform: translateY(-4px)
+    }
+  }
+  
+  @media (max-width: 650px) and (min-width: 600px) {
+    #indeed-logo {
+      width: 88px !important;
+      transform: translateY(-3px)
+    }
+  }
+  
+  @media (max-width: 600px) and (min-width: 550px) {
+    #indeed-logo {
+      width: 80px !important;
+      transform: translateY(-3px)
+    }
+  }
+  
+  @media (max-width: 550px) and (min-width: 450px) {
+    #indeed-logo {
+      width: 73px !important;
+      transform: translateY(-3px)
+    }
+  }
+  
+  @media (max-width: 450px) and (min-width: 400px) {
+    #indeed-logo {
+      width: 55px !important;
+      transform: translateY(-2.5px) 
+    }
+  }
+  
+  @media (max-width: 400px) and (min-width: 360px) {
+    #indeed-logo {
+      width: 50px !important;
+      transform: translateY(-1.8px)
+    }
+  }
+  
+  @media (max-width: 360px) and (min-width: 320px) {
+    #indeed-logo {
+      width: 40px !important;
+      transform: translateY(-1.8px)
+    }
+  }
+  
+  @media (max-width: 320px) and (min-width: 240px) {
+    #indeed-logo {
+      width: 37px !important;
+      transform: translateY(-1.5px)
+    }
+  }

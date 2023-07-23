@@ -1,0 +1,164 @@
+@media (max-width: 3200px) and (min-width: 2800px) {
+    #slogan {
+      font-size: 124px !important;
+      top: 55% !important;
+    }
+  }
+  @media (max-width: 2800px) and (min-width: 2500px) {
+    #slogan {
+      font-size: 114px !important;
+      top: 52.5% !important;
+    }
+  }
+  
+  @media (max-width: 2500px) and (min-width: 2100px) {
+    #slogan {
+      font-size: 98px !important;
+      top: 57% !important;
+    }
+  }
+  
+  @media (max-width: 2100px) and (min-width: 1800px) {
+    #slogan {
+      font-size: 82px !important;
+      top: 57.5% !important;
+    }
+  }
+  
+  @media (max-width: 1800px) and (min-width: 1700px) {
+    #slogan {
+      font-size: 64px !important;
+      top: 55% !important;
+    }
+  }
+  
+  @media (max-width: 1700px) and (min-width: 1600px) {
+    #slogan {
+      font-size: 64px !important;
+      top: 53% !important;
+    }
+  }
+  
+  @media (max-width: 1600px) and (min-width: 1500px) {
+    #slogan {
+      font-size: 64px !important;
+      top: 55% !important;
+    }
+  }
+  
+  @media (max-width: 1500px) and (min-width: 1300px) {
+    #slogan {
+      font-size: 58px !important;
+    }
+  }
+  
+  @media (max-width: 1300px) and (min-width: 1100px) {
+    #slogan {
+      font-size: 46px !important;
+      top: 55% !important;
+    }
+  }
+  
+  @media (max-width: 1100px) and (min-width: 880px) {
+    #slogan {
+      font-size: 42px !important;
+      top: 53.5% !important;
+    }
+  }
+  
+  @media (max-width: 880px) and (min-width: 850px) {
+    #slogan {
+      font-size: 36px !important;
+      top: 51% !important;
+    }
+  }
+  
+  @media (max-width: 850px) and (min-width: 750px) {
+    #slogan {
+      font-size: 32px !important;
+      top: 50.5% !important;
+    }
+  }
+  
+  @media (max-width: 750px) and (min-width: 650px) {
+    #slogan {
+      font-size: 30px !important;
+      top: 50% !important;
+    }
+  }
+  
+  @media (max-width: 650px) and (min-width: 600px) {
+    #slogan {
+      font-size: 25px !important;
+      top: 50.5% !important;
+    }
+  }
+  
+  @media (max-width: 600px) and (min-width: 550px) {
+    #slogan {
+      font-size: 25px !important;
+      top: 50.5% !important;
+    }
+  }
+  
+  @media (max-width: 550px) and (min-width: 500px) {
+    #slogan {
+      font-size: 20px !important;
+      top: 50% !important;
+    }
+  }
+  
+  @media (max-width: 500px) and (min-width: 450px) {
+    #slogan {
+      font-size: 20px !important;
+      top: 50% !important;
+    }
+  }
+  
+  @media (max-width: 450px) and (min-width: 400px) {
+    #slogan {
+      font-size: 17px !important;
+      top: 51.5% !important;
+    }
+  }
+  
+  @media (max-width: 400px) and (min-width: 375px) {
+    #slogan {
+      font-size: 17px !important;
+      top: 50.5% !important;
+    }
+  }
+  
+  @media (max-width: 375px) and (min-width: 350px) {
+    #slogan {
+      font-size: 17px !important;
+      top: 51% !important;
+    }
+  }
+  
+  @media (max-width: 350px) and (min-width: 300px) {
+    #slogan {
+      font-size: 16px !important;
+      top: 50.5% !important;
+    }
+  }
+  @media (max-width: 300px) and (min-width: 275px) {
+    #slogan {
+      font-size: 12px !important;
+      top: 52% !important;
+    }
+  }
+  
+  @media (max-width: 275px) and (min-width: 250px) {
+    #slogan {
+      font-size: 12px !important;
+      top: 54% !important;
+    }
+  }
+  
+  @media (max-width: 250px) and (min-width: 200px) {
+    #slogan {
+      font-size: 9px !important;
+      top: 51.5% !important;
+    }
+  }

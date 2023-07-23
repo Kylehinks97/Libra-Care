@@ -1,5 +1,9 @@
 import Carousel from "react-bootstrap/Carousel";
-import "./styles/HomeImage.css";
+import "./styles/HomeImage/HomeImage.css";
+import "./styles/HomeImage/hiring-banner.css";
+import "./styles/HomeImage/title.css";
+import "./styles/HomeImage/inquiry-button.css";
+import "./styles/HomeImage/indeed-logo.css";
 import { BiSolidStar } from "react-icons/bi";
 
 export default function HomeImage() {
@@ -12,25 +16,27 @@ export default function HomeImage() {
 
   return (
     <>
-      <h6
-        style={{
-          background: "#C8FFC8",
-          padding: "1px",
-          display: "flex",
-          justifyContent: "center",
-          fontSize: "14px",
-          margin: 0,
-          borderBottom: "3px solid #C8FFC8",
-          color: "green",
-          whiteSpace: "nowrap",
-          width: "100%",
-          cursor: "pointer",
-        }}
-        id="hiring-banner"
-        onClick={scrollToBottom}
-      >
-        🚀&nbsp;<span>We are currently hiring carers! Apply Now</span>&nbsp;💼
-      </h6>
+      <div id="hiring-banner-wrapper" style={{ maxWidth: "100%" }}>
+        <h6
+          style={{
+            background: "#C8FFC8",
+            padding: "1px",
+            display: "flex",
+            justifyContent: "center",
+            fontSize: "2em",
+            margin: 0,
+            borderBottom: "3px solid #C8FFC8",
+            color: "green",
+            whiteSpace: "nowrap",
+            width: "100%",
+            cursor: "pointer",
+          }}
+          id="hiring-banner"
+          onClick={scrollToBottom}
+        >
+          🚀&nbsp;<span>We are currently hiring carers! Apply Now</span>&nbsp;💼
+        </h6>
+      </div>
       <div style={{ position: "relative", width: "100%" }}>
         <img
           src="/src/assets/old man.jpg"
@@ -50,7 +56,8 @@ export default function HomeImage() {
         >
           <a
             href="https://uk.indeed.com/cmp/Libra-Care-Ltd/reviews"
-            target="_blank" rel="noreferrer"
+            target="_blank"
+            rel="noreferrer"
           >
             <Carousel
               controls={false}
@@ -177,7 +184,7 @@ export default function HomeImage() {
               position: "absolute",
               top: "430%",
               left: "50%",
-              transform: "translate(-50%, -50%)",
+              transform: "translate(-50%, -45%)",
             }}
             id="title"
           >
@@ -199,7 +206,7 @@ export default function HomeImage() {
             position: "absolute",
             top: "57%",
             left: "50%",
-            transform: "translate(-50%, -50%)",
+            transform: "translate(-50%, -170%)",
             color: "white",
             fontSize: "19.5px",
             fontWeight: "bold",
@@ -214,7 +221,7 @@ export default function HomeImage() {
           style={{
             position: "relative",
             left: "50%",
-            transform: "translate(-50%, -50%)",
+            transform: "translate(-50%, -250%)",
             color: "white",
             fontWeight: "bold",
             textShadow: "2px 2px 4px black",
