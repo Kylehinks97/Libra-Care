@@ -50,7 +50,7 @@ export default function HomeImage() {
         >
           <a
             href="https://uk.indeed.com/cmp/Libra-Care-Ltd/reviews"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             <Carousel
               controls={false}
@@ -208,7 +208,7 @@ export default function HomeImage() {
           }}
           id="slogan"
         >
-          "Balancing care with your independence"
+          &quot;Balancing care with your independence&quot;
         </h2>
         <button
           style={{

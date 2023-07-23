@@ -112,7 +112,6 @@ export default function Home() {
           style={{
             color: "white",
             textAlign: "center",
-            marginTop: 0,
             marginBottom: 10,
             textShadow: "2px 2px 4px black",
             padding: "10px",
