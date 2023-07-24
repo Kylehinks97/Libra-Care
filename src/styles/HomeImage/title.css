@@ -114,85 +114,85 @@
   
   @media (max-width: 1300px) and (min-width: 1250px) {
     #title {
-      font-size: 120px !important  
+      font-size: 170px !important  
     }
   }
   
   @media (max-width: 1250px) and (min-width: 1200px) {
     #title {
-      font-size: 120px !important;
+      font-size: 160px !important;
     }
   }
   
   @media (max-width: 1200px) and (min-width: 1050px) {
     #title {
-      font-size: 96px !important;
+      font-size: 150px !important;
     }
   }
   
   @media (max-width: 1050px) and (min-width: 1000px) {
     #title {
-      font-size: 88px !important;
+      font-size: 140px !important;
     }
   }
   
   @media (max-width: 1000px) and (min-width: 950px) {
     #title {
-      font-size: 68px !important;
+      font-size: 130px !important;
     }
   }
   
   @media (max-width: 950px) and (min-width: 900px) {
     #title {
-      font-size: 68px !important;
+      font-size: 120px !important;
     }
   }
   
   @media (max-width: 900px) and (min-width: 850px) {
     #title {
-      font-size: 64px !important;
+      font-size: 110px !important;
     }
   }
   
   @media (max-width: 850px) and (min-width: 800px) {
     #title {
-      font-size: 64px !important;
+      font-size: 100px !important;
     }
   }
   
   @media (max-width: 800px) and (min-width: 750px) {
     #title {
-      font-size: 54px !important;
+      font-size: 90px !important;
     }
   }
   
   @media (max-width: 750px) and (min-width: 700px) {
     #title {
-      font-size: 54px !important;
+      font-size: 80px !important;
     }
   }
   
   @media (max-width: 700px) and (min-width: 650px) {
     #title {
-      font-size: 52px !important;
+      font-size: 70px !important;
     }
   }
   
   @media (max-width: 650px) and (min-width: 600px) {
     #title {
-      font-size: 52px !important;
+      font-size: 64px !important;
     }
   }
   
   @media (max-width: 600px) and (min-width: 550px) {
     #title {
-      font-size: 50px !important;
+      font-size: 56px !important;
     }
   }
   
   @media (max-width: 550px) and (min-width: 500px) {
     #title {
-      font-size: 50px !important;
+      font-size: 48px !important;
     }
   }
   

@@ -1,10 +1,11 @@
-import Carousel from "react-bootstrap/Carousel";
 import "./styles/HomeImage/HomeImage.css";
 import "./styles/HomeImage/hiring-banner.css";
 import "./styles/HomeImage/title.css";
 import "./styles/HomeImage/inquiry-button.css";
 import "./styles/HomeImage/indeed-logo.css";
-import { BiSolidStar } from "react-icons/bi";
+import "./styles/HomeImage/slogan.css";
+import CareerCarousel from "./CareerCarousel";
+import Carousel from "react-bootstrap/Carousel";
 
 export default function HomeImage() {
   const scrollToBottom = () => {
@@ -43,6 +44,7 @@ export default function HomeImage() {
           width="100%"
           alt="Background Image"
           id="background-img"
+          style={{ zIndex: -0 }}
         />
         <div
           style={{
@@ -59,169 +61,44 @@ export default function HomeImage() {
             target="_blank"
             rel="noreferrer"
           >
-            <Carousel
-              controls={false}
-              indicators={false}
-              style={{ cursor: "pointer" }}
-            >
-              <Carousel.Item>
-                <div
-                  style={{
-                    padding: "0px 5px 0px",
-                    color: "white",
-                    fontWeight: "500",
-                    width: "100%",
-                  }}
-                  id="carousel-text"
-                >
-                  4.3&nbsp;
-                  <BiSolidStar
-                    style={{
-                      marginBottom: "5px",
-                      fontSize: "19px",
-                      color: "#9d2b6b",
-                    }}
-                    id="star"
-                  />
-                  &nbsp;Pay/Benefits&nbsp;on&nbsp;
-                  <img
-                    src="../src/assets/Indeed_logo.svg.png"
-                    style={{ width: "65px" }}
-                    href="https://uk.indeed.com/cmp/Libra-Care-Ltd/reviews#:~:text=Excellent%20place%20to%20work!,are%20both%20supportive%20and%20helpful!"
-                    alt="Indeed logo"
-                    id="indeed-logo"
-                  />
-                </div>
-              </Carousel.Item>
-              <Carousel.Item>
-                <div
-                  style={{
-                    padding: "0px 5px 0px",
-                    color: "white",
-                    fontWeight: "500",
-                    width: "100%",
-                  }}
-                  id="carousel-text"
-                >
-                  4.3&nbsp;
-                  <BiSolidStar
-                    style={{
-                      marginBottom: "5px",
-                      fontSize: "19px",
-                      color: "#9d2b6b",
-                    }}
-                    id="star"
-                  />
-                  &nbsp;Job Security and Advancement&nbsp;on&nbsp;
-                  <img
-                    src="../src/assets/Indeed_logo.svg.png"
-                    style={{ width: "65px" }}
-                    id="indeed-logo"
-                    alt="Indeed logo"
-                  />
-                </div>
-              </Carousel.Item>
-              <Carousel.Item>
-                <div
-                  style={{
-                    padding: "0px 5px 0px",
-                    color: "white",
-                    fontWeight: "500",
-                    width: "100%",
-                  }}
-                  id="carousel-text"
-                >
-                  4&nbsp;
-                  <BiSolidStar
-                    style={{
-                      marginBottom: "5px",
-                      fontSize: "19px",
-                      color: "#9d2b6b",
-                    }}
-                    id="star"
-                  />
-                  &nbsp;Management&nbsp;on&nbsp;
-                  <img
-                    src="../src/assets/Indeed_logo.svg.png"
-                    style={{ width: "65px" }}
-                    alt="Indeed logo"
-                    id="indeed-logo"
-                  />
-                </div>
-              </Carousel.Item>
-              <Carousel.Item>
-                <div
-                  style={{
-                    padding: "0px 5px 0px",
-                    color: "white",
-                    fontWeight: "500",
-                    width: "100%",
-                  }}
-                  id="carousel-text"
-                >
-                  4&nbsp;
-                  <BiSolidStar
-                    style={{
-                      marginBottom: "5px",
-                      fontSize: "19px",
-                      color: "#9d2b6b",
-                    }}
-                    id="star"
-                  />
-                  &nbsp;Culture&nbsp;on&nbsp;
-                  <img
-                    src="../src/assets/Indeed_logo.svg.png"
-                    style={{ width: "65px" }}
-                    alt="Indeed logo"
-                    id="indeed-logo"
-                  />
-                </div>
-              </Carousel.Item>
-            </Carousel>
+            <CareerCarousel />
           </a>
-          <div
-            style={{
-              position: "absolute",
-              top: "430%",
-              left: "50%",
-              transform: "translate(-50%, -45%)",
-            }}
-            id="title"
-          >
-            <h1
-              style={{
-                color: "white",
-                fontWeight: "bold",
-                whiteSpace: "nowrap",
-                zIndex: 2,
-              }}
-              id="title"
-            >
-              Libra Care
-            </h1>
-          </div>
         </div>
-        <h2
+        <h1
           style={{
             position: "absolute",
-            top: "57%",
+            zIndex: 3,
             left: "50%",
-            transform: "translate(-50%, -170%)",
+            transform: "translateX(-50%)",
             color: "white",
-            fontSize: "19.5px",
-            fontWeight: "bold",
+            top: "30%",
             whiteSpace: "nowrap",
-            zIndex: 2,
+          }}
+          id="title"
+        >
+          Libra Care
+        </h1>
+        <h6
+          style={{
+            position: "absolute",
+            zIndex: 3,
+            left: "50%",
+            transform: "translateX(-50%)",
+            color: "white",
+            top: "53%",
+            whiteSpace: "nowrap",
           }}
           id="slogan"
         >
           &quot;Balancing care with your independence&quot;
-        </h2>
+        </h6>
         <button
           style={{
-            position: "relative",
+            position: "absolute",
+            zIndex: 3,
+            top: "67%",
             left: "50%",
-            transform: "translate(-50%, -250%)",
+            transform: "translateX(-50%)",
             color: "white",
             fontWeight: "bold",
             textShadow: "2px 2px 4px black",
@@ -234,8 +111,8 @@ export default function HomeImage() {
             zIndex: 2,
             width: "fit-content",
           }}
-          onClick={scrollToBottom}
           id="inquiry-button"
+          onClick={scrollToBottom}
         >
           Make an Inquiry
         </button>
