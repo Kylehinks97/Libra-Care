@@ -395,7 +395,7 @@ They gave this as optional further information: ${anythingMore}
   return (
     <div
       style={{
-        background: "red",
+        
         display: "flex"
       }}
       id="inquiry-form-wrapper"
@@ -411,13 +411,13 @@ They gave this as optional further information: ${anythingMore}
               justifyContent: "center",
             }}
           >
-            <h2>Inquiry Form</h2>
+            <h2 style={{fontSize: "2.2em"}}>Inquiry Form</h2>
           </div>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <Form.Label
               className="text-center align-middle"
               style={{
-                margin: "3% 0 9%",
+                margin: "3% 0 3%",
                 fontWeight: "580",
                 pointerEvents: "none",
               }}
@@ -430,7 +430,7 @@ They gave this as optional further information: ${anythingMore}
             style={{
               backgroundColor: "white",
               display: "flex",
-              justifyContent: "space-between",
+              
             }}
           >
             <div className="row">
@@ -472,7 +472,8 @@ They gave this as optional further information: ${anythingMore}
                   type="radio"
                   label="I want a career"
                   id="job-radio"
-                  className="longer-questions"
+                  style={{whiteSpace: "nowrap"}}
+                  className="longer-question"
                   checked={wantJob}
                   onChange={() => {
                     setIsChecked(true);
