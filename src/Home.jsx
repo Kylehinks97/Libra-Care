@@ -91,9 +91,8 @@ export default function Home() {
         </h3>
         <MapContainer
           style={{
-            height: "65%",
-            width: "80%",
-            borderRadius: "10px",
+           
+            borderRadius: "1.5em",
           }}
           zoom={10}
           center={[52.605738, -1.957181]}
@@ -108,19 +107,7 @@ export default function Home() {
             return <Marker position={coord} id={idx} key={idx} icon={transparentIcon}></Marker>;
           })}
         </MapContainer>
-        <h4
-          style={{
-            color: "white",
-            textAlign: "center",
-            marginBottom: 10,
-            textShadow: "2px 2px 4px black",
-            padding: "10px",
-            fontSize: "16px",
-            marginTop: "10px",
-          }}
-        >
-          We deliver care in Walsall, Lichfield and Cannock.
-        </h4>
+   
       </div>
       <div
         style={{

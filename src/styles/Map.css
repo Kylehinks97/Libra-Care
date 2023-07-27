@@ -1,6 +1,25 @@
 .leaflet-container {
-height: 100px;
-width: 50vw;
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: center;
 }
+
+@media (max-width: 450px) and (min-width: 230px) {
+  .leaflet-container, #inquiry-form {
+    height: 65%;
+    aspect-ratio: 1;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 450px) {
+  .leaflet-container, #inquiry-form {
+    height: 65%;
+    aspect-ratio: 1;
+}
+}
+
+@media (max-width: 300000px) and (min-width: 900px) {
+    .leaflet-container, #inquiry-form {
+        height: 65%;
+        aspect-ratio: 1;
+    }
+  }

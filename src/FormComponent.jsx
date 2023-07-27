@@ -14,6 +14,8 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import axios from "axios";
 
+
+
 export default function FormComponent() {
   const [isChecked, setIsChecked] = useState(false);
   const [wantCare, setWantCare] = useState(false);
@@ -120,8 +122,7 @@ export default function FormComponent() {
     },
     {
       label: "Submit your CV",
-      description:
-        "Please send your CV to us via email.",
+      description: "Please send your CV to us via email.",
     },
     {
       label: "Await our response",
@@ -193,7 +194,7 @@ export default function FormComponent() {
   const handleEmployeeSubmit = () => {
     console.log("hi");
 
-    const formData = {}
+    const formData = {};
 
     formData["from_name"] = "kyle.s.hinks1997@gmail.com";
     formData["to_name"] = "kyle.s.hinks@outlook.com";
@@ -251,36 +252,6 @@ Contact number of their reference:   ${employeeRefContactNumber}`;
       });
   };
 
-  const getJobInquiry = () => {
-    const jobInquiry = {
-      employeeName: employeeName,
-      employeeDOB: employeeDOB,
-      employeeEmail: employeeEmail,
-      employeeContactNumber: employeeContactNumber,
-      employeeNationalInsurance: employeeNationalInsurance,
-      address: {
-        employeeFirstLineOfAddress: employeeFirstLineOfAddress,
-        employeeSecondLineOfAddress: employeeSecondLineOfAddress,
-        employeePostCode: employeePostCode,
-      },
-      reference: {
-        employeeRefName: employeeRefName,
-        employeeRefEmail: employeeRefEmail,
-        employeeRefContactNumber: employeeRefContactNumber,
-      },
-      skillsAndExperience: {
-        employeeExperience: employeeExperience,
-        employeeSkills: employeeSkills,
-        employeeQualifications: employeeQualifications,
-      },
-      employeeIsWilling: employeeIsWilling,
-      employeeIsNotWilling: employeeIsNotWilling,
-      employeeCanDrive: employeeCanDrive,
-      employeeCannotDrive: employeeCannotDrive,
-    };
-    return jobInquiry;
-  };
-
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
@@ -294,7 +265,7 @@ Contact number of their reference:   ${employeeRefContactNumber}`;
   };
 
   function handleSubmitForMyself() {
-    const formDataForMyself = {}
+    const formDataForMyself = {};
 
     formDataForMyself["from_name"] = "kyle.s.hinks1997@gmail.com";
     formDataForMyself["to_name"] = "kyle.s.hinks@outlook.com";
@@ -338,7 +309,7 @@ Further details entered about care requirements (if they selected other or not s
 They need this many visits: ${visits},
 \n
 They gave this as optional further information: ${anythingMore}
-`
+`;
 
     emailjs
       .send(
@@ -356,7 +327,7 @@ They gave this as optional further information: ${anythingMore}
   }
 
   function handleSubmitForAnother() {
-    const formDataForAnother = {}
+    const formDataForAnother = {};
 
     formDataForAnother["from_name"] = "kyle.s.hinks1997@gmail.com";
     formDataForAnother["to_name"] = "kyle.s.hinks@outlook.com";
@@ -404,7 +375,7 @@ Further details entered about care requirements (if they selected other or not s
 They need this many visits: ${visits},
 \n
 They gave this as optional further information: ${anythingMore}
-`
+`;
 
     emailjs
       .send(
@@ -424,14 +395,14 @@ They gave this as optional further information: ${anythingMore}
   return (
     <div
       style={{
-        background: "white",
+        background: "red",
+        display: "flex"
       }}
+      id="inquiry-form-wrapper"
     >
       {!jobApplication && (
         <Form
-          style={{
-            width: "80vw",
-          }}
+        
           id="inquiry-form"
         >
           <div
@@ -544,7 +515,7 @@ They gave this as optional further information: ${anythingMore}
             </div>
           </FormGroup>
           {wantCare && (
-            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+            <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
               <Form.Group>
                 <Form.Label>
                   Is this care for yourself or for another?
@@ -626,7 +597,7 @@ They gave this as optional further information: ${anythingMore}
             </div>
           )}
           {forAnother && (
-            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+            <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
               <Form.Group className="mb-3">
                 <Form.Label>
                   What is your relationship to this person?
@@ -649,7 +620,7 @@ They gave this as optional further information: ${anythingMore}
             </div>
           )}
           {relationship === "Other" && (
-            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+            <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
               <Form.Group className="mb-3">
                 <Form.Label htmlFor="describe-relationship">
                   Please describe your relationship with this person
@@ -665,7 +636,7 @@ They gave this as optional further information: ${anythingMore}
           )}
           {(relationshipsGreenList.includes(relationship) ||
             customRelationship) && (
-            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+            <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
               <Form.Group className="mb-3">
                 <Form.Label>What is your full name?</Form.Label>
                 <Form.Control
@@ -678,7 +649,7 @@ They gave this as optional further information: ${anythingMore}
           )}
 
           {inquirersName !== "" && (
-            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+            <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
               <Form.Group className="mb-3">
                 <Form.Label htmlFor="name-receiving-care">
                   What is the full name of the person to receive care?
@@ -693,7 +664,7 @@ They gave this as optional further information: ${anythingMore}
             </div>
           )}
           {personReceivingCare !== "" && (
-            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+            <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
               <Form.Group className="mb-3">
                 <Form.Label
                   style={{
@@ -717,7 +688,7 @@ They gave this as optional further information: ${anythingMore}
             </div>
           )}
           {inquirersEmail !== "" && (
-            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+            <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
               <Form.Group className="mb-3">
                 <Form.Label htmlFor="poc-number">Contact number</Form.Label>
                 <Form.Control
@@ -730,7 +701,7 @@ They gave this as optional further information: ${anythingMore}
             </div>
           )}
           {contactNumber !== "" && (
-            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+            <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
               <Form.Group className="text-center">
                 <Form.Label
                   style={{
@@ -743,7 +714,7 @@ They gave this as optional further information: ${anythingMore}
                   Address of person to receive care
                 </Form.Label>
               </Form.Group>
-              <Form.Group style={{ marginTop: "20px", marginBottom: "20px" }}>
+              <Form.Group style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
                 <Form.Label htmlFor="receivers-1st-line-address">
                   1st Line of Address
                 </Form.Label>
@@ -753,7 +724,7 @@ They gave this as optional further information: ${anythingMore}
                   onChange={(e) => setFirstLineOfAddress(e.target.value)}
                 />
               </Form.Group>
-              <Form.Group style={{ marginTop: "20px", marginBottom: "20px" }}>
+              <Form.Group style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
                 <Form.Label htmlFor="receivers-2nd-line-address">
                   2nd Line of Address
                 </Form.Label>
@@ -763,7 +734,7 @@ They gave this as optional further information: ${anythingMore}
                   onChange={(e) => setSecondLineOfAddress(e.target.value)}
                 />
               </Form.Group>
-              <Form.Group style={{ marginTop: "20px", marginBottom: "20px" }}>
+              <Form.Group style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
                 <Form.Label htmlFor="receivers-post-code">Post Code</Form.Label>
                 <Form.Control
                   id="receivers-post-code"
@@ -774,7 +745,7 @@ They gave this as optional further information: ${anythingMore}
             </div>
           )}
           {firstLineOfAddress !== "" && postCode !== "" && (
-            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+            <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
               <Form.Group className="mb-3">
                 <Form.Label
                   style={{
@@ -791,8 +762,8 @@ They gave this as optional further information: ${anythingMore}
                   style={{
                     display: "flex",
                     justifyContent: "center",
-                    marginTop: "20px",
-                    marginBottom: "20px",
+                    marginTop: "1.5em",
+                    marginBottom: "1.5em",
                     pointerEvents: "none",
                   }}
                 >
@@ -925,7 +896,7 @@ They gave this as optional further information: ${anythingMore}
                 {(other || notSure) && (
                   <Form.Group
                     className="mb-3"
-                    style={{ marginTop: "20px", marginBottom: "20px" }}
+                    style={{ marginTop: "1.5em", marginBottom: "1.5em" }}
                   >
                     <Form.Label htmlFor="set-more-details">
                       Please describe the care required
@@ -951,7 +922,7 @@ They gave this as optional further information: ${anythingMore}
               domesticDuties ||
               oralCare ||
               feeding) && (
-              <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+              <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
                 <Form.Group className="mb-3">
                   <Form.Label htmlFor="how-many-visits">
                     Lastly, many visits do you think are needed?
@@ -976,59 +947,11 @@ They gave this as optional further information: ${anythingMore}
                 </Form.Group>
               </div>
             )}
-          {/* {(moreDetails !== "" && visits !== "") ||
-            visitsGreenList.includes(visits) ||
-            (inquirersAndReceiversContactNumber &&
-              inquirersAndReceiversEmail &&
-              inquirersAndReceiversName &&
-              inquirersAndReceiversFirstLineOfAddress &&
-              inquirersAndReceiversPostCode &&
-              (continenceCare ||
-                personalCare ||
-                mealPrep ||
-                medicationAdmin ||
-                domesticDuties ||
-                oralCare ||
-                other ||
-                notSure) &&
-              visitsForMyself &&
-              !forMyself && (
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                  }}
-                  // onClick={() => console.log("hi")}
-                >
-                  <div
-                    style={{
-                      width: "100%",
-                      color: "white",
-                      fontSize: "18px",
-                      fontWeight: "bold",
-                      textShadow: "2px 2px 4px black",
-                      whiteSpace: "nowrap",
-                      padding: "1.8%",
-                      letterSpacing: "1.3px",
-                      borderRadius: "10px",
-                      border: "none",
-                      background: "#FF6B3D",
-                      boxShadow: "1px 1px 6px black",
-                      marginTop: "20px",
-                      marginBottom: "20px",
-                      display: "flex",
-                      justifyContent: "center",
-                    }}
-                    onClick={handleSubmitForAnother}
-                  >
-                    Submit
-                  </div>
-                </div>
-              ))} */}
+
           {forMyself && (
             <Form.Group
               className="mb-3"
-              style={{ marginTop: "20px", marginBottom: "20px" }}
+              style={{ marginTop: "1.5em", marginBottom: "1.5em" }}
             >
               <Form.Label>What is your full name?</Form.Label>
               <Form.Control
@@ -1042,7 +965,7 @@ They gave this as optional further information: ${anythingMore}
             <>
               <Form.Group
                 className="mb-3"
-                style={{ marginTop: "20px", marginBottom: "20px" }}
+                style={{ marginTop: "1.5em", marginBottom: "1.5em" }}
               >
                 <Form.Label
                   style={{
@@ -1051,8 +974,8 @@ They gave this as optional further information: ${anythingMore}
                     margin: "8% 0 8%",
                     fontWeight: "650",
                     pointerEvents: "none",
-                    marginTop: "20px",
-                    marginBottom: "20px",
+                    marginTop: "1.5em",
+                    marginBottom: "1.5em",
                   }}
                 >
                   Your contact details
@@ -1072,7 +995,7 @@ They gave this as optional further information: ${anythingMore}
             </>
           )}
           {inquirersAndReceiversEmail !== "" && (
-            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+            <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
               <Form.Group className="mb-3">
                 <Form.Label htmlFor="inquirer-and-receivers-contact-number">
                   Contact number
@@ -1089,7 +1012,7 @@ They gave this as optional further information: ${anythingMore}
             </div>
           )}
           {inquirersAndReceiversContactNumber && (
-            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+            <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
               <Form.Group className="text-center">
                 <Form.Label
                   style={{
@@ -1097,14 +1020,14 @@ They gave this as optional further information: ${anythingMore}
                     justifyContent: "center",
                     margin: "8% 0 8%",
                     fontWeight: "650",
-                    marginTop: "20px",
-                    marginBottom: "20px",
+                    marginTop: "1.5em",
+                    marginBottom: "1.5em",
                   }}
                 >
                   Your Address
                 </Form.Label>
               </Form.Group>
-              <Form.Group style={{ marginTop: "20px", marginBottom: "20px" }}>
+              <Form.Group style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
                 <Form.Label htmlFor="inquirers-and-receivers-first-line-of-address">
                   1st Line of Address
                 </Form.Label>
@@ -1116,7 +1039,7 @@ They gave this as optional further information: ${anythingMore}
                   }
                 />
               </Form.Group>
-              <Form.Group style={{ marginTop: "20px", marginBottom: "20px" }}>
+              <Form.Group style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
                 <Form.Label htmlFor="inquirers-and-receivers-second-line-of-address">
                   2nd Line of Address
                 </Form.Label>
@@ -1129,7 +1052,7 @@ They gave this as optional further information: ${anythingMore}
                   }
                 />
               </Form.Group>
-              <Form.Group style={{ marginTop: "20px", marginBottom: "20px" }}>
+              <Form.Group style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
                 <Form.Label htmlFor="inquirers-and-receivers-post-code">
                   Post Code
                 </Form.Label>
@@ -1146,7 +1069,7 @@ They gave this as optional further information: ${anythingMore}
           )}
           {inquirersAndReceiversFirstLineOfAddress &&
             inquirersAndReceiversPostCode && (
-              <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+              <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
                 <Form.Group className="mb-3">
                   <Form.Label
                     style={{
@@ -1163,8 +1086,8 @@ They gave this as optional further information: ${anythingMore}
                     style={{
                       display: "flex",
                       justifyContent: "center",
-                      marginTop: "20px",
-                      marginBottom: "20px",
+                      marginTop: "1.5em",
+                      marginBottom: "1.5em",
                       pointerEvents: "none",
                     }}
                   >
@@ -1297,7 +1220,7 @@ They gave this as optional further information: ${anythingMore}
                   {(other || notSure) && (
                     <Form.Group
                       className="mb-3"
-                      style={{ marginTop: "20px", marginBottom: "20px" }}
+                      style={{ marginTop: "1.5em", marginBottom: "1.5em" }}
                     >
                       <Form.Label htmlFor="set-more-details">
                         Please describe the care required
@@ -1323,7 +1246,7 @@ They gave this as optional further information: ${anythingMore}
             oralCare ||
             feeding) &&
             inquirersAndReceiversContactNumber && (
-              <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+              <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
                 <Form.Group className="mb-3">
                   <Form.Label htmlFor="set-visits">
                     Lastly, how many visits do you think are needed?
@@ -1350,7 +1273,7 @@ They gave this as optional further information: ${anythingMore}
               </div>
             )}
           {(visits || visitsForMyself) && (
-            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+            <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
               <div className="mb-3">
                 <label
                   htmlFor="exampleFormControlTextarea1"
@@ -1391,11 +1314,13 @@ They gave this as optional further information: ${anythingMore}
                   border: "none",
                   background: "#FF6B3D",
                   boxShadow: "1px 1px 6px black",
-                  marginTop: "20px",
+                  marginTop: "1.5em",
                   letterSpacing: "1.3px",
                 }}
                 onClick={() => {
-                  forMyself ? handleSubmitForMyself() : handleSubmitForAnother()
+                  forMyself
+                    ? handleSubmitForMyself()
+                    : handleSubmitForAnother();
                 }}
               >
                 SUBMIT
@@ -1403,7 +1328,7 @@ They gave this as optional further information: ${anythingMore}
             </div>
           )}
           {wantJob && (
-            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+            <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
               <Form.Group className="mb-3">
                 <Form.Label htmlFor="employee-name">
                   What is your full name?
@@ -1418,7 +1343,7 @@ They gave this as optional further information: ${anythingMore}
             </div>
           )}
           {employeeName && (
-            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+            <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
               <Form.Group className="mb-3">
                 <Form.Label htmlFor="employee-dob">Date of birth</Form.Label>
                 <Form.Control
@@ -1431,7 +1356,7 @@ They gave this as optional further information: ${anythingMore}
             </div>
           )}
           {employeeDOB && (
-            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+            <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
               <Form.Group className="mb-3">
                 <Form.Label>National insurance number</Form.Label>
                 <Form.Control
@@ -1443,7 +1368,7 @@ They gave this as optional further information: ${anythingMore}
             </div>
           )}
           {employeeNationalInsurance && (
-            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+            <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
               <Form.Group className="mb-3">
                 <Form.Label
                   style={{
@@ -1467,7 +1392,7 @@ They gave this as optional further information: ${anythingMore}
             </div>
           )}
           {employeeEmail && (
-            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+            <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
               <Form.Group className="mb-3">
                 <Form.Label htmlFor="employee-contact">
                   Contact number
@@ -1482,7 +1407,7 @@ They gave this as optional further information: ${anythingMore}
             </div>
           )}
           {employeeContactNumber && (
-            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+            <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
               <Form.Group className="text-center">
                 <Form.Label
                   style={{
@@ -1490,14 +1415,14 @@ They gave this as optional further information: ${anythingMore}
                     justifyContent: "center",
                     margin: "8% 0 8%",
                     fontWeight: "650",
-                    marginTop: "20px",
-                    marginBottom: "20px",
+                    marginTop: "1.5em",
+                    marginBottom: "1.5em",
                   }}
                 >
                   Your Address
                 </Form.Label>
               </Form.Group>
-              <Form.Group style={{ marginTop: "20px", marginBottom: "20px" }}>
+              <Form.Group style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
                 <Form.Label htmlFor="employee-1st-address">
                   1st Line of Address
                 </Form.Label>
@@ -1509,7 +1434,7 @@ They gave this as optional further information: ${anythingMore}
                   }
                 />
               </Form.Group>
-              <Form.Group style={{ marginTop: "20px", marginBottom: "20px" }}>
+              <Form.Group style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
                 <Form.Label htmlFor="employee-2nd-address">
                   2nd Line of Address
                 </Form.Label>
@@ -1521,7 +1446,7 @@ They gave this as optional further information: ${anythingMore}
                   }
                 />
               </Form.Group>
-              <Form.Group style={{ marginTop: "20px", marginBottom: "20px" }}>
+              <Form.Group style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
                 <Form.Label htmlFor="employee-post-code">Post Code</Form.Label>
                 <Form.Control
                   id="employee-post-code"
@@ -1532,7 +1457,7 @@ They gave this as optional further information: ${anythingMore}
             </div>
           )}
           {employeeFirstLineOfAddress && employeePostCode && (
-            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+            <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
               <Form.Group className="mb-3">
                 <Form.Label
                   style={{
@@ -1590,7 +1515,7 @@ They gave this as optional further information: ${anythingMore}
             </div>
           )}
           {employeeQualifications && (
-            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+            <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
               <Form.Group>
                 <Form.Label>
                   Do you hold a valid UK Drivers License, and have access to a
@@ -1628,7 +1553,7 @@ They gave this as optional further information: ${anythingMore}
             </div>
           )}
           {(employeeCanDrive || employeeCannotDrive) && (
-            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+            <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
               <Form.Group>
                 <Form.Label>
                   Are you willing/able to work one weekend on, one weekend off?
@@ -1665,7 +1590,7 @@ They gave this as optional further information: ${anythingMore}
             </div>
           )}
           {(employeeIsWilling || employeeIsNotWilling) && (
-            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+            <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
               <Form.Group className="mb-3">
                 <Form.Label
                   style={{
@@ -1682,8 +1607,8 @@ They gave this as optional further information: ${anythingMore}
                   style={{
                     display: "flex",
                     justifyContent: "center",
-                    marginTop: "20px",
-                    marginBottom: "20px",
+                    marginTop: "1.5em",
+                    marginBottom: "1.5em",
                     pointerEvents: "none",
                   }}
                 >
@@ -1709,7 +1634,7 @@ They gave this as optional further information: ${anythingMore}
             </div>
           )}
           {employeeRefName && (
-            <div style={{ marginTop: "20px", marginBottom: "20px" }}>
+            <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
               <Form.Group className="mb-3">
                 <Form.Label htmlFor="ref-email">
                   Email address of your reference
@@ -1743,7 +1668,7 @@ They gave this as optional further information: ${anythingMore}
                 <div class="input-group mb-3">
                   <input
                     style={{
-                      marginBottom: "20px",
+                      marginBottom: "1.5em",
                     }}
                     type="file"
                     className="form-control"
@@ -1782,8 +1707,8 @@ They gave this as optional further information: ${anythingMore}
                   background: "#FF6B3D",
                   boxShadow: "1px 1px 6px black",
                   letterSpacing: "1.3px",
-                  marginBottom: "20px",
-                  marginTop: "20px"
+                  marginBottom: "1.5em",
+                  marginTop: "1.5em",
                 }}
                 onClick={() => {
                   setJobApplication(true);
@@ -1804,46 +1729,49 @@ They gave this as optional further information: ${anythingMore}
           <Box sx={{ width: "300px" }}>
             <Stepper activeStep={activeStep} orientation="vertical">
               {steps.map((step, index) => (
-                <Step key={step.label} >
-                  <StepLabel
-                    
-                  >
-                    {step.label}
-                  </StepLabel>
+                <Step key={step.label}>
+                  <StepLabel>{step.label}</StepLabel>
                   <StepContent>
-                    <Typography style={{color: "grey"}}>{step.description}</Typography>
+                    <Typography style={{ color: "grey" }}>
+                      {step.description}
+                    </Typography>
                     <Box sx={{ mb: 2 }}>
                       <div>
                         <Button
                           variant="contained"
-                          style={{backgroundColor: "#FF6B3D",
-                      }}
+                          style={{ backgroundColor: "#FF6B3D" }}
                           onClick={() => {
                             if (index === steps.length - 1) {
                               setTimeout(() => {
-                                setCompletedJobApplication(true)
-                              }, 1000)
+                                setCompletedJobApplication(true);
+                              }, 1000);
                             }
                             if (index === steps.length - 2) {
                               window.open("mailto:recipient@example.com");
-                              handleNext()
+                              handleNext();
                             } else {
                               handleNext();
                             }
                           }}
                           sx={{ mt: 1, mr: 1 }}
                         >
-                           {index === 0 ? "continue" : index === steps.length - 1 ? "confirm" : "SEND CV"}
+                          {index === 0
+                            ? "continue"
+                            : index === steps.length - 1
+                            ? "confirm"
+                            : "SEND CV"}
                         </Button>
-                        {index !== 0 && <Button
-                          disabled={index === 0}
-                          onClick={() => {
-                            handleBack()
-                          }}
-                          sx={{ mt: 1, mr: 1, color: "grey" }}
-                        >
-                          Back
-                        </Button>}
+                        {index !== 0 && (
+                          <Button
+                            disabled={index === 0}
+                            onClick={() => {
+                              handleBack();
+                            }}
+                            sx={{ mt: 1, mr: 1, color: "grey" }}
+                          >
+                            Back
+                          </Button>
+                        )}
                         {/* <Button
                           disabled={index === 0}
                           onClick={() => {
@@ -1859,14 +1787,16 @@ They gave this as optional further information: ${anythingMore}
                 </Step>
               ))}
             </Stepper>
-            
           </Box>
         </>
       )}
-      {completedJobApplication && <div className="text text-center">
-      <h4>Thank you for applying, you can expect to hear from us shortly...</h4>
-      </div>
-      }
+      {completedJobApplication && (
+        <div className="text text-center">
+          <h4>
+            Thank you for applying, you can expect to hear from us shortly...
+          </h4>
+        </div>
+      )}
     </div>
   );
 }

@@ -61,3 +61,25 @@
 .css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-completed {
   color: rgba(71, 210, 71, 0.727) !important;
 }
+
+@media (max-width: 450px) and (min-width: 230px) {
+  #inquiry-form-wrapper {
+    width: 65%;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 450px) {
+  #inquiry-form-wrapper {
+    width: 65%;
+  }
+}
+
+@media (max-width: 300000px) and (min-width: 900px) {
+  #inquiry-form-wrapper {
+    width: 65%;
+  }
+}
+
+#inquiry-form {
+  width: 
+}
