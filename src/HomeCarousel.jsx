@@ -14,12 +14,8 @@ export default function HomeCarousel() {
     <Carousel
       activeIndex={index}
       className="carousel"
+      id="review-carousel"
       onSelect={handleSelect}
-      style={{
-        background: "white",
-        height: "250px",
-        
-      }}
     >
       <Carousel.Item>
         <Box
@@ -29,8 +25,16 @@ export default function HomeCarousel() {
             alignItems: "center",
             "& > :not(style)": {
               m: 1,
-              width: 178,
-              height: 188,
+              width: {
+                xs: 180,
+                sm: 270,
+                md: 360,
+              },
+              height: {
+                xs: 200,
+                sm: 300,
+                md: 300,
+              },
             },
           }}
         >
@@ -38,8 +42,13 @@ export default function HomeCarousel() {
             sx={{ backgroundColor: "rgba(139, 139, 139, 0.14)" }}
             elevation={3}
           >
-            <div style={{maxWidth: '50%'}}>
-            <h5>Without the understanding, patience, and hard work of Libra Care, both my sister and I would have struggled to cope.<br/><br/>- Sue</h5>
+            <div className="review-wrapper">
+              <h5 className="review">
+                Without the understanding, patience, and hard work of Libra
+                Care, both my sister and I would have struggled to cope.
+                <br />
+                <br />- Sue
+              </h5>
             </div>
             <div>
               <p className="opening">"</p>
@@ -56,17 +65,70 @@ export default function HomeCarousel() {
             alignItems: "center",
             "& > :not(style)": {
               m: 1,
-              width: 178,
-              height: 188,
+              width: {
+                xs: 180,
+                sm: 270,
+                md: 360,
+              },
+              height: {
+                xs: 200,
+                sm: 300,
+                md: 300,
+              },
             },
           }}
         >
-           <Paper
+          <Paper
             sx={{ backgroundColor: "rgba(139, 139, 139, 0.14)" }}
             elevation={3}
           >
-            <div style={{maxWidth: '50%'}}>
-            <h5>Under extreme circumstances, nothing was too much trouble; all the staff who attended to her gave 100% care and compassion.<br/><br/>- Sara</h5>
+            <div className="review-wrapper">
+              <h5 className="review">
+                Under extreme circumstances, nothing was too much trouble; all
+                the staff who attended to her gave 100% care and compassion.
+                <br />
+                <br />- Sara
+              </h5>
+            </div>
+            <div>
+              <p className="opening">"</p>
+              <p className="closing">"</p>
+            </div>
+          </Paper>
+        </Box>
+      </Carousel.Item>
+      <Carousel.Item>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            "& > :not(style)": {
+              m: 1,
+              width: {
+                xs: 180,
+                sm: 270,
+                md: 360,
+              },
+              height: {
+                xs: 200,
+                sm: 300,
+                md: 300,
+              },
+            },
+          }}
+        >
+          <Paper
+            sx={{ backgroundColor: "rgba(139, 139, 139, 0.14)" }}
+            elevation={3}
+          >
+            <div className="review-wrapper">
+              <h5 className="review">
+                Under extreme circumstances, nothing was too much trouble; all
+                the staff who attended to her gave 100% care and compassion.
+                <br />
+                <br />- Sara
+              </h5>
             </div>
             <div>
               <p className="opening">"</p>

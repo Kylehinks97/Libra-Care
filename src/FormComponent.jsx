@@ -14,8 +14,6 @@ import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import axios from "axios";
 
-
-
 export default function FormComponent() {
   const [isChecked, setIsChecked] = useState(false);
   const [wantCare, setWantCare] = useState(false);
@@ -65,9 +63,16 @@ export default function FormComponent() {
   const [employeeCannotDrive, setEmployeeCannotDrive] = useState(false);
   const [employeeIsWilling, setEmployeeIsWilling] = useState(false);
   const [employeeIsNotWilling, setEmployeeIsNotWilling] = useState(false);
+
   const [employeeRefEmail, setEmployeeRefEmail] = useState("");
   const [employeeRefName, setEmployeeRefName] = useState("");
   const [employeeRefContactNumber, setEmployeeRefContactNumber] = useState("");
+
+  const [employeeRefEmail2, setEmployeeRefEmail2] = useState("");
+  const [employeeRefName2, setEmployeeRefName2] = useState("");
+  const [employeeRefContactNumber2, setEmployeeRefContactNumber2] =
+    useState("");
+
   const [cv, setCV] = useState(false);
 
   const [inquirersAndReceiversName, setInquirersAndReceiversName] =
@@ -93,6 +98,9 @@ export default function FormComponent() {
   const [activeStep, setActiveStep] = React.useState(0);
 
   const [completedJobApplication, setCompletedJobApplication] = useState(false);
+  const [careAppSent, setCareAppSent] = useState(false);
+
+  console.log(careAppSent, "<-->");
 
   const visitsGreenList = [
     "Weekly",
@@ -122,7 +130,8 @@ export default function FormComponent() {
     },
     {
       label: "Submit your CV",
-      description: "Please send your CV to us via email.",
+      description:
+        "Your application would be strengthened with a CV, you may send it here, alternatively you can continue without sending it.",
     },
     {
       label: "Await our response",
@@ -141,55 +150,6 @@ export default function FormComponent() {
     notSure,
     other,
   ];
-
-  const getCareInquiry = () => {
-    const careInquiry = {
-      forMyself: forMyself,
-      forAnother: forAnother,
-      onBehalfDetails: {
-        relationship: relationship,
-        customRelationship: customRelationship,
-
-        inquirersName: inquirersName,
-        inquirersEmail: inquirersEmail,
-        contactNumber: contactNumber,
-        address: {
-          firstLineOfAddress: firstLineOfAddress,
-          secondLineOfAddress: secondLineOfAddress,
-          postCode: postCode,
-        },
-      },
-      forMyselfDetails: {
-        inquirersAndReceiversName: inquirersAndReceiversName,
-        inquirersAndReceiversEmail: inquirersAndReceiversEmail,
-        inquirersAndReceiversContactNumber: inquirersAndReceiversContactNumber,
-        address: {
-          inquirersAndReceiversFirstLineOfAddress:
-            inquirersAndReceiversFirstLineOfAddress,
-          inquirersAndReceiversSecondLineOfAddress:
-            inquirersAndReceiversSecondLineOfAddress,
-          inquirersAndReceiversPostCode: inquirersAndReceiversPostCode,
-        },
-      },
-      careRequirements: {
-        continenceCare: continenceCare,
-        personalCare: personalCare,
-        mealPrep: mealPrep,
-        medicationAdmin: medicationAdmin,
-        domesticDuties: domesticDuties,
-        feeding: feeding,
-        oralCare: oralCare,
-        notSure: notSure,
-        other: other,
-        moreDetails: moreDetails,
-        visits: visits,
-        visitsForMyself: visitsForMyself,
-        moreDetailsForMyself: forMyself,
-        anythingMore: anythingMore,
-      },
-    };
-    return careInquiry;
-  };
 
   const handleEmployeeSubmit = () => {
     console.log("hi");
@@ -231,11 +191,19 @@ Can they drive? (if true, they can):   ${employeeCanDrive},
 \n
 Can they NOT drive? (if true, they cannot):   ${employeeCannotDrive},
 \n
-Name of their reference:   ${employeeRefName},
+Name of their 1st reference:   ${employeeRefName},
 \n
-Email of their reference:   ${employeeRefEmail},
+Email of their 1st reference:   ${employeeRefEmail},
 \n
-Contact number of their reference:   ${employeeRefContactNumber}`;
+Contact number of their 1st reference:   ${employeeRefContactNumber}
+\n
+Name of their 2nd reference:   ${employeeRefName2},
+\n
+Email of their 2nd reference:   ${employeeRefEmail2},
+\n
+Contact number of their 2nd reference:   ${employeeRefContactNumber2}
+
+`;
 
     emailjs
       .send(
@@ -395,23 +363,19 @@ They gave this as optional further information: ${anythingMore}
   return (
     <div
       style={{
-        
-        display: "flex"
+        display: "flex",
       }}
       id="inquiry-form-wrapper"
     >
-      {!jobApplication && (
-        <Form
-        
-          id="inquiry-form"
-        >
+      {!jobApplication && !careAppSent && (
+        <Form id="inquiry-form">
           <div
             style={{
               display: "flex",
               justifyContent: "center",
             }}
           >
-            <h2 style={{fontSize: "2.2em"}}>Inquiry Form</h2>
+            <h2 style={{ fontSize: "2.2em" }}>Inquiry Form</h2>
           </div>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <Form.Label
@@ -430,11 +394,10 @@ They gave this as optional further information: ${anythingMore}
             style={{
               backgroundColor: "white",
               display: "flex",
-              
             }}
           >
-            <div className="row">
-              <div className="col">
+            <div className="row" id="row">
+              <div className="col" id="col">
                 <Form.Check
                   type="radio"
                   label="I want care"
@@ -467,13 +430,13 @@ They gave this as optional further information: ${anythingMore}
                   }}
                 />
               </div>
-              <div className="col">
+              <div className="col" id="col">
                 <Form.Check
                   type="radio"
                   label="I want a career"
                   id="job-radio"
-                  style={{whiteSpace: "nowrap"}}
                   className="longer-question"
+                  style={{whiteSpace: "nowrap"}}
                   checked={wantJob}
                   onChange={() => {
                     setIsChecked(true);
@@ -521,8 +484,8 @@ They gave this as optional further information: ${anythingMore}
                 <Form.Label>
                   Is this care for yourself or for another?
                 </Form.Label>
-                <div className="row">
-                  <div className="col">
+                <div className="row" id="row">
+                  <div className="col" id="col">
                     <Form.Check
                       type="radio"
                       label="For myself"
@@ -556,7 +519,7 @@ They gave this as optional further information: ${anythingMore}
                       }}
                     />
                   </div>
-                  <div className="col">
+                  <div className="col" id="col">
                     <Form.Check
                       type="radio"
                       label="For another"
@@ -979,7 +942,7 @@ They gave this as optional further information: ${anythingMore}
                     marginBottom: "1.5em",
                   }}
                 >
-                  Your contact details
+                  Your Contact Details
                 </Form.Label>
                 <Form.Label htmlFor="inquirer-and-receivers-email">
                   Email address
@@ -1267,7 +1230,6 @@ They gave this as optional further information: ${anythingMore}
                     <option value="Five, or more times a day">
                       Five, or more times a day
                     </option>
-
                     <option value="Not sure">Not sure</option>
                   </Form.Select>
                 </Form.Group>
@@ -1310,7 +1272,7 @@ They gave this as optional further information: ${anythingMore}
                   fontWeight: "500",
                   textShadow: "2px 2px 4px black",
                   whiteSpace: "nowrap",
-                  padding: "1.8%",
+                  padding: "1.5%",
                   borderRadius: "10px",
                   border: "none",
                   background: "#FF6B3D",
@@ -1322,6 +1284,7 @@ They gave this as optional further information: ${anythingMore}
                   forMyself
                     ? handleSubmitForMyself()
                     : handleSubmitForAnother();
+                  setCareAppSent(true);
                 }}
               >
                 SUBMIT
@@ -1602,7 +1565,7 @@ They gave this as optional further information: ${anythingMore}
                     pointerEvents: "none",
                   }}
                 >
-                  Reference
+                  References
                 </Form.Label>
                 <Form.Label
                   style={{
@@ -1613,8 +1576,7 @@ They gave this as optional further information: ${anythingMore}
                     pointerEvents: "none",
                   }}
                 >
-                  It is a mandatory requirement from the CQC that we obtain
-                  references for all staff hires.
+                  We demand two references for all new hires.
                   <br></br>
                   <br></br>
                   Whom may we contact that can speak to your character?
@@ -1622,8 +1584,9 @@ They gave this as optional further information: ${anythingMore}
                   <br></br>
                   e.g. a former employer, teacher or college tutor...
                 </Form.Label>
+
                 <Form.Label htmlFor="ref-name">
-                  Full name of your reference
+                  Full name of your 1st reference
                 </Form.Label>
                 <Form.Control
                   id="ref-name"
@@ -1638,7 +1601,7 @@ They gave this as optional further information: ${anythingMore}
             <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
               <Form.Group className="mb-3">
                 <Form.Label htmlFor="ref-email">
-                  Email address of your reference
+                  Email address of your 1st reference
                 </Form.Label>
                 <Form.Control
                   type="email"
@@ -1649,7 +1612,7 @@ They gave this as optional further information: ${anythingMore}
               </Form.Group>
               <Form.Group className="mb-3">
                 <Form.Label htmlFor="ref-contact">
-                  Contact number (optional)
+                  Contact number of your 1st reference (optional)
                 </Form.Label>
                 <Form.Control
                   id="ref-contact"
@@ -1660,32 +1623,57 @@ They gave this as optional further information: ${anythingMore}
               </Form.Group>
             </div>
           )}
-          {/* {employeeRefEmail && (
-            <Form style={{ border: "none", padding: 0 }} id="emailForm">
-              <Form.Group>
-                <Form.Label htmlFor="ref-contact">
-                  Lastly, upload CV (.pdf, .doc, .docx)
-                </Form.Label>
-                <div class="input-group mb-3">
-                  <input
-                    style={{
-                      marginBottom: "1.5em",
-                    }}
-                    type="file"
-                    className="form-control"
-                    id="inputGroupFile02"
-                    name="attachment"
-                    accept=".pdf, .doc, .docx"
-                    onChange={(e) => {
-                      setCV(true);
-                      handleFileChange(e);
-                    }}
-                  ></input>
-                </div>
-              </Form.Group>
-            </Form>
-          )} */}
           {employeeRefEmail && (
+            <FormGroup>
+              <Form.Label
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  marginTop: "1.5em",
+                  marginBottom: "1.5em",
+                  pointerEvents: "none",
+                }}
+              >
+                2nd Reference
+              </Form.Label>
+              <Form.Label htmlFor="ref-name">
+                Full name of your 2nd reference
+              </Form.Label>
+              <Form.Control
+                id="ref-name"
+                type="text"
+                placeholder="Enter their full name..."
+                onChange={(e) => setEmployeeRefName2(e.target.value)}
+              />
+            </FormGroup>
+          )}
+          {employeeRefName2 && (
+            <div style={{ marginTop: "1.5em", marginBottom: "1.5em" }}>
+              <Form.Group className="mb-3">
+                <Form.Label htmlFor="ref-email">
+                  Email address of your 2nd reference
+                </Form.Label>
+                <Form.Control
+                  type="email"
+                  id="ref-email"
+                  placeholder="Enter their email address..."
+                  onChange={(e) => setEmployeeRefEmail2(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label htmlFor="ref-contact">
+                  Contact number of your 2nd reference (optional)
+                </Form.Label>
+                <Form.Control
+                  id="ref-contact"
+                  type="tel"
+                  placeholder="Enter full name..."
+                  onChange={(e) => setEmployeeRefContactNumber2(e.target.value)}
+                />
+              </Form.Group>
+            </div>
+          )}
+          {employeeRefEmail2 && (
             <div
               style={{
                 display: "flex",
@@ -1699,35 +1687,31 @@ They gave this as optional further information: ${anythingMore}
                   width: "100%",
                   color: "white",
                   fontSize: "18px",
-                  fontWeight: "bold",
+                  fontWeight: "500",
                   textShadow: "2px 2px 4px black",
                   whiteSpace: "nowrap",
-                  padding: "1.8%",
+                  padding: "1.5%",
                   borderRadius: "10px",
                   border: "none",
                   background: "#FF6B3D",
                   boxShadow: "1px 1px 6px black",
-                  letterSpacing: "1.3px",
-                  marginBottom: "1.5em",
                   marginTop: "1.5em",
+                  letterSpacing: "1.3px",
                 }}
                 onClick={() => {
                   setJobApplication(true);
                   handleEmployeeSubmit();
-                  // handleSubmit()
                 }}
               >
-                Submit
+                SUBMIT
               </div>
             </div>
           )}
         </Form>
       )}
-      {/* <FormData getCareInquiry={getCareInquiry} getJobInquiry={getJobInquiry} /> */}
       {jobApplication && !completedJobApplication && (
         <>
-          {" "}
-          <Box sx={{ width: "300px" }}>
+          <Box sx={{ width: "100%" }}>
             <Stepper activeStep={activeStep} orientation="vertical">
               {steps.map((step, index) => (
                 <Step key={step.label}>
@@ -1759,9 +1743,17 @@ They gave this as optional further information: ${anythingMore}
                           {index === 0
                             ? "continue"
                             : index === steps.length - 1
-                            ? "confirm"
+                            ? "FINISH"
                             : "SEND CV"}
                         </Button>
+                        {index === 1 && (
+                          <Button
+                            sx={{ mt: 1, mr: 1, color: "grey" }}
+                            onClick={() => handleNext()}
+                          >
+                            SKIP
+                          </Button>
+                        )}
                         {index !== 0 && (
                           <Button
                             disabled={index === 0}
@@ -1773,15 +1765,6 @@ They gave this as optional further information: ${anythingMore}
                             Back
                           </Button>
                         )}
-                        {/* <Button
-                          disabled={index === 0}
-                          onClick={() => {
-                            handleBack()
-                          }}
-                          sx={{ mt: 1, mr: 1 }}
-                        >
-                          Back
-                        </Button> */}
                       </div>
                     </Box>
                   </StepContent>
@@ -1795,6 +1778,14 @@ They gave this as optional further information: ${anythingMore}
         <div className="text text-center">
           <h4>
             Thank you for applying, you can expect to hear from us shortly...
+          </h4>
+        </div>
+      )}
+      {careAppSent && (
+        <div className="text text-center">
+          <h4>
+            Thank you for your inquiry, you can expect to hear from us
+            shortly...
           </h4>
         </div>
       )}

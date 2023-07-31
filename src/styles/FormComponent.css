@@ -10,6 +10,17 @@
   border: 1px solid black;
 }
 
+#row {
+  width: 100%;
+  
+}
+
+#col {
+  justify-content: center;
+  display: flex;
+}
+
+
 .form-check-input:checked {
   background-image: none;
   background-color: #ff6b3d !important;
