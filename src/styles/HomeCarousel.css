@@ -21,7 +21,7 @@
   background-color: #ff6b3d;
 }
 
-p {
+.opening, .closing {
   font-size: 100px;
   color: rgba(255, 127, 80, 0.739);
   font-family: "Alex Brush", cursive;

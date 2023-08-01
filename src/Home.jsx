@@ -7,59 +7,61 @@ import "leaflet/dist/leaflet.css";
 import FormComponent from "./FormComponent";
 import Footer from "./Footer";
 import * as turf from "@turf/turf";
+import LogoCarousel from "./LogoCarousel";
+import HomeFooter from "./FooterCarousel";
+import "./styles/Home.css"
+import LogoBoard from "./LogoBoard.jsx";
 
 export default function Home() {
-
   const transparentIcon = new L.Icon({
     iconUrl: "../assets/",
     iconSize: [0, 0],
   });
 
-  const markerCoords = 
-    [
-      [52.608787, -1.993917],
-      [52.603735, -1.942715],
-      [52.602003, -1.943823],
-      [52.612602, -1.994888],
-      [52.613196, -1.942931],
-      [52.648283, -1.989843],
-      [52.586713, -1.986419],
-      [52.619668, -1.981383],
-      [52.615297, -1.932066],
-      [52.620103, -1.985038],
-      [52.616938, -1.935317],
-      [52.60816, -1.978749],
-      [52.61535, -1.939768],
-      [52.613055, -1.998774],
-      [52.58605, -1.880128],
-      [52.593694, -1.961498],
-      [52.60722, -1.970668],
-      [52.64731, -1.983913],
-      [52.579606, -1.916812],
-      [52.623455, -1.994055],
-      [52.612056, -1.999197],
-      [52.609717, -1.945763],
-      [52.594888, -1.945799],
-      [52.593623, -1.853371],
-      [52.602558, -1.9732],
-      [52.611402, -1.987069],
-      [52.604258, -1.942875],
-      [52.614822, -1.932869],
-      [52.603568, -1.94387],
-      [52.605889, -1.943026],
-      [52.604614, -1.942914],
-      [52.603677, -1.944529],
-      [52.587389, -1.87674],
-      [52.601997, -1.941354],
-      [52.614727, -1.939224],
-      [52.595787, -1.941609],
-      [52.6154, -1.8845],
-      [52.674827,-2.029781]
+  const markerCoords = [
+    [52.608787, -1.993917],
+    [52.603735, -1.942715],
+    [52.602003, -1.943823],
+    [52.612602, -1.994888],
+    [52.613196, -1.942931],
+    [52.648283, -1.989843],
+    [52.586713, -1.986419],
+    [52.619668, -1.981383],
+    [52.615297, -1.932066],
+    [52.620103, -1.985038],
+    [52.616938, -1.935317],
+    [52.60816, -1.978749],
+    [52.61535, -1.939768],
+    [52.613055, -1.998774],
+    [52.58605, -1.880128],
+    [52.593694, -1.961498],
+    [52.60722, -1.970668],
+    [52.64731, -1.983913],
+    [52.579606, -1.916812],
+    [52.623455, -1.994055],
+    [52.612056, -1.999197],
+    [52.609717, -1.945763],
+    [52.594888, -1.945799],
+    [52.593623, -1.853371],
+    [52.602558, -1.9732],
+    [52.611402, -1.987069],
+    [52.604258, -1.942875],
+    [52.614822, -1.932869],
+    [52.603568, -1.94387],
+    [52.605889, -1.943026],
+    [52.604614, -1.942914],
+    [52.603677, -1.944529],
+    [52.587389, -1.87674],
+    [52.601997, -1.941354],
+    [52.614727, -1.939224],
+    [52.595787, -1.941609],
+    [52.6154, -1.8845],
+    [52.674827, -2.029781],
   ];
   const bufferedPolygon = turf.buffer(turf.multiPoint(markerCoords), 3.4, {
     units: "kilometers",
   });
-  const polygonCoords = bufferedPolygon.geometry.coordinates[0]
+  const polygonCoords = bufferedPolygon.geometry.coordinates[0];
 
   return (
     <>
@@ -91,7 +93,6 @@ export default function Home() {
         </h3>
         <MapContainer
           style={{
-           
             borderRadius: "1.5em",
           }}
           zoom={10}
@@ -104,14 +105,19 @@ export default function Home() {
             url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           {markerCoords.map((coord, idx) => {
-            return <Marker position={coord} id={idx} key={idx} icon={transparentIcon}></Marker>;
+            return (
+              <Marker
+                position={coord}
+                id={idx}
+                key={idx}
+                icon={transparentIcon}
+              ></Marker>
+            );
           })}
         </MapContainer>
-   
       </div>
       <div
         style={{
-          // clipPath: "polygon(0 0, 100% 0, 100% 80%, 0 90%)",
           marginBottom: "5%",
           height: "auto",
           display: "flex",
@@ -120,6 +126,13 @@ export default function Home() {
       >
         <FormComponent></FormComponent>
       </div>
+      <div className="logo-carousel-container">
+        <LogoCarousel />
+      </div>
+      <div className="logo-board-container">
+        <LogoBoard />
+      </div>
+
       <Footer />
     </>
   );

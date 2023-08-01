@@ -1,0 +1,25 @@
+.logo-carousel-container {
+  display: none;
+}
+
+.logo-board-container {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .logo-carousel-container {
+    display: block;
+  }
+  .logo-board-container {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .logo-carousel-container {
+    display: none;
+  }
+  .logo-board-container {
+    display: block;
+  }
+}
