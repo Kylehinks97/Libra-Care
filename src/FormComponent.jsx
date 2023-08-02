@@ -131,11 +131,11 @@ export default function FormComponent() {
     {
       label: "Submit your CV",
       description:
-        "Your application would be strengthened with a CV, you may send it here, alternatively you can continue without sending it.",
+        "Your application would be strengthened with a CV, you may send it here, alternatively you can skip this",
     },
     {
       label: "Await our response",
-      description: `Please confirm you have sent your CV.`,
+      description: `Application complete! Sit back and relax whilst we review your application.`,
     },
   ];
 

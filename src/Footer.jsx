@@ -28,7 +28,7 @@ export default function Footer() {
             WS4 1PJ
           </h3>
           <h3 style={{ margin: 0 }}>07800646398</h3>
-          <h3 style={{ margin: 0 }}>libracare@gmail.com</h3>
+          <h3 style={{ margin: 0, cursor: "pointer" }} id="email-link" onClick={window.open("mailto:libracare@outlook.com")}>libracare@outlook.com</h3>
         </div>
       </div>
     </>

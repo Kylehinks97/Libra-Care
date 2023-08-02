@@ -40,4 +40,38 @@
     border-bottom: 3px solid coral;
     padding: 5px
 }
+/* Add this CSS to your stylesheet */
+.link {
+  text-decoration: none;
+  position: relative;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px; /* Adjust the value to control the underline position */
+  height: 2px;
+  background-color: transparent;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+  background-color: #ff6b3d; /* Adjust the color of the underline on hover */
+}
+
+.link.active::after {
+  transform: scaleX(1);
+  background-color: #ff6b3d; /* Adjust the color of the underline when clicked */
+}
+
+.dropdown-link:hover {
+  background-color: rgba(184, 184, 184, 0.407);
+}
+
+
 

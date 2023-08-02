@@ -3,3 +3,7 @@
     border-bottom: none;
     padding: 5px
 }
+
+#email-link:hover {
+    text-decoration: underline;
+}

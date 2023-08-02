@@ -38,6 +38,24 @@
   direction: ltr;
 }
 
+@media (max-width: 500px) and (min-width: 0px) {
+  .opening, .closing {
+    font-size: 100px;
+  }
+}
+
+@media (max-width: 1300px) and (min-width: 500px) {
+  .opening, .closing {
+    font-size: 150px;
+  }
+}
+
+@media (max-width: 999999px) and (min-width: 1300px) {
+  .opening, .closing {
+    font-size: 200px;
+  }
+}
+
 h5 {
   position: absolute;
   top: 50%;
