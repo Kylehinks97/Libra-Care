@@ -1,46 +1,44 @@
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 @media (min-width: 768px) {
-    h1 {
-      font-size: 40px;
-    }
-    
-    h2 {
-      font-size: 15.5px;
-    }
-    
-    button {
-      font-size: 18px;
-    }
+  h1 {
+    font-size: 40px;
   }
-  
-  @media (min-width: 1024px) {
-    h1 {
-      font-size: 48px;
-    }
-    
-    h2 {
-      font-size: 18px;
-    }
-    
-    button {
-      font-size: 20px;
-    }
+
+  h2 {
+    font-size: 15.5px;
   }
-  
+
+  button {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  button {
+    font-size: 20px;
+  }
+}
 
 .logo {
-    margin-bottom: 2px;
+  margin-bottom: 2px;
 }
 
 .bg-body-tertiary2 {
-    border-bottom: 3px solid coral;
-    padding: 5px
+  border-bottom: 3px solid coral;
+  padding: 5px;
 }
-/* Add this CSS to your stylesheet */
 .link {
   text-decoration: none;
   position: relative;
@@ -51,27 +49,28 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0px; /* Adjust the value to control the underline position */
+  bottom: 0px;
   height: 2px;
   background-color: transparent;
   transform: scaleX(0);
-  transform-origin: left center;
+  transform-origin: center;
   transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .link:hover::after {
   transform: scaleX(1);
-  background-color: #ff6b3d; /* Adjust the color of the underline on hover */
+  background-color: #ff6b3d;
 }
 
 .link.active::after {
   transform: scaleX(1);
-  background-color: #ff6b3d; /* Adjust the color of the underline when clicked */
+  background-color: #ff6b3d;
 }
 
 .dropdown-link:hover {
   background-color: rgba(184, 184, 184, 0.407);
 }
 
-
-
+#inquiry-button-nav:hover {
+  transform: scale(1.05);
+}

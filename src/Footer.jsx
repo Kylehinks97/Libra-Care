@@ -19,15 +19,16 @@ export default function Footer() {
           }}
         >
           <h3 style={{ margin: 0 }}>
-            241 Lichfield Road
+            Suite 58 Beacon Buildings
             <br />
-            Shelfield
+            Leighswood Road
             <br />
-            Walsall
+            Aldridge
             <br />
-            WS4 1PJ
+            WS9 8AA
           </h3>
-          <h3 style={{ margin: 0 }}>07800646398</h3>
+          <h3 style={{ margin: 0 }}>01922 234 453</h3>
+          <h3 style={{ margin: 0 }}>07974 733 121</h3>
           <h3 style={{ margin: 0, cursor: "pointer" }} id="email-link" onClick={window.open("mailto:libracare@outlook.com")}>libracare@outlook.com</h3>
         </div>
       </div>

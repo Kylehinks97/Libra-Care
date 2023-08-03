@@ -1,0 +1,27 @@
+@media (max-width: 480px) and (min-width: 0px) {
+  #text-container {
+    width: 90%;  
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 480px) {
+    #text-container {
+      width: 80%;  
+    }
+  }
+
+  @media (max-width: 1200px) and (min-width: 1024px) {
+    #text-container {
+      width: 70%;  
+    }
+  }
+
+  @media (max-width: 99999999px) and (min-width: 1200px) {
+    #text-container {
+      width: 60%;  
+    }
+  }
+
+.care-list-item {
+    margin: 0.3em 0 0.3em
+}

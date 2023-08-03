@@ -10,35 +10,39 @@ export default function NavigationBar() {
       <Navbar
         expand="lg"
         className="bg-body-tertiary2"
-        style={{ padding: "10px", margin: 0}}
+        style={{ padding: "8px", margin: 0, display: "flex", justifyContent: "center"}}
       >
-        <Container>
-          <Navbar.Brand href="#home">
+        <Container style={{margin: 0, width: "100%"}}>
+          <Navbar.Brand href="#home" style={{marginRight: "5vw"}}>
             <img
               alt=""
               src="../src/assets/Scales.png"
               className="logo"
               width="30"
+              
             />
             &nbsp;&nbsp; Libra Care
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#home" className="link">
+              <Nav.Link href="/" className="link">
                 Home
               </Nav.Link>
+              <Nav.Link href="/services" className="link">
+                Services
+              </Nav.Link>
               <NavDropdown title="About us" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1" className="dropdown-link">
+                <NavDropdown.Item href="/values" className="dropdown-link">
                   Values
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2" className="dropdown-link">
+                <NavDropdown.Item href="/our-team" className="dropdown-link">
                   Our Team
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3" className="dropdown-link">
+                <NavDropdown.Item href="/testimonials" className="dropdown-link">
                   Testimonials
                 </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3" className="dropdown-link">
+                <NavDropdown.Item href="/data-protection" className="dropdown-link">
                   Data Protection
                 </NavDropdown.Item>
               </NavDropdown>
@@ -48,7 +52,7 @@ export default function NavigationBar() {
             </Nav>
             <Nav className="ms-auto">
               <Nav.Link
-                href="#link"
+                href="/inquiry"
                 style={{
                   backgroundColor: "coral",
                   borderRadius: "0.5em",
@@ -62,6 +66,7 @@ export default function NavigationBar() {
                   justifyContent: "center",
                   display: "flex"
                 }}
+                id="inquiry-button-nav"
               >
                 Make an Inquiry
               </Nav.Link>

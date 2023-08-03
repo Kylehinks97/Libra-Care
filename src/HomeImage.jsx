@@ -4,6 +4,7 @@ import "./styles/HomeImage/title.css";
 import "./styles/HomeImage/inquiry-button.css";
 import "./styles/HomeImage/indeed-logo.css";
 import "./styles/HomeImage/slogan.css";
+import "./styles/HomeImage/cqc-hover.css";
 import CareerCarousel from "./CareerCarousel";
 import Carousel from "react-bootstrap/Carousel";
 
@@ -111,7 +112,7 @@ export default function HomeImage() {
             zIndex: 2,
             width: "fit-content",
           }}
-          id="inquiry-button"
+          id="inquiry-button"cd nprth
           onClick={scrollToBottom}
         >
           Make an Inquiry
