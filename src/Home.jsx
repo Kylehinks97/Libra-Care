@@ -8,9 +8,9 @@ import FormComponent from "./FormComponent";
 import Footer from "./Footer";
 import * as turf from "@turf/turf";
 import LogoCarousel from "./LogoCarousel";
-import HomeFooter from "./FooterCarousel";
 import "./styles/Home.css"
 import LogoBoard from "./LogoBoard.jsx";
+import FinalFooter from "./FinalFooter.jsx"
 
 export default function Home() {
   const transparentIcon = new L.Icon({
@@ -132,8 +132,8 @@ export default function Home() {
       <div className="logo-board-container">
         <LogoBoard />
       </div>
-
       <Footer />
+      <FinalFooter />
     </>
   );
 }

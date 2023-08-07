@@ -1,0 +1,17 @@
+@media (max-width: 500px) and (min-width: 0px) {
+    #contact-us-wrapper {
+      margin-left: 4em;
+    }
+  }
+
+  @media (max-width: 900px) and (min-width: 500px) {
+    #contact-us-wrapper {
+      margin-left: 10em;
+    }
+  }
+
+  @media (max-width: 9999900px) and (min-width: 900px) {
+    #contact-us-wrapper {
+      margin-left: 13em;
+    }
+  }

@@ -1,10 +1,12 @@
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
+
 import "./styles/Footer.css";
 
 export default function Footer() {
+
+function openEmailWindow() {
+  return window.open("mailto:libracare@outlook.com")
+}
+
   return (
     <>
       <div style={{ backgroundColor: "#FF6B3D", margin: 0, width: "100%" }}>
@@ -27,9 +29,29 @@ export default function Footer() {
             <br />
             WS9 8AA
           </h3>
-          <h3 style={{ margin: 0 }}>01922 234 453</h3>
-          <h3 style={{ margin: 0 }}>07974 733 121</h3>
-          <h3 style={{ margin: 0, cursor: "pointer" }} id="email-link" onClick={window.open("mailto:libracare@outlook.com")}>libracare@outlook.com</h3>
+          <h3 style={{ margin: 0 }}>
+            <a
+              href="tel:01922234453"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              01922 234 453
+            </a>
+          </h3>
+          <h3 style={{ margin: 0 }}>
+            <a
+              href="tel:07974733121"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              07974 733 121
+            </a>
+          </h3>
+          <h3
+            style={{ margin: 0, cursor: "pointer" }}
+            id="email-link"
+            onClick={openEmailWindow}
+          >
+            libracare@outlook.com
+          </h3>
         </div>
       </div>
     </>

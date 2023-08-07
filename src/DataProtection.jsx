@@ -1,5 +1,6 @@
 import Footer from "./Footer.jsx";
 import "./styles/DataProtection.css";
+import FinalFooter from "./FinalFooter.jsx"
 
 export default function DataProtection() {
   return (
@@ -13,6 +14,7 @@ export default function DataProtection() {
           className="d-flex justify-content-center"
           style={{
             margin: "1em 0 1em",
+            userSelect: "none"
           }}
         >
           Data Protection
@@ -29,14 +31,13 @@ export default function DataProtection() {
             information that you share with us is kept securely and processed in
             line with legislation. <br></br>
             <br></br>To tailor our services to meet your own personal
-            circusmtances some of this information is both personal and
+            circumstances some of this information is both personal and
             sensitive to you. The Principles below are embedded within to our
             practices.
           </p>
-          <p className="d-flex justify-content-center">
+          
             <br></br>
-            <span>The principles are:</span>
-          </p>
+        
           <ol>
             <li>
               <span>Lawful, fair and transparent</span>
@@ -73,6 +74,7 @@ export default function DataProtection() {
         </div>
       </div>
       <Footer />
+      <FinalFooter />
     </>
   );
 }

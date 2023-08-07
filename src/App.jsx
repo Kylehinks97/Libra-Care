@@ -7,6 +7,11 @@ import Values from "./Values.jsx";
 import DataProtection from "./DataProtection.jsx";
 import Inquiry from "./Inquiry";
 import Services from "./Services";
+import OurTeam from "./OurTeam";
+import ContactUs from "./ContactUs";
+import Testimonials from "./Testimonials";
+import PrivacyPolicy from "./PrivacyPolicy.jsx";
+import Blog from "./Blog.jsx";
 
 function App() {
   return (
@@ -18,6 +23,11 @@ function App() {
         <Route path="/data-protection" element={<DataProtection />} />
         <Route path="/inquiry" element={<Inquiry />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/our-team" element={<OurTeam />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/testimonials" element={<Testimonials />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
     </BrowserRouter>
   );

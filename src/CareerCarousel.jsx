@@ -5,7 +5,7 @@ export default function CareerCarousel() {
   return (
     <>
       <a
-        href="https://uk.indeed.com/cmp/Libra-Care-Ltd/reviews"
+        href=""
         target="_blank"
       >
         <Carousel

@@ -1,5 +1,6 @@
 import "./styles/DataProtection.css";
 import Footer from "./Footer.jsx";
+import FinalFooter from "./FinalFooter.jsx"
 
 export default function Services() {
   return (
@@ -126,6 +127,7 @@ export default function Services() {
         </div>
       </div>
       <Footer />
+      <FinalFooter />
     </>
   );
 }

@@ -10,9 +10,7 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import StepContent from "@mui/material/StepContent";
 import Button from "@mui/material/Button";
-import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
-import axios from "axios";
+
 
 export default function FormComponent() {
   const [isChecked, setIsChecked] = useState(false);
@@ -304,7 +302,7 @@ They gave this as optional further information: ${anythingMore}
       "message"
     ] = `${inquirersName} has applied for care for another.
     \n
-    They applied for care for their: ${relationship}.
+    They said their relationship to this person was: ${relationship}.
     \n
     If other, they described their relationship as: ${customRelationship}
     \n
@@ -436,7 +434,7 @@ They gave this as optional further information: ${anythingMore}
                   label="I want a career"
                   id="job-radio"
                   className="longer-question"
-                  style={{whiteSpace: "nowrap"}}
+                  style={{ whiteSpace: "nowrap" }}
                   checked={wantJob}
                   onChange={() => {
                     setIsChecked(true);
@@ -1285,6 +1283,7 @@ They gave this as optional further information: ${anythingMore}
                     ? handleSubmitForMyself()
                     : handleSubmitForAnother();
                   setCareAppSent(true);
+                  id="submit-button"
                 }}
               >
                 SUBMIT
@@ -1678,7 +1677,9 @@ They gave this as optional further information: ${anythingMore}
               style={{
                 display: "flex",
                 justifyContent: "center",
+                cursor: "pointer"
               }}
+              id="submit-button"
             >
               <div
                 style={{

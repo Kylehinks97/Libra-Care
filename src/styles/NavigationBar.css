@@ -69,6 +69,7 @@
 
 .dropdown-link:hover {
   background-color: rgba(184, 184, 184, 0.407);
+  border-bottom: 2px solid #ff6b3d  ;
 }
 
 #inquiry-button-nav:hover {

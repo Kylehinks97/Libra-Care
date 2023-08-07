@@ -1,5 +1,6 @@
 import Footer from "./Footer.jsx";
 import "./styles/DataProtection.css";
+import FinalFooter from "./FinalFooter.jsx"
 
 export default function Values() {
   return (
@@ -13,6 +14,7 @@ export default function Values() {
           className="d-flex justify-content-center"
           style={{
             marginTop: "1em",
+            userSelect: "none"
           }}
         >
           Our Values
@@ -49,6 +51,7 @@ export default function Values() {
         </div>
       </div>
       <Footer />
+      <FinalFooter />
     </>
   );
 }

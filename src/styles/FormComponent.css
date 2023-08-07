@@ -93,3 +93,7 @@
 #inquiry-form {
   width: 100%
 }
+
+#submit-button {
+  cursor: pointer;
+}
