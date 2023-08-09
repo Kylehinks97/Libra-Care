@@ -20,7 +20,7 @@ export default function NavigationBar() {
         <Container style={{ margin: 0, width: "100%" }}>
           <Navbar.Brand href="/" style={{ marginRight: "5vw" }}>
             <img
-              alt=""
+              alt="Libra Care's Logo - Balancing Scales"
               src="../src/assets/Scales.png"
               className="logo"
               width="30"

@@ -1,5 +1,5 @@
 #background-img {
-  filter: blur(calc(0.15vw)) brightness(calc(80%));
+  filter: blur(calc(0.17vw)) brightness(calc(80%));
   clip-path: polygon(0 0, 100% 0, 100% 70%, 0 80%);
   border-top: 1px solid coral;
   z-index: 1;
@@ -59,5 +59,67 @@
 @media (max-width: 999999px) and (min-width: 0px) {
   #title, #slogan, #carousel-text {
     text-shadow: calc(3px) calc(3px) calc(5px) black;
+  }
+}
+
+@media (max-width: 99999999px) and (min-width: 1400px) {
+  #CQC-logo {
+    top: 5% !important;
+    width: 27em
+  }
+}
+
+@media (max-width: 1400px) and (min-width: 1100px) {
+  #CQC-logo {
+    width: 21em
+  }
+}
+
+@media (max-width: 1100px) and (min-width: 1000px) {
+  #CQC-logo {
+    width: 19em
+  }
+}
+
+
+@media (max-width: 1000px) and (min-width: 900px) {
+  #CQC-logo {
+    width: 17em
+  }
+}
+
+@media (max-width: 900px) and (min-width: 800px) {
+  #CQC-logo {
+    width: 15em
+  }
+}
+
+@media (max-width: 800px) and (min-width: 700px) {
+  #CQC-logo {
+    width: 12em
+  }
+}
+
+@media (max-width: 700px) and (min-width: 600px) {
+  #CQC-logo {
+    width: 10em
+  }
+}
+
+@media (max-width: 600px) and (min-width: 500px) {
+  #CQC-logo {
+    width: 9em
+  }
+}
+
+@media (max-width: 500px) and (min-width: 400px) {
+  #CQC-logo {
+    width: 7em
+  }
+}
+
+@media (max-width: 400px) and (min-width: 0px) {
+  #CQC-logo {
+    width: 6.4em;
   }
 }

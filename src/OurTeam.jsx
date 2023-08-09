@@ -6,22 +6,22 @@ export default function OurTeam() {
     {
       name: "Deanne Hinks",
       role: "Registered Manager",
-      img: "",
+      alt: "Registered Manager of Libra Care - Deanne Hinks",
+      img: "../src/assets/Deanne.jpg",
       paragraph1:
-        "My career within Health and Social Care has been diverse and focused on supporting individuals with a variety of different needs including Frail Elderly, Elderly Mentally Ill and Younger Adults with Profound Learning Disabilities. ",
-      paragraph2:
-        "I have worked with the Emergency Call Centre for the NHS dealing with 999 emergency calls and navigating them to the appropriate service.",
+        "My career within Health and Social Care has been diverse and focused on supporting individuals with a variety of different needs including frail elderly, elderly mental health and younger adults with profound learning disabilities.",
       paragraph3:
-        "Employed by the Local Authority I have been part of the Management Team that responds to emergency calls from customers who need care and support outside of normal office hours.",
+        "I have worked for the NHS answering 999 emergency calls. Employed by the local authority I have been part of the management team that responds to emergency calls from customers who need care and support outside of normal office hours.",
       paragraph4:
         "I have also worked as a Care Manager where my primary role was designing and implementing care packages tailored to meet the holistic needs of an individual, reviewing these to ensure that the best quality and cost effectiveness was being maintained.",
       paragraph5:
-        "Within my most recent role I assisted individuals to design support plans that took into account their allocated Personal Budget and utilise the services that are available from the Private, Voluntary and Council operated sectors.",
+        "Within my most recent role I assisted individuals to design support plans that took into account their allocated personal budget and utilise the services that are available from the private, voluntary and Council operated sectors.",
     },
     {
       name: "Vicki Bates",
       role: "Responsible Individual",
-      img: "",
+      alt: "Responsible Individual of Libra Care - Vicki Bates",
+      img: "../src/assets/Vicki.jpg",
       paragraph1:
         "I previously worked as a registered nurse for over nine years, after graduating from the University of Wolverhampton.",
       paragraph2:
@@ -57,17 +57,19 @@ export default function OurTeam() {
                   height: "200px",
                   objectFit: "cover",
                 }}
-                src="../src/assets/old man.jpg"
-                alt={member.name}
+                src={member.img}
+                alt={member.alt}
               ></img>
             </div>
-            <h4>{member.name}</h4>
-            <p>{member.role}</p>
-            <p>{member.paragraph1}</p>
-            <p>{member.paragraph2}</p>
-            <p>{member.paragraph3}</p>
-            <p>{member.paragraph4}</p>
-            <p>{member.paragraph5}</p>
+            <div style={{}}>
+              <h4>{member.name}</h4>
+              <p>{member.role}</p>
+              <p>{member.paragraph1}</p>
+              <p>{member.paragraph2}</p>
+              <p>{member.paragraph3}</p>
+              <p>{member.paragraph4}</p>
+              <p>{member.paragraph5}</p>
+            </div>
           </div>
         ))}
       </div>

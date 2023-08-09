@@ -1,0 +1,31 @@
+
+
+@media (max-width: 767px) and (min-width: 0px) {
+    #reginald-blog {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 767px) and (min-width: 0px) {
+    #blog-post {
+      width: 100%;
+    }
+  }
+
+
+  @media (max-width: 1024px) and (min-width: 767px) {
+    #reginald-blog, #blog-posts {
+      width: 65%;
+    }
+  }
+
+  @media (max-width: 9999999999999999px) and (min-width: 1024px) {
+    #reginald-blog, #blog-posts {
+      width: 58%;
+    }
+  }
+
+#blog-title:hover, #blog-back:hover {
+  text-decoration: underline;
+}
+

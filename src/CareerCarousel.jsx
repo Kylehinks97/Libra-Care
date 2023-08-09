@@ -5,7 +5,6 @@ export default function CareerCarousel() {
   return (
     <>
       <a
-        href=""
         target="_blank"
       >
         <Carousel

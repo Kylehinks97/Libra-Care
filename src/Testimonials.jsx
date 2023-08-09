@@ -34,13 +34,19 @@ export default function Testimonials() {
           </p>
           <p>
             You can read staff reviews on{" "}
-            <a href="https://uk.indeed.com/cmp/Libra-Care-Ltd/reviews">
+            <a
+              href="https://uk.indeed.com/cmp/Libra-Care-Ltd/reviews"
+              target="_blank"
+            >
               Indeed Reviews
             </a>
           </p>
           <p>
             And customer reviews on{" "}
-            <a href="https://www.bestcarecompare.com/homecare/info/detail.aspx?x1=6117919">
+            <a
+              target="_blank"
+              href="https://www.bestcarecompare.com/homecare/info/detail.aspx?x1=6117919"
+            >
               BestCompare.com
             </a>
           </p>

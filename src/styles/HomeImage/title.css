@@ -1,6 +1,7 @@
 @media (max-width: 9999999px) and (min-width: 3000px) {
     #title {
       font-size: 260px !important;
+      letter-spacing: 5% !important
     }
   }
   

@@ -15,10 +15,7 @@ export default function FinalFooter() {
   };
 
   return (
-    <div
-      className="d-flex justify-content-center"
-      style={{ marginTop: "0.4em" }}
-    >
+    <div className="d-flex justify-content-center align-items-center">
       <p
         style={{ color: "rgba(48, 48, 48, 0.777)" }}
         className="final-footer-text"
@@ -31,7 +28,7 @@ export default function FinalFooter() {
         style={{ color: "rgba(48, 48, 48, 0.777)", cursor: "pointer" }}
         className="final-footer-text"
         onClick={handleDataProtectionClick}
-        >
+      >
         Data Protection
       </p>
       <p style={{ color: "#ff6b3d" }}>&nbsp;&nbsp;|&nbsp;&nbsp;</p>
