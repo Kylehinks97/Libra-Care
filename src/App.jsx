@@ -19,7 +19,7 @@ function App() {
       <NavigationBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route to="/values" element={<Values />} />
+        <Route path="values" element={<Values />} />
         <Route path="/data-protection" element={<DataProtection />} />
         <Route path="/inquiry" element={<Inquiry />} />
         <Route path="/services" element={<Services />} />
