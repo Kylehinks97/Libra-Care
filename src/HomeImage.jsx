@@ -37,7 +37,7 @@ export default function HomeImage() {
       </Link>
       <div style={{ position: "relative", width: "100%" }}>
         <img
-          src="../public/images/Home Image.png"
+          src="/images/Home Image.png"
           width="100%"
           alt="Elderly lady enjoying the company of her female carer"
           id="background-img"

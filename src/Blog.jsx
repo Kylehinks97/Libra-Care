@@ -12,18 +12,18 @@ export default function Blog() {
   const blogPosts = [
     {
       blogName: "Reginald Beresford goes viral on his 100th Birthday",
-      blogImg: "../public/images/Reg1.jpg",
+      blogImg: "/images/Reg1.jpg",
       alt: "Reginald Beresford donning his many war medals and outfit",
     },
     {
       blogName:
         "From Support Worker to Paramedic Graduate: Georgia Rowbotham's Inspiring Journey",
-      blogImg: "../public/images/Georgia (2).png",
+      blogImg: "/images/Georgia (2).png",
       alt: "Georgia throwing her graduation cap in the air on graduation day",
     },
     {
       blogName: "Enhancing Quality Care: Libra Care's Staff Training Update",
-      blogImg: "../public/images/Scales.png",
+      blogImg: "/images/Scales.png",
     },
   ];
 
@@ -120,7 +120,7 @@ export default function Blog() {
           >
             <Carousel.Item>
               <img
-                src="../public/images/Reg4.jpg"
+                src="/images/Reg4.jpg"
                 alt="Reginald Beresford holding a birthday balloon with 100 on it"
                 style={{
                   display: "flex",
@@ -135,7 +135,7 @@ export default function Blog() {
             </Carousel.Item>
             <Carousel.Item>
               <img
-                src="../public/images/Reg2.jpg"
+                src="/images/Reg2.jpg"
                 style={{
                   display: "flex",
                   justifyContent: "center",
@@ -150,7 +150,7 @@ export default function Blog() {
             </Carousel.Item>
             <Carousel.Item>
               <img
-                src="../public/images/Reg3.jpg"
+                src="/images/Reg3.jpg"
                 style={{
                   display: "flex",
                   justifyContent: "center",
@@ -204,7 +204,7 @@ export default function Blog() {
               target="_blank"
             >
               <img
-                src="../public/images/Post.jpg"
+                src="/images/Post.jpg"
                 alt="Facebook post of Reginald Beresford with thousands of likes and comments"
                 style={{
                   maxWidth: "100%",
@@ -262,7 +262,7 @@ export default function Blog() {
               </p>
             </div>
             <img
-              src="./public/images/Georgia.png"
+              src="/images/Georgia.png"
               alt="Georgia Rowbotham throwing her graduation cap into the air on graduation day"
               style={{
                 width: "100%",
