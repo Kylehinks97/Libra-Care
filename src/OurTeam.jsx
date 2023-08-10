@@ -7,7 +7,7 @@ export default function OurTeam() {
       name: "Deanne Hinks",
       role: "Registered Manager",
       alt: "Registered Manager of Libra Care - Deanne Hinks",
-      img: "../public/Deanne.jpg",
+      img: "../public/images/Deanne.jpg",
       paragraph1:
         "My career within Health and Social Care has been diverse and focused on supporting individuals with a variety of different needs including frail elderly, elderly mental health and younger adults with profound learning disabilities.",
       paragraph3:
@@ -21,7 +21,7 @@ export default function OurTeam() {
       name: "Vicki Bates",
       role: "Responsible Individual",
       alt: "Responsible Individual of Libra Care - Vicki Bates",
-      img: "../public/Vicki.jpg",
+      img: "../public/images/Vicki.jpg",
       paragraph1:
         "I previously worked as a registered nurse for over nine years, after graduating from the University of Wolverhampton.",
       paragraph2:

@@ -14,14 +14,14 @@ export default function LogoCarousel() {
             target="_blank"
           >
             <img
-              src="../public/CQC.png"
+              src="../public/images/CQC.png"
               id="cqc"
               alt="Care Quality Commission Logo - Rated Good"
             ></img>
           </a>
           <a href="https://www.skillsforcare.org.uk/Home.aspx" target="_blank">
             <img
-              src="../public/skills for care.png"
+              src="../public/images/skills for care.png"
               id="skills-for-care"
               alt="Skills for care logo"
             ></img>
@@ -35,7 +35,7 @@ export default function LogoCarousel() {
         >
           <a href="https://www.savinglivesuk.com/" target="_blank">
             <img
-              src="../public/save lives.png"
+              src="../public/images/save lives.png"
               id="save-lives"
               alt="Save lives charity logo for HIV"
             ></img>
@@ -45,7 +45,7 @@ export default function LogoCarousel() {
             target="_blank"
           >
             <img
-              src="../public/Indeed_logo.svg.png"
+              src="../public/images/Indeed_logo.svg.png"
               id="indeed"
               alt="Indeed Logo"
             ></img>

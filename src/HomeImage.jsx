@@ -37,7 +37,7 @@ export default function HomeImage() {
       </Link>
       <div style={{ position: "relative", width: "100%" }}>
         <img
-          src="/public/Home Image.png"
+          src="../public/images/Home Image.png"
           width="100%"
           alt="Elderly lady enjoying the company of her female carer"
           id="background-img"
@@ -117,7 +117,7 @@ export default function HomeImage() {
         <a href="https://www.cqc.org.uk/location/1-2564241746" target="_blank">
           <img
             id="CQC-logo"
-            src="../public/CQC.png"
+            src="../public/images/CQC.png"
             alt="Care Quality Commission - Rated Good"
             style={{
               display: "flex",
