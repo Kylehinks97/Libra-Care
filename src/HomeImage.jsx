@@ -117,7 +117,7 @@ export default function HomeImage() {
         <a href="https://www.cqc.org.uk/location/1-2564241746" target="_blank">
           <img
             id="CQC-logo"
-            src="../public/images/CQC.png"
+            src="/images/CQC.png"
             alt="Care Quality Commission - Rated Good"
             style={{
               display: "flex",
