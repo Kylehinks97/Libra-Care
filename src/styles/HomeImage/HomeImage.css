@@ -1,5 +1,5 @@
 #background-img {
-  filter: blur(calc(0.17vw)) brightness(calc(80%));
+  filter: blur(calc(0.07vw)) brightness(calc(80%));
   clip-path: polygon(0 0, 100% 0, 100% 70%, 0 80%);
   border-top: 1px solid coral;
   z-index: 1;

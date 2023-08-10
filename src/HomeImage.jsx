@@ -4,33 +4,37 @@ import "./styles/HomeImage/title.css";
 import "./styles/HomeImage/inquiry-button.css";
 import "./styles/HomeImage/indeed-logo.css";
 import "./styles/HomeImage/slogan.css";
-
+import { Link } from "react-router-dom";
 import CareerCarousel from "./CareerCarousel";
 
 export default function HomeImage() {
   return (
     <>
-      <div id="hiring-banner-wrapper" style={{ maxWidth: "100%" }}>
-        <h6
-          style={{
-            background: "#C8FFC8",
-            padding: "1px",
-            display: "flex",
-            justifyContent: "center",
-            fontSize: "2em",
-            margin: 0,
-            borderBottom: "3px solid #C8FFC8",
-            color: "green",
-            letterSpacing: "-0.03em",
-            whiteSpace: "nowrap",
-            width: "100%",
-            cursor: "pointer",
-          }}
-          id="hiring-banner"
+      <Link to="/inquiry">
+        <div id="hiring-banner-wrapper" style={{ maxWidth: "100%" }}>
+          <h6
+            style={{
+              background: "#C8FFC8",
+              padding: "1px",
+              display: "flex",
+              justifyContent: "center",
+              fontSize: "2em",
+              margin: 0,
+              borderBottom: "3px solid #C8FFC8",
+              color: "green",
+              letterSpacing: "-0.03em",
+              whiteSpace: "nowrap",
+              width: "100%",
+              cursor: "pointer",
+              textDecoration: "underline",
+            }}
+            id="hiring-banner"
           >
-          🚀&nbsp;<span>We are currently hiring carers! Apply Now</span>&nbsp;💼
-        </h6>
-      </div>
+            🚀&nbsp;<span style={{textDecoration: "underline"}}>We are currently hiring carers! Apply Now</span>
+            &nbsp;💼
+          </h6>
+        </div>
+      </Link>
       <div style={{ position: "relative", width: "100%" }}>
         <img
           src="/src/assets/Home Image.png"
@@ -59,7 +63,7 @@ export default function HomeImage() {
         <h1
           style={{
             position: "absolute",
-       
+            fontWeight: "900",
             zIndex: 3,
             left: "50%",
             transform: "translateX(-50%)",

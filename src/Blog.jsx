@@ -22,8 +22,8 @@ export default function Blog() {
       alt: "Georgia throwing her graduation cap in the air on graduation day",
     },
     {
-      blogName: "Libra Care Training Update",
-      blogImg: "../src/assets/old man.jpg",
+      blogName: "Enhancing Quality Care: Libra Care's Staff Training Update",
+      blogImg: "../src/assets/Scales.png",
     },
   ];
 
@@ -313,8 +313,148 @@ export default function Blog() {
         </>
       )}
       {selectedPost === 3 && (
-        <div>
-          <p>hello</p>
+        <div style={{ margin: "auto auto 2em auto" }} id="reginald-blog">
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+            }}
+            onClick={() => {
+              setBlogSelected(false);
+              setSelectedPost(false);
+            }}
+          >
+            <IoArrowBackCircle
+              style={{
+                fontSize: "2em",
+                margin: "0em 0.2em 0.5em 0em",
+                alignItems: "center",
+                color: "#ff6b3d",
+                cursor: "pointer",
+              }}
+              alt="Go back arrow"
+            />
+            <p style={{ cursor: "pointer" }} id="blog-back">
+              BACK
+            </p>
+          </div>
+          <h6>Enhancing Quality Care: Libra Care's Staff Training Update</h6>
+          <p>
+            In its unyielding commitment to providing top-notch care services,
+            Libra Care is excited to announce a significant advancement in staff
+            training. With the new training update, Libra Care's staff members
+            are now fully equipped to deliver exceptional care to their
+            customers.<br></br>
+            <br></br>This comprehensive training program ensures that every
+            staff member possesses the skills, knowledge, and empathy necessary
+            to provide compassionate and effective care across a range of
+            critical areas.<br></br>
+            <br></br>Recognizing the multifaceted nature of care provision,
+            Libra Care's new training program encompasses a wide spectrum of
+            courses that address the diverse needs of their clients. From
+            medical concerns to emotional well-being, each course has been
+            carefully curated to ensure staff members are well-prepared to
+            handle various situations with competence and sensitivity. <br></br>
+            <br></br>Key courses include, but not limited to:<br></br>
+            <br></br>
+            <ul>
+              <li>
+                Adult Safeguarding: Libra Care's staff are trained to recognize
+                and respond to signs of abuse or neglect, ensuring the safety
+                and well-being of their customers at all times.
+              </li>
+              <br />
+              <li>
+                Duty of Care: This course underscores the ethical and legal
+                responsibilities that staff members have toward their customers,
+                ensuring a high standard of care delivery.{" "}
+              </li>
+              <br />
+              <li>
+                Dementia Care: Equipping staff with the knowledge and techniques
+                to provide specialized care for individuals living with
+                dementia, fostering a supportive and understanding environment.
+              </li>
+              <br />
+              <li>
+                Infection Control: With a focus on hygiene and disease
+                prevention, this course ensures that staff members can maintain
+                a safe and clean environment for their customers.{" "}
+              </li>
+              <br />
+              <li>
+                Mental Capacity: Libra Care's staff are trained to respect the
+                rights and autonomy of individuals while also ensuring their
+                safety and well-being. Nutrition and Hydration: Recognizing the
+                importance of proper nutrition, staff members are educated on
+                dietary requirements and how to support customers' dietary
+                needs.
+              </li>
+              <br />
+              <li>
+                Catheter Care: A specialized course that prepares staff to
+                provide attentive care to individuals with catheters, promoting
+                comfort and health.
+              </li>
+              <br />
+              <li>
+                Personal Care: This course emphasizes the significance of
+                maintaining personal dignity while delivering essential care
+                services.{" "}
+              </li>
+              <br />
+              <li>
+                Safe Administration of Medicines: Staff members are trained to
+                administer medications safely and accurately, minimizing risks
+                and ensuring proper treatment.
+              </li>
+              <br />
+              <li>
+                Manual Handling: To prevent injuries, staff members are taught
+                proper techniques for lifting and assisting individuals.{" "}
+              </li>
+              <br />
+              <li>
+                Basic Life Support: This critical course equips staff with
+                life-saving skills such as CPR, ensuring they can respond
+                effectively in emergencies.{" "}
+              </li>
+              <br />
+              <li>
+                The Care Certificate: A comprehensive program that covers
+                various aspects of care delivery, setting a high standard for
+                all Libra Care staff members.{" "}
+              </li>
+              <br />
+              <li>
+                Equality and Diversity: Fostering an inclusive environment, this
+                course sensitizes staff members to the diverse needs of their
+                customers.
+              </li>
+              <br />
+              <li>
+                Falls Awareness: Staff are trained to identify fall risks and
+                take preventive measures to ensure customer safety.
+              </li>
+              <br />
+              <li>
+                {" "}
+                Sepsis Awareness: This course educates staff about the signs,
+                symptoms, and proper response to sepsis, a potentially
+                life-threatening condition.
+              </li>
+            </ul>
+              With this new training update, Libra Care has reaffirmed its
+              dedication to providing exceptional care services. By ensuring
+              that staff members are well-versed in a comprehensive range of
+              topics, from medical procedures to empathetic communication, Libra
+              Care stands as a shining example of excellence in the caregiving
+              industry. <br />
+              <br />
+              The enhanced skills and knowledge of the staff are bound to have a
+              positive impact on the lives of the customers they serve, creating
+              an environment of trust, compassion, and professionalism.
+          </p>
         </div>
       )}
       <Footer />

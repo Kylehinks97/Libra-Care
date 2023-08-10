@@ -10,6 +10,7 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import StepContent from "@mui/material/StepContent";
 import Button from "@mui/material/Button";
+import Typography from '@mui/material/Typography';
 
 
 export default function FormComponent() {
@@ -129,7 +130,7 @@ export default function FormComponent() {
     {
       label: "Submit your CV",
       description:
-        "Your application would be strengthened with a CV, you may send it here, alternatively you can skip this",
+        "Your application would be strengthened with a CV, you may send it here, alternatively you can skip this.",
     },
     {
       label: "Await our response",
@@ -155,7 +156,7 @@ export default function FormComponent() {
     const formData = {};
 
     formData["from_name"] = "kyle.s.hinks1997@gmail.com";
-    formData["to_name"] = "kyle.s.hinks@outlook.com";
+    formData["to_name"] = "libracare@outlook.com";
     formData["subject"] = "Test Email";
     formData[
       "message"
@@ -218,23 +219,11 @@ Contact number of their 2nd reference:   ${employeeRefContactNumber2}
       });
   };
 
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const handleReset = () => {
-    setActiveStep(0);
-  };
-
   function handleSubmitForMyself() {
     const formDataForMyself = {};
 
-    formDataForMyself["from_name"] = "kyle.s.hinks1997@gmail.com";
-    formDataForMyself["to_name"] = "kyle.s.hinks@outlook.com";
+    formDataForMyself["from_name"] = "THE LIBRA CARE WEBSITE";
+    formDataForMyself["to_name"] = "libracare@outlook.com";
     formDataForMyself["subject"] = "Test Email";
     formDataForMyself[
       "message"
@@ -296,7 +285,7 @@ They gave this as optional further information: ${anythingMore}
     const formDataForAnother = {};
 
     formDataForAnother["from_name"] = "kyle.s.hinks1997@gmail.com";
-    formDataForAnother["to_name"] = "kyle.s.hinks@outlook.com";
+    formDataForAnother["to_name"] = "libracare@outlook.com";
     formDataForAnother["subject"] = "Test Email";
     formDataForAnother[
       "message"
@@ -357,6 +346,18 @@ They gave this as optional further information: ${anythingMore}
         console.error("Email sending failed:", error);
       });
   }
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
+  const handleReset = () => {
+    setActiveStep(0);
+  };
 
   return (
     <div
@@ -1283,7 +1284,7 @@ They gave this as optional further information: ${anythingMore}
                     ? handleSubmitForMyself()
                     : handleSubmitForAnother();
                   setCareAppSent(true);
-                  id="submit-button"
+                  id = "submit-button";
                 }}
               >
                 SUBMIT
@@ -1677,7 +1678,7 @@ They gave this as optional further information: ${anythingMore}
               style={{
                 display: "flex",
                 justifyContent: "center",
-                cursor: "pointer"
+                cursor: "pointer",
               }}
               id="submit-button"
             >
@@ -1733,7 +1734,7 @@ They gave this as optional further information: ${anythingMore}
                               }, 1000);
                             }
                             if (index === steps.length - 2) {
-                              window.open("mailto:recipient@example.com");
+                              window.open("mailto:libracare@outlook.com");
                               handleNext();
                             } else {
                               handleNext();
