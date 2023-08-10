@@ -33,7 +33,7 @@ export default function CareerCarousel() {
               />
               &nbsp;Pay/Benefits&nbsp;on&nbsp;
               <img
-                src="../src/assets/images/Indeed_logo.svg.png"
+                src="../public/Indeed_logo.svg.png"
                 style={{ width: "65px" }}
                 href="https://uk.indeed.com/cmp/Libra-Care-Ltd/reviews#:~:text=Excellent%20place%20to%20work!,are%20both%20supportive%20and%20helpful!"
                 alt="Indeed logo"
@@ -62,7 +62,7 @@ export default function CareerCarousel() {
               />
               &nbsp;Job Security and Advancement&nbsp;on&nbsp;
               <img
-                src="../src/assets/images/Indeed_logo.svg.png"
+                src="../public/Indeed_logo.svg.png"
                 style={{ width: "65px" }}
                 id="indeed-logo"
                 alt="Indeed logo"
@@ -90,7 +90,7 @@ export default function CareerCarousel() {
               />
               &nbsp;Management&nbsp;on&nbsp;
               <img
-                src="../src/assets/images/Indeed_logo.svg.png"
+                src="../public/Indeed_logo.svg.png"
                 style={{ width: "65px" }}
                 alt="Indeed logo"
                 id="indeed-logo"
@@ -118,7 +118,7 @@ export default function CareerCarousel() {
               />
               &nbsp;Culture&nbsp;on&nbsp;
               <img
-                src="../src/assets/images/Indeed_logo.svg.png"
+                src="../public/Indeed_logo.svg.png"
                 style={{ width: "65px" }}
                 alt="Indeed logo"
                 id="indeed-logo"
