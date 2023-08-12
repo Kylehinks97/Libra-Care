@@ -10,7 +10,7 @@ import CareerCarousel from "./CareerCarousel";
 export default function HomeImage() {
   return (
     <>
-      <Link to="/inquiry">
+      <Link to="/inquiry" style={{textDecoration: "none"}}>
         <div id="hiring-banner-wrapper" style={{ maxWidth: "100%" }}>
           <h6
             style={{
@@ -26,11 +26,10 @@ export default function HomeImage() {
               whiteSpace: "nowrap",
               width: "100%",
               cursor: "pointer",
-              textDecoration: "underline",
             }}
             id="hiring-banner"
           >
-            🚀&nbsp;<span style={{textDecoration: "underline"}}>We are currently hiring carers! Apply Now</span>
+            🚀&nbsp;<span >We are currently hiring carers! Apply Now</span>
             &nbsp;💼
           </h6>
         </div>

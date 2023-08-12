@@ -1,105 +1,104 @@
-import { FormGroup } from "@mui/material";
-import React from "react";
-import Form from "react-bootstrap/Form";
-import "./styles/FormComponent.css";
-import { useState } from "react";
-import emailjs from "emailjs-com";
-import Box from "@mui/material/Box";
-import Stepper from "@mui/material/Stepper";
-import Step from "@mui/material/Step";
-import StepLabel from "@mui/material/StepLabel";
-import StepContent from "@mui/material/StepContent";
-import Button from "@mui/material/Button";
-import Typography from '@mui/material/Typography';
-
+import { FormGroup } from "@mui/material"
+import React from "react"
+import Form from "react-bootstrap/Form"
+import "./styles/FormComponent.css"
+import { useState } from "react"
+import emailjs from "emailjs-com"
+import Box from "@mui/material/Box"
+import Stepper from "@mui/material/Stepper"
+import Step from "@mui/material/Step"
+import StepLabel from "@mui/material/StepLabel"
+import StepContent from "@mui/material/StepContent"
+import Button from "@mui/material/Button"
+import Typography from "@mui/material/Typography"
 
 export default function FormComponent() {
-  const [isChecked, setIsChecked] = useState(false);
-  const [wantCare, setWantCare] = useState(false);
-  const [wantJob, setWantJob] = useState(false);
-  const [forMyself, setForMyself] = useState(false);
-  const [forAnother, setForAnother] = useState(false);
-  const [relationship, setRelationship] = useState("");
-  const [customRelationship, setCustomRelationship] = useState("");
-  const [inquirersName, setInquirersName] = useState("");
-  const [personReceivingCare, setPersonReceivingCare] = useState("");
-  const [inquirersEmail, setInquirersEmail] = useState("");
-  const [contactNumber, setContactNumber] = useState("");
-  const [firstLineOfAddress, setFirstLineOfAddress] = useState("");
-  const [secondLineOfAddress, setSecondLineOfAddress] = useState("");
-  const [postCode, setPostCode] = useState("");
+  const [isChecked, setIsChecked] = useState(false)
+  const [wantCare, setWantCare] = useState(false)
+  const [wantJob, setWantJob] = useState(false)
+  const [forMyself, setForMyself] = useState(false)
+  const [forAnother, setForAnother] = useState(false)
+  const [relationship, setRelationship] = useState("")
+  const [customRelationship, setCustomRelationship] = useState("")
+  const [inquirersName, setInquirersName] = useState("")
+  const [personReceivingCare, setPersonReceivingCare] = useState("")
+  const [inquirersEmail, setInquirersEmail] = useState("")
+  const [contactNumber, setContactNumber] = useState("")
+  const [firstLineOfAddress, setFirstLineOfAddress] = useState("")
+  const [secondLineOfAddress, setSecondLineOfAddress] = useState("")
+  const [postCode, setPostCode] = useState("")
 
-  const [continenceCare, setContinenceCare] = useState(false);
-  const [personalCare, setPersonalCare] = useState(false);
-  const [mealPrep, setMealPrep] = useState(false);
-  const [medicationAdmin, setMedicationAdmin] = useState(false);
-  const [domesticDuties, setDomesticDuties] = useState(false);
-  const [feeding, setFeeding] = useState(false);
-  const [oralCare, setOralCare] = useState(false);
-  const [notSure, setNotSure] = useState(false);
-  const [other, setOther] = useState(false);
-  const [moreDetails, setMoreDetails] = useState("");
-  const [visits, setVisits] = useState("");
-  const [visitsForMyself, setVisitsForMyself] = useState("");
-  const [moreDetailsForMyself, setMoreDetailsForMyself] = useState("");
-  const [anythingMore, setAnythingMore] = useState("");
+  const [continenceCare, setContinenceCare] = useState(false)
+  const [personalCare, setPersonalCare] = useState(false)
+  const [mealPrep, setMealPrep] = useState(false)
+  const [medicationAdmin, setMedicationAdmin] = useState(false)
+  const [domesticDuties, setDomesticDuties] = useState(false)
+  const [feeding, setFeeding] = useState(false)
+  const [oralCare, setOralCare] = useState(false)
+  const [notSure, setNotSure] = useState(false)
+  const [other, setOther] = useState(false)
+  const [moreDetails, setMoreDetails] = useState("")
+  const [visits, setVisits] = useState("")
+  const [visitsForMyself, setVisitsForMyself] = useState("")
+  const [moreDetailsForMyself, setMoreDetailsForMyself] = useState("")
+  const [anythingMore, setAnythingMore] = useState("")
 
-  const [employeeName, setEmployeeName] = useState("");
-  const [employeeEmail, setEmployeeEmail] = useState("");
-  const [employeeContactNumber, setEmployeeContactNumber] = useState("");
-  const [employeeDOB, setEmployeeDOB] = useState("");
+  const [employeeName, setEmployeeName] = useState("")
+  const [employeeEmail, setEmployeeEmail] = useState("")
+  const [employeeContactNumber, setEmployeeContactNumber] = useState("")
+  const [employeeDOB, setEmployeeDOB] = useState("")
   const [employeeNationalInsurance, setEmployeeNationalInsurance] =
-    useState("");
+    useState("")
   const [employeeFirstLineOfAddress, setEmployeeFirstLineOfAddress] =
-    useState("");
+    useState("")
   const [employeeSecondLineOfAddress, setEmployeeSecondLineOfAddress] =
-    useState("");
-  const [employeePostCode, setEmployeePostCode] = useState("");
-  const [employeeExperience, setEmployeeExperience] = useState("");
-  const [employeeSkills, setEmployeeSkills] = useState("");
-  const [employeeQualifications, setEmployeeQualifications] = useState("");
-  const [employeeCanDrive, setEmployeeCanDrive] = useState(false);
-  const [employeeCannotDrive, setEmployeeCannotDrive] = useState(false);
-  const [employeeIsWilling, setEmployeeIsWilling] = useState(false);
-  const [employeeIsNotWilling, setEmployeeIsNotWilling] = useState(false);
+    useState("")
+  const [employeePostCode, setEmployeePostCode] = useState("")
+  const [employeeExperience, setEmployeeExperience] = useState("")
+  const [employeeSkills, setEmployeeSkills] = useState("")
+  const [employeeQualifications, setEmployeeQualifications] = useState("")
+  const [employeeCanDrive, setEmployeeCanDrive] = useState(false)
+  const [employeeCannotDrive, setEmployeeCannotDrive] = useState(false)
+  const [employeeIsWilling, setEmployeeIsWilling] = useState(false)
+  const [employeeIsNotWilling, setEmployeeIsNotWilling] = useState(false)
 
-  const [employeeRefEmail, setEmployeeRefEmail] = useState("");
-  const [employeeRefName, setEmployeeRefName] = useState("");
-  const [employeeRefContactNumber, setEmployeeRefContactNumber] = useState("");
+  const [employeeRefEmail, setEmployeeRefEmail] = useState("")
+  const [employeeRefName, setEmployeeRefName] = useState("")
+  const [employeeRefContactNumber, setEmployeeRefContactNumber] = useState("")
 
-  const [employeeRefEmail2, setEmployeeRefEmail2] = useState("");
-  const [employeeRefName2, setEmployeeRefName2] = useState("");
+  const [employeeRefEmail2, setEmployeeRefEmail2] = useState("")
+  const [employeeRefName2, setEmployeeRefName2] = useState("")
   const [employeeRefContactNumber2, setEmployeeRefContactNumber2] =
-    useState("");
+    useState("")
 
-  const [cv, setCV] = useState(false);
+  const [cv, setCV] = useState(false)
 
   const [inquirersAndReceiversName, setInquirersAndReceiversName] =
-    useState("");
+    useState("")
   const [inquirersAndReceiversEmail, setInquirersAndReceiversEmail] =
-    useState("");
+    useState("")
   const [
     inquirersAndReceiversContactNumber,
     setInquirersAndReceiversContactNumber,
-  ] = useState("");
+  ] = useState("")
   const [
     inquirersAndReceiversFirstLineOfAddress,
     setInquirersAndReceiversFirstLineOfAddress,
-  ] = useState("");
+  ] = useState("")
   const [
     inquirersAndReceiversSecondLineOfAddress,
     setInquirersAndReceiversSecondLineOfAddress,
-  ] = useState("");
+  ] = useState("")
   const [inquirersAndReceiversPostCode, setInquirersAndReceiversPostCode] =
-    useState("");
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [jobApplication, setJobApplication] = useState(false);
-  const [activeStep, setActiveStep] = React.useState(0);
+    useState("")
+  const [selectedFile, setSelectedFile] = useState(null)
+  const [jobApplication, setJobApplication] = useState(false)
+  const [activeStep, setActiveStep] = React.useState(0)
 
-  const [completedJobApplication, setCompletedJobApplication] = useState(false);
-  const [careAppSent, setCareAppSent] = useState(false);
+  const [completedJobApplication, setCompletedJobApplication] = useState(false)
+  const [careAppSent, setCareAppSent] = useState(false)
 
-  console.log(careAppSent, "<-->");
+  console.log(careAppSent, "<-->")
 
   const visitsGreenList = [
     "Weekly",
@@ -110,7 +109,7 @@ export default function FormComponent() {
     "Four times a day",
     "Five, or more times a day",
     "Not sure",
-  ];
+  ]
   const relationshipsGreenList = [
     "Son/Daughter",
     "Spouse",
@@ -120,7 +119,7 @@ export default function FormComponent() {
     "Parent",
     "Friend",
     "Other",
-  ];
+  ]
 
   const steps = [
     {
@@ -136,7 +135,7 @@ export default function FormComponent() {
       label: "Await our response",
       description: `Application complete! Sit back and relax whilst we review your application.`,
     },
-  ];
+  ]
 
   const careRequirements = [
     continenceCare,
@@ -148,16 +147,16 @@ export default function FormComponent() {
     oralCare,
     notSure,
     other,
-  ];
+  ]
 
   const handleEmployeeSubmit = () => {
-    console.log("hi");
+    console.log("hi")
 
-    const formData = {};
+    const formData = {}
 
-    formData["from_name"] = "kyle.s.hinks1997@gmail.com";
-    formData["to_name"] = "libracare@outlook.com";
-    formData["subject"] = "Test Email";
+    formData["from_name"] = "kyle.s.hinks1997@gmail.com"
+    formData["to_name"] = "libracare@outlook.com"
+    formData["subject"] = "Test Email"
     formData[
       "message"
     ] = `${employeeName} has applied for a job with Libra Care. Their details are as follows:
@@ -202,7 +201,7 @@ Email of their 2nd reference:   ${employeeRefEmail2},
 \n
 Contact number of their 2nd reference:   ${employeeRefContactNumber2}
 
-`;
+`
 
     emailjs
       .send(
@@ -212,19 +211,19 @@ Contact number of their 2nd reference:   ${employeeRefContactNumber2}
         "6qbARiXYk2OZNtVe3"
       )
       .then((response) => {
-        console.log("Email sent successfully:", response.status, response.text);
+        console.log("Email sent successfully:", response.status, response.text)
       })
       .catch((error) => {
-        console.error("Email sending failed:", error);
-      });
-  };
+        console.error("Email sending failed:", error)
+      })
+  }
 
   function handleSubmitForMyself() {
-    const formDataForMyself = {};
+    const formDataForMyself = {}
 
-    formDataForMyself["from_name"] = "THE LIBRA CARE WEBSITE";
-    formDataForMyself["to_name"] = "libracare@outlook.com";
-    formDataForMyself["subject"] = "Test Email";
+    formDataForMyself["from_name"] = "THE LIBRA CARE WEBSITE"
+    formDataForMyself["to_name"] = "libracare@outlook.com"
+    formDataForMyself["subject"] = "Test Email"
     formDataForMyself[
       "message"
     ] = `${inquirersAndReceiversName} has applied for care for themselves. Their details are as follows:
@@ -264,7 +263,7 @@ Further details entered about care requirements (if they selected other or not s
 They need this many visits: ${visits},
 \n
 They gave this as optional further information: ${anythingMore}
-`;
+`
 
     emailjs
       .send(
@@ -274,19 +273,19 @@ They gave this as optional further information: ${anythingMore}
         "6qbARiXYk2OZNtVe3"
       )
       .then((response) => {
-        console.log("Email sent successfully:", response.status, response.text);
+        console.log("Email sent successfully:", response.status, response.text)
       })
       .catch((error) => {
-        console.error("Email sending failed:", error);
-      });
+        console.error("Email sending failed:", error)
+      })
   }
 
   function handleSubmitForAnother() {
-    const formDataForAnother = {};
+    const formDataForAnother = {}
 
-    formDataForAnother["from_name"] = "kyle.s.hinks1997@gmail.com";
-    formDataForAnother["to_name"] = "libracare@outlook.com";
-    formDataForAnother["subject"] = "Test Email";
+    formDataForAnother["from_name"] = "kyle.s.hinks1997@gmail.com"
+    formDataForAnother["to_name"] = "libracare@outlook.com"
+    formDataForAnother["subject"] = "Test Email"
     formDataForAnother[
       "message"
     ] = `${inquirersName} has applied for care for another.
@@ -330,7 +329,7 @@ Further details entered about care requirements (if they selected other or not s
 They need this many visits: ${visits},
 \n
 They gave this as optional further information: ${anythingMore}
-`;
+`
 
     emailjs
       .send(
@@ -340,24 +339,24 @@ They gave this as optional further information: ${anythingMore}
         "6qbARiXYk2OZNtVe3"
       )
       .then((response) => {
-        console.log("Email sent successfully:", response.status, response.text);
+        console.log("Email sent successfully:", response.status, response.text)
       })
       .catch((error) => {
-        console.error("Email sending failed:", error);
-      });
+        console.error("Email sending failed:", error)
+      })
   }
 
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
+    setActiveStep((prevActiveStep) => prevActiveStep + 1)
+  }
 
   const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
+    setActiveStep((prevActiveStep) => prevActiveStep - 1)
+  }
 
   const handleReset = () => {
-    setActiveStep(0);
-  };
+    setActiveStep(0)
+  }
 
   return (
     <div
@@ -404,28 +403,28 @@ They gave this as optional further information: ${anythingMore}
                   id="care-radio"
                   checked={wantCare}
                   onChange={() => {
-                    setIsChecked(true);
-                    setWantCare(true);
-                    setWantJob(false);
-                    setEmployeeName("");
-                    setEmployeeDOB("");
-                    setEmployeeEmail("");
-                    setEmployeeContactNumber("");
-                    setEmployeeFirstLineOfAddress("");
-                    setEmployeeSecondLineOfAddress("");
-                    setEmployeePostCode("");
-                    setEmployeeNationalInsurance("");
-                    setEmployeeExperience("");
-                    setEmployeeSkills("");
-                    setEmployeeQualifications("");
-                    setEmployeeCanDrive(false);
-                    setEmployeeCannotDrive(false);
-                    setEmployeeIsWilling(false);
-                    setEmployeeIsNotWilling(false);
-                    setEmployeeRefName("");
-                    setEmployeeRefEmail("");
-                    setEmployeeRefContactNumber("");
-                    setCV(false);
+                    setIsChecked(true)
+                    setWantCare(true)
+                    setWantJob(false)
+                    setEmployeeName("")
+                    setEmployeeDOB("")
+                    setEmployeeEmail("")
+                    setEmployeeContactNumber("")
+                    setEmployeeFirstLineOfAddress("")
+                    setEmployeeSecondLineOfAddress("")
+                    setEmployeePostCode("")
+                    setEmployeeNationalInsurance("")
+                    setEmployeeExperience("")
+                    setEmployeeSkills("")
+                    setEmployeeQualifications("")
+                    setEmployeeCanDrive(false)
+                    setEmployeeCannotDrive(false)
+                    setEmployeeIsWilling(false)
+                    setEmployeeIsNotWilling(false)
+                    setEmployeeRefName("")
+                    setEmployeeRefEmail("")
+                    setEmployeeRefContactNumber("")
+                    setCV(false)
                   }}
                 />
               </div>
@@ -438,40 +437,40 @@ They gave this as optional further information: ${anythingMore}
                   style={{ whiteSpace: "nowrap" }}
                   checked={wantJob}
                   onChange={() => {
-                    setIsChecked(true);
-                    setWantJob(true);
-                    setWantCare(false);
-                    setForAnother(false);
-                    setForMyself(false);
-                    setPersonReceivingCare("");
-                    setContinenceCare(false);
-                    setPersonalCare(false);
-                    setOralCare(false);
-                    setMealPrep(false);
-                    setMedicationAdmin(false);
-                    setFeeding(false);
-                    setOther(false);
-                    setNotSure(false);
-                    setDomesticDuties(false);
-                    setPostCode("");
-                    setFirstLineOfAddress("");
-                    setInquirersEmail("");
-                    setInquirersAndReceiversName("");
-                    setInquirersAndReceiversContactNumber("");
-                    setInquirersAndReceiversEmail("");
-                    setInquirersAndReceiversPostCode("");
-                    setInquirersAndReceiversSecondLineOfAddress("");
-                    setPersonReceivingCare("");
-                    setMoreDetails("");
-                    setRelationship("");
-                    setCustomRelationship("");
-                    setInquirersName("");
-                    setForMyself(false);
-                    setForAnother(false);
-                    setAnythingMore("");
-                    setVisits("");
-                    setVisitsForMyself("");
-                    setContactNumber("");
+                    setIsChecked(true)
+                    setWantJob(true)
+                    setWantCare(false)
+                    setForAnother(false)
+                    setForMyself(false)
+                    setPersonReceivingCare("")
+                    setContinenceCare(false)
+                    setPersonalCare(false)
+                    setOralCare(false)
+                    setMealPrep(false)
+                    setMedicationAdmin(false)
+                    setFeeding(false)
+                    setOther(false)
+                    setNotSure(false)
+                    setDomesticDuties(false)
+                    setPostCode("")
+                    setFirstLineOfAddress("")
+                    setInquirersEmail("")
+                    setInquirersAndReceiversName("")
+                    setInquirersAndReceiversContactNumber("")
+                    setInquirersAndReceiversEmail("")
+                    setInquirersAndReceiversPostCode("")
+                    setInquirersAndReceiversSecondLineOfAddress("")
+                    setPersonReceivingCare("")
+                    setMoreDetails("")
+                    setRelationship("")
+                    setCustomRelationship("")
+                    setInquirersName("")
+                    setForMyself(false)
+                    setForAnother(false)
+                    setAnythingMore("")
+                    setVisits("")
+                    setVisitsForMyself("")
+                    setContactNumber("")
                   }}
                 />
               </div>
@@ -492,29 +491,29 @@ They gave this as optional further information: ${anythingMore}
                       className="longer-questions"
                       checked={forMyself}
                       onChange={() => {
-                        setForMyself(true);
-                        setForAnother(false);
-                        setInquirersName("");
-                        setRelationship("");
-                        setPersonReceivingCare("");
-                        setContactNumber("");
-                        setInquirersEmail("");
-                        setFirstLineOfAddress("");
-                        setPostCode("");
-                        setContinenceCare(false);
-                        setPersonalCare(false);
-                        setContinenceCare(false);
-                        setDomesticDuties(false);
-                        setMealPrep(false);
-                        setMedicationAdmin(false);
-                        setFeeding(false);
-                        setOralCare(false);
-                        setOther(false);
-                        setNotSure(false);
-                        setVisits("");
-                        setMoreDetails("");
-                        setInquirersAndReceiversName("");
-                        setCustomRelationship("");
+                        setForMyself(true)
+                        setForAnother(false)
+                        setInquirersName("")
+                        setRelationship("")
+                        setPersonReceivingCare("")
+                        setContactNumber("")
+                        setInquirersEmail("")
+                        setFirstLineOfAddress("")
+                        setPostCode("")
+                        setContinenceCare(false)
+                        setPersonalCare(false)
+                        setContinenceCare(false)
+                        setDomesticDuties(false)
+                        setMealPrep(false)
+                        setMedicationAdmin(false)
+                        setFeeding(false)
+                        setOralCare(false)
+                        setOther(false)
+                        setNotSure(false)
+                        setVisits("")
+                        setMoreDetails("")
+                        setInquirersAndReceiversName("")
+                        setCustomRelationship("")
                       }}
                     />
                   </div>
@@ -526,32 +525,32 @@ They gave this as optional further information: ${anythingMore}
                       checked={forAnother}
                       className="longer-questions"
                       onChange={() => {
-                        setForAnother(true);
-                        setForMyself(false);
-                        setInquirersAndReceiversName("");
-                        setInquirersAndReceiversEmail("");
-                        setInquirersAndReceiversContactNumber("");
-                        setCustomRelationship("");
-                        setForMyself(false);
-                        setPersonReceivingCare("");
-                        setContinenceCare(false);
-                        setPersonalCare(false);
-                        setOralCare(false);
-                        setMealPrep(false);
-                        setMedicationAdmin(false);
-                        setFeeding(false);
-                        setOther(false);
-                        setNotSure(false);
-                        setDomesticDuties(false);
-                        setPostCode("");
-                        setFirstLineOfAddress("");
-                        setInquirersEmail("");
-                        setInquirersAndReceiversContactNumber("");
-                        setInquirersAndReceiversEmail("");
-                        setInquirersAndReceiversPostCode("");
-                        setInquirersAndReceiversSecondLineOfAddress("");
-                        setVisits("");
-                        setVisitsForMyself("");
+                        setForAnother(true)
+                        setForMyself(false)
+                        setInquirersAndReceiversName("")
+                        setInquirersAndReceiversEmail("")
+                        setInquirersAndReceiversContactNumber("")
+                        setCustomRelationship("")
+                        setForMyself(false)
+                        setPersonReceivingCare("")
+                        setContinenceCare(false)
+                        setPersonalCare(false)
+                        setOralCare(false)
+                        setMealPrep(false)
+                        setMedicationAdmin(false)
+                        setFeeding(false)
+                        setOther(false)
+                        setNotSure(false)
+                        setDomesticDuties(false)
+                        setPostCode("")
+                        setFirstLineOfAddress("")
+                        setInquirersEmail("")
+                        setInquirersAndReceiversContactNumber("")
+                        setInquirersAndReceiversEmail("")
+                        setInquirersAndReceiversPostCode("")
+                        setInquirersAndReceiversSecondLineOfAddress("")
+                        setVisits("")
+                        setVisitsForMyself("")
                       }}
                     />
                   </div>
@@ -741,9 +740,9 @@ They gave this as optional further information: ${anythingMore}
                       checked={continenceCare}
                       className="text-nowrap"
                       onClick={() => {
-                        setContinenceCare((prevState) => !prevState);
-                        setOther(false);
-                        setNotSure(false);
+                        setContinenceCare((prevState) => !prevState)
+                        setOther(false)
+                        setNotSure(false)
                       }}
                     />
                     <Form.Check
@@ -753,9 +752,9 @@ They gave this as optional further information: ${anythingMore}
                       className="text-nowrap"
                       checked={personalCare}
                       onClick={() => {
-                        setPersonalCare((prevState) => !prevState);
-                        setOther(false);
-                        setNotSure(false);
+                        setPersonalCare((prevState) => !prevState)
+                        setOther(false)
+                        setNotSure(false)
                       }}
                     />
                     <Form.Check
@@ -765,9 +764,9 @@ They gave this as optional further information: ${anythingMore}
                       id="care-req-3"
                       checked={mealPrep}
                       onClick={() => {
-                        setMealPrep((prevState) => !prevState);
-                        setOther(false);
-                        setNotSure(false);
+                        setMealPrep((prevState) => !prevState)
+                        setOther(false)
+                        setNotSure(false)
                       }}
                     />
                     <Form.Check
@@ -776,9 +775,9 @@ They gave this as optional further information: ${anythingMore}
                       id="care-req-4"
                       checked={medicationAdmin}
                       onClick={() => {
-                        setMedicationAdmin((prevState) => !prevState);
-                        setOther(false);
-                        setNotSure(false);
+                        setMedicationAdmin((prevState) => !prevState)
+                        setOther(false)
+                        setNotSure(false)
                       }}
                     />
                   </div>
@@ -789,9 +788,9 @@ They gave this as optional further information: ${anythingMore}
                       id="care-req-6"
                       checked={feeding}
                       onClick={() => {
-                        setFeeding((prevState) => !prevState);
-                        setOther(false);
-                        setNotSure(false);
+                        setFeeding((prevState) => !prevState)
+                        setOther(false)
+                        setNotSure(false)
                       }}
                     />
                     <Form.Check
@@ -800,9 +799,9 @@ They gave this as optional further information: ${anythingMore}
                       id="care-req-7"
                       checked={oralCare}
                       onClick={() => {
-                        setOralCare((prevState) => !prevState);
-                        setOther(false);
-                        setNotSure(false);
+                        setOralCare((prevState) => !prevState)
+                        setOther(false)
+                        setNotSure(false)
                       }}
                     />
                     <Form.Check
@@ -811,17 +810,17 @@ They gave this as optional further information: ${anythingMore}
                       id="care-req-9"
                       checked={notSure}
                       onClick={() => {
-                        setNotSure((prevState) => !prevState);
-                        setContinenceCare(false);
-                        setPersonalCare(false);
-                        setMealPrep(false);
-                        setMedicationAdmin(false);
-                        setDomesticDuties(false);
-                        setFeeding(false);
-                        setOralCare(false);
-                        setOther(false);
-                        setMoreDetails("");
-                        setVisits("");
+                        setNotSure((prevState) => !prevState)
+                        setContinenceCare(false)
+                        setPersonalCare(false)
+                        setMealPrep(false)
+                        setMedicationAdmin(false)
+                        setDomesticDuties(false)
+                        setFeeding(false)
+                        setOralCare(false)
+                        setOther(false)
+                        setMoreDetails("")
+                        setVisits("")
                       }}
                     />
                     <Form.Check
@@ -830,17 +829,17 @@ They gave this as optional further information: ${anythingMore}
                       id="care-req-8"
                       checked={other}
                       onClick={() => {
-                        setOther((prevState) => !prevState);
-                        setContinenceCare(false);
-                        setPersonalCare(false);
-                        setMealPrep(false);
-                        setMedicationAdmin(false);
-                        setDomesticDuties(false);
-                        setFeeding(false);
-                        setOralCare(false);
-                        setNotSure(false);
-                        setMoreDetails("");
-                        setVisits("");
+                        setOther((prevState) => !prevState)
+                        setContinenceCare(false)
+                        setPersonalCare(false)
+                        setMealPrep(false)
+                        setMedicationAdmin(false)
+                        setDomesticDuties(false)
+                        setFeeding(false)
+                        setOralCare(false)
+                        setNotSure(false)
+                        setMoreDetails("")
+                        setVisits("")
                       }}
                     />
                     <Form.Check
@@ -849,9 +848,9 @@ They gave this as optional further information: ${anythingMore}
                       id="care-req-5"
                       checked={domesticDuties}
                       onClick={() => {
-                        setDomesticDuties((prevState) => !prevState);
-                        setOther(false);
-                        setNotSure(false);
+                        setDomesticDuties((prevState) => !prevState)
+                        setOther(false)
+                        setNotSure(false)
                       }}
                     />
                   </div>
@@ -1065,9 +1064,9 @@ They gave this as optional further information: ${anythingMore}
                         checked={continenceCare}
                         className="text-nowrap"
                         onClick={() => {
-                          setContinenceCare((prevState) => !prevState);
-                          setOther(false);
-                          setNotSure(false);
+                          setContinenceCare((prevState) => !prevState)
+                          setOther(false)
+                          setNotSure(false)
                         }}
                       />
                       <Form.Check
@@ -1077,9 +1076,9 @@ They gave this as optional further information: ${anythingMore}
                         className="text-nowrap"
                         checked={personalCare}
                         onClick={() => {
-                          setPersonalCare((prevState) => !prevState);
-                          setOther(false);
-                          setNotSure(false);
+                          setPersonalCare((prevState) => !prevState)
+                          setOther(false)
+                          setNotSure(false)
                         }}
                       />
                       <Form.Check
@@ -1089,9 +1088,9 @@ They gave this as optional further information: ${anythingMore}
                         id="care-req-3"
                         checked={mealPrep}
                         onClick={() => {
-                          setMealPrep((prevState) => !prevState);
-                          setOther(false);
-                          setNotSure(false);
+                          setMealPrep((prevState) => !prevState)
+                          setOther(false)
+                          setNotSure(false)
                         }}
                       />
                       <Form.Check
@@ -1100,9 +1099,9 @@ They gave this as optional further information: ${anythingMore}
                         id="care-req-4"
                         checked={medicationAdmin}
                         onClick={() => {
-                          setMedicationAdmin((prevState) => !prevState);
-                          setOther(false);
-                          setNotSure(false);
+                          setMedicationAdmin((prevState) => !prevState)
+                          setOther(false)
+                          setNotSure(false)
                         }}
                       />
                     </div>
@@ -1113,9 +1112,9 @@ They gave this as optional further information: ${anythingMore}
                         id="care-req-6"
                         checked={feeding}
                         onClick={() => {
-                          setFeeding((prevState) => !prevState);
-                          setOther(false);
-                          setNotSure(false);
+                          setFeeding((prevState) => !prevState)
+                          setOther(false)
+                          setNotSure(false)
                         }}
                       />
                       <Form.Check
@@ -1124,9 +1123,9 @@ They gave this as optional further information: ${anythingMore}
                         id="care-req-7"
                         checked={oralCare}
                         onClick={() => {
-                          setOralCare((prevState) => !prevState);
-                          setOther(false);
-                          setNotSure(false);
+                          setOralCare((prevState) => !prevState)
+                          setOther(false)
+                          setNotSure(false)
                         }}
                       />
                       <Form.Check
@@ -1135,17 +1134,17 @@ They gave this as optional further information: ${anythingMore}
                         id="care-req-9"
                         checked={notSure}
                         onClick={() => {
-                          setNotSure((prevState) => !prevState);
-                          setContinenceCare(false);
-                          setPersonalCare(false);
-                          setMealPrep(false);
-                          setMedicationAdmin(false);
-                          setDomesticDuties(false);
-                          setFeeding(false);
-                          setOralCare(false);
-                          setOther(false);
-                          setMoreDetails("");
-                          setVisits("");
+                          setNotSure((prevState) => !prevState)
+                          setContinenceCare(false)
+                          setPersonalCare(false)
+                          setMealPrep(false)
+                          setMedicationAdmin(false)
+                          setDomesticDuties(false)
+                          setFeeding(false)
+                          setOralCare(false)
+                          setOther(false)
+                          setMoreDetails("")
+                          setVisits("")
                         }}
                       />
                       <Form.Check
@@ -1154,17 +1153,17 @@ They gave this as optional further information: ${anythingMore}
                         id="care-req-8"
                         checked={other}
                         onClick={() => {
-                          setOther((prevState) => !prevState);
-                          setContinenceCare(false);
-                          setPersonalCare(false);
-                          setMealPrep(false);
-                          setMedicationAdmin(false);
-                          setDomesticDuties(false);
-                          setFeeding(false);
-                          setOralCare(false);
-                          setNotSure(false);
-                          setMoreDetails("");
-                          setVisits("");
+                          setOther((prevState) => !prevState)
+                          setContinenceCare(false)
+                          setPersonalCare(false)
+                          setMealPrep(false)
+                          setMedicationAdmin(false)
+                          setDomesticDuties(false)
+                          setFeeding(false)
+                          setOralCare(false)
+                          setNotSure(false)
+                          setMoreDetails("")
+                          setVisits("")
                         }}
                       />
                       <Form.Check
@@ -1173,9 +1172,9 @@ They gave this as optional further information: ${anythingMore}
                         id="care-req-5"
                         checked={domesticDuties}
                         onClick={() => {
-                          setDomesticDuties((prevState) => !prevState);
-                          setOther(false);
-                          setNotSure(false);
+                          setDomesticDuties((prevState) => !prevState)
+                          setOther(false)
+                          setNotSure(false)
                         }}
                       />
                     </div>
@@ -1282,9 +1281,9 @@ They gave this as optional further information: ${anythingMore}
                 onClick={() => {
                   forMyself
                     ? handleSubmitForMyself()
-                    : handleSubmitForAnother();
-                  setCareAppSent(true);
-                  id = "submit-button";
+                    : handleSubmitForAnother()
+                  setCareAppSent(true)
+                  id = "submit-button"
                 }}
               >
                 SUBMIT
@@ -1494,8 +1493,8 @@ They gave this as optional further information: ${anythingMore}
                       id="can-drive"
                       checked={employeeCanDrive}
                       onChange={() => {
-                        setEmployeeCanDrive(true);
-                        setEmployeeCannotDrive(false);
+                        setEmployeeCanDrive(true)
+                        setEmployeeCannotDrive(false)
                       }}
                     />
                   </div>
@@ -1507,8 +1506,8 @@ They gave this as optional further information: ${anythingMore}
                       id="cannot-drive"
                       checked={employeeCannotDrive}
                       onChange={() => {
-                        setEmployeeCannotDrive(true);
-                        setEmployeeCanDrive(false);
+                        setEmployeeCannotDrive(true)
+                        setEmployeeCanDrive(false)
                       }}
                     />
                   </div>
@@ -1531,8 +1530,8 @@ They gave this as optional further information: ${anythingMore}
                       className="yes-or-no"
                       checked={employeeIsWilling}
                       onChange={() => {
-                        setEmployeeIsWilling(true);
-                        setEmployeeIsNotWilling(false);
+                        setEmployeeIsWilling(true)
+                        setEmployeeIsNotWilling(false)
                       }}
                     />
                   </div>
@@ -1544,8 +1543,8 @@ They gave this as optional further information: ${anythingMore}
                       id="not-willing"
                       checked={employeeIsNotWilling}
                       onChange={() => {
-                        setEmployeeIsNotWilling(true);
-                        setEmployeeIsWilling(false);
+                        setEmployeeIsNotWilling(true)
+                        setEmployeeIsWilling(false)
                       }}
                     />
                   </div>
@@ -1701,8 +1700,8 @@ They gave this as optional further information: ${anythingMore}
                   letterSpacing: "1.3px",
                 }}
                 onClick={() => {
-                  setJobApplication(true);
-                  handleEmployeeSubmit();
+                  setJobApplication(true)
+                  handleEmployeeSubmit()
                 }}
               >
                 SUBMIT
@@ -1730,14 +1729,14 @@ They gave this as optional further information: ${anythingMore}
                           onClick={() => {
                             if (index === steps.length - 1) {
                               setTimeout(() => {
-                                setCompletedJobApplication(true);
-                              }, 1000);
+                                setCompletedJobApplication(true)
+                              }, 1000)
                             }
                             if (index === steps.length - 2) {
-                              window.open("mailto:libracare@outlook.com");
-                              handleNext();
+                              window.open("mailto:libracare@outlook.com")
+                              handleNext()
                             } else {
-                              handleNext();
+                              handleNext()
                             }
                           }}
                           sx={{ mt: 1, mr: 1 }}
@@ -1760,7 +1759,7 @@ They gave this as optional further information: ${anythingMore}
                           <Button
                             disabled={index === 0}
                             onClick={() => {
-                              handleBack();
+                              handleBack()
                             }}
                             sx={{ mt: 1, mr: 1, color: "grey" }}
                           >
@@ -1792,5 +1791,5 @@ They gave this as optional further information: ${anythingMore}
         </div>
       )}
     </div>
-  );
+  )
 }

@@ -10,43 +10,49 @@
 /* carousel-text */
 @media (max-width: 99999px) and (min-width: 1000px) {
   #carousel-text {
-    font-size: 32px;
+    font-size: 30px;
   }
 }
 
 @media (max-width: 1000px) and (min-width: 700px) {
   #carousel-text {
-    font-size: 28px;
+    font-size: 26px;
   }
 }
 
 @media (max-width: 700px) and (min-width: 600px) {
   #carousel-text {
-    font-size: 26px;
+    font-size: 24px;
   }
 }
 
 @media (max-width: 600px) and (min-width: 500px) {
   #carousel-text {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 
 @media (max-width: 500px) and (min-width: 450px) {
   #carousel-text {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
 @media (max-width: 380px) and (min-width: 330px) {
   #carousel-text {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
 @media (max-width: 330px) and (min-width: 240px) {
   #carousel-text {
-    font-size: 9.7px;
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 240px) and (min-width: 0px) {
+  #carousel-text {
+    font-size: 8px;
   }
 }
 
@@ -65,61 +71,67 @@
 @media (max-width: 99999999px) and (min-width: 1400px) {
   #CQC-logo {
     top: 5% !important;
-    width: 27em
+    width: 25em
   }
 }
 
 @media (max-width: 1400px) and (min-width: 1100px) {
   #CQC-logo {
-    width: 21em
+    width: 19em
   }
 }
 
 @media (max-width: 1100px) and (min-width: 1000px) {
   #CQC-logo {
-    width: 19em
+    width: 16em
   }
 }
 
 
 @media (max-width: 1000px) and (min-width: 900px) {
   #CQC-logo {
-    width: 17em
+    width: 14em
   }
 }
 
 @media (max-width: 900px) and (min-width: 800px) {
   #CQC-logo {
-    width: 15em
+    width: 13em
   }
 }
 
 @media (max-width: 800px) and (min-width: 700px) {
   #CQC-logo {
-    width: 12em
+    width: 10em
   }
 }
 
 @media (max-width: 700px) and (min-width: 600px) {
   #CQC-logo {
-    width: 10em
+    width: 8.5em
   }
 }
 
 @media (max-width: 600px) and (min-width: 500px) {
   #CQC-logo {
-    width: 9em
+    width: 7em
   }
 }
 
 @media (max-width: 500px) and (min-width: 400px) {
   #CQC-logo {
-    width: 7em
+    width: 5em
   }
 }
 
-@media (max-width: 400px) and (min-width: 0px) {
+@media (max-width: 400px) and (min-width: 300px) {
   #CQC-logo {
-    width: 6.4em;
+    width: 5em;
+  }
+}
+
+@media (max-width: 300px) and (min-width: 0px) {
+  #CQC-logo {
+    width: 4em;
   }
 }

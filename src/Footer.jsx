@@ -20,7 +20,7 @@ function openEmailWindow() {
             textShadow: "2px 2px 4px black",
           }}
         >
-          <h3 style={{ margin: 0 }}>
+          <h3 style={{ margin: 0 }} className="footer-text">
             Suite 58 Beacon Buildings
             <br />
             Leighswood Road
@@ -29,7 +29,7 @@ function openEmailWindow() {
             <br />
             WS9 8AA
           </h3>
-          <h3 style={{ margin: 0 }}>
+          <h3 style={{ margin: 0 }}  className="footer-text">
             <a
               href="tel:01922234453"
               style={{ textDecoration: "none", color: "inherit" }}
@@ -37,7 +37,7 @@ function openEmailWindow() {
               01922 234 453
             </a>
           </h3>
-          <h3 style={{ margin: 0 }}>
+          <h3 style={{ margin: 0 }}  className="footer-text">
             <a
               href="tel:07974733121"
               style={{ textDecoration: "none", color: "inherit" }}
@@ -47,6 +47,7 @@ function openEmailWindow() {
           </h3>
           <h3
             style={{ margin: 0, cursor: "pointer" }}
+            className="footer-text"
             id="email-link"
             onClick={openEmailWindow}
           >

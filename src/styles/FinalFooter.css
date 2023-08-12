@@ -2,3 +2,34 @@
     color: black !important;
     cursor: pointer
 }
+
+@media (max-width: 800px) and (min-width: 400px) {
+    .final-footer-text {
+      font-size: 16px !important;
+    }
+  }
+
+@media (max-width: 400px) and (min-width: 360px) {
+    .final-footer-text {
+      font-size: 14px !important;
+    }
+  }
+
+  @media (max-width: 360px) and (min-width: 300px) {
+    .final-footer-text {
+      font-size: 12px !important;
+    }
+  }
+
+  @media (max-width: 300px) and (min-width: 240px) {
+    .final-footer-text {
+      font-size: 10px !important;
+    }
+  }
+
+  
+  @media (max-width: 240px) and (min-width: 0px) {
+    .final-footer-text {
+      font-size: 8px !important;
+    }
+  }

@@ -29,3 +29,14 @@
   text-decoration: underline;
 }
 
+@media (max-width: 400px) and (min-width: 300px) {
+  #blog-title {
+    font-size: 13px
+  }
+}
+
+@media (max-width: 300px) and (min-width: 0px) {
+  #blog-title {
+    font-size: 10px
+  }
+}

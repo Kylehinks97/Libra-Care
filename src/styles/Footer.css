@@ -1,9 +1,45 @@
 .bg-body-tertiary {
-    border-top: 3px solid coral;
-    border-bottom: none;
-    padding: 5px
+  border-top: 3px solid coral;
+  border-bottom: none;
+  padding: 5px;
 }
 
 #email-link:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
+
+@media (max-width: 99999999999px) and (min-width: 500px) {
+    .footer-text {
+      font-size: 32px !important;
+    }
+  }
+
+@media (max-width: 500px) and (min-width: 400px) {
+    .footer-text {
+      font-size: 28px !important;
+    }
+  }
+
+@media (max-width: 400px) and (min-width: 360px) {
+  .footer-text {
+    font-size: 24px !important;
+  }
+}
+
+@media (max-width: 360px) and (min-width: 300px) {
+  .footer-text {
+    font-size: 20px !important;
+  }
+}
+
+@media (max-width: 300px) and (min-width: 250px) {
+    .footer-text {
+      font-size: 16px !important;
+    }
+  }
+
+  @media (max-width: 250px) and (min-width: 0px) {
+    .footer-text {
+      font-size: 14px !important;
+    }
+  }

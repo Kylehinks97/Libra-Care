@@ -2,7 +2,7 @@
 #hiring-banner span:hover,
 #hiring-banner:hover {
   color: #004f00 !important;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 @media (max-width: 9999px) and (min-width: 1000px) {
@@ -43,7 +43,7 @@
 
 @media (max-width: 400px) and (min-width: 360px) {
   #hiring-banner {
-    font-size: 16px !important;
+    font-size: 14px !important;
   }
 }
 
@@ -52,8 +52,21 @@
     font-size: 12.5px !important;
   }
 }
-@media (max-width: 300px) and (min-width: 100px) {
+
+@media (max-width: 300px) and (min-width: 250px) {
   #hiring-banner {
     font-size: 10px !important;
+  }
+}
+
+@media (max-width: 250px) and (min-width: 200px) {
+  #hiring-banner {
+    font-size: 9px !important;
+  }
+}
+
+@media (max-width: 200px) and (min-width: 0px) {
+  #hiring-banner {
+    font-size: 8px !important;
   }
 }
