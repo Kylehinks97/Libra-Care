@@ -18,7 +18,7 @@ export default function OurTeam() {
         "Within my most recent role I assisted individuals to design support plans that took into account their allocated personal budget and utilise the services that are available from the private, voluntary and Council operated sectors.",
     },
     {
-      name: "Vicki Bates",
+      name: "Vicki Bate",
       role: "Responsible Individual",
       alt: "Responsible Individual of Libra Care - Vicki Bates",
       img: "/images/Vicki.jpg",
